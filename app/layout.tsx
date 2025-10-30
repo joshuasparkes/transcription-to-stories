@@ -19,8 +19,8 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Transcription to User Story Tool",
-  description: "Convert meeting transcripts into structured user stories",
+  title: "Transcription Analysis Tool",
+  description: "Convert meeting transcripts into structured user stories and query transcripts with AI",
 };
 
 export default function RootLayout({

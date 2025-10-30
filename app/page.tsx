@@ -51,16 +51,18 @@ export default function Home() {
 
   // Update page title to show loading indicator
   useEffect(() => {
-    const originalTitle = document.title;
+    const originalTitle = 'Transcription Analysis Tool';
     if (loading) {
-      document.title = '⏳ Processing...';
+      document.title = '⏳ Extracting User Stories...';
+    } else if (customQueryLoading) {
+      document.title = '⏳ Processing Query...';
     } else {
       document.title = originalTitle;
     }
     return () => {
       document.title = originalTitle;
     };
-  }, [loading]);
+  }, [loading, customQueryLoading]);
 
   const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
