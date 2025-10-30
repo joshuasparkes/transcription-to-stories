@@ -2,7 +2,7 @@
 
 import { useState, useRef, ChangeEvent, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpload, faFileAlt, faTimes, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faUpload, faTimes, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { parseVTT } from '@/lib/vttParser';
 import { UserStory } from '@/lib/types';
 import ResultsTable from '@/components/ResultsTable';
@@ -17,6 +17,7 @@ interface UsageInfo {
 }
 
 type GptModel = 'gpt-5' | 'gpt-5-mini' | 'gpt-5-nano';
+type Mode = 'query' | 'user-stories';
 
 export default function Home() {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
@@ -30,6 +31,7 @@ export default function Home() {
   const [customQueryResponse, setCustomQueryResponse] = useState('');
   const [customQueryUsage, setCustomQueryUsage] = useState<UsageInfo | null>(null);
   const [customQueryLoading, setCustomQueryLoading] = useState(false);
+  const [mode, setMode] = useState<Mode>('query');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Update page title to show loading indicator
@@ -228,32 +230,57 @@ export default function Home() {
     <div className="min-h-screen text-black bg-black px-8 py-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center mb-12">
+        <div className="flex justify-between items-center mb-8">
           <div className="flex-1" />
           <h1 className="font-[family-name:var(--font-raleway)] font-bold text-4xl text-white text-center flex-1">
-            Transcription to User Story Tool
+            Transcription Analysis Tool
           </h1>
           <div className="flex-1 flex justify-end">
           </div>
         </div>
 
-        {/* Main Form */}
-        <div className="space-y-6">
+        {/* Mode Toggle and Model Selector */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+          {/* Mode Toggle */}
+          <div className="flex gap-4">
+            <button
+              onClick={() => setMode('query')}
+              className={`px-8 py-3 rounded-xl font-semibold cursor-pointer transition-all duration-200 ${
+                mode === 'query'
+                  ? 'bg-green-600 text-white shadow-lg scale-105'
+                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              }`}
+            >
+              Custom Query
+            </button>
+            <button
+              onClick={() => setMode('user-stories')}
+              className={`px-8 py-3 rounded-xl font-semibold cursor-pointer transition-all duration-200 ${
+                mode === 'user-stories'
+                  ? 'bg-blue-600 text-white shadow-lg scale-105'
+                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              }`}
+            >
+              Extract User Stories
+            </button>
+          </div>
+
           {/* Model Selector */}
-          <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
-            <label className="block text-white font-medium mb-2">
-              Select GPT Model
-            </label>
+          <div className="w-full md:w-auto md:min-w-[400px]">
             <select
               value={selectedModel}
               onChange={(e) => setSelectedModel(e.target.value as GptModel)}
-              className="w-full p-3 bg-white text-black rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-all duration-200"
+              className="w-full p-3 bg-gray-900 text-white rounded-xl border-2 border-gray-700 focus:border-blue-500 focus:outline-none transition-all duration-200"
             >
               <option value="gpt-5">GPT-5 (Highest quality, $2.50/$10.00 per 1M tokens)</option>
               <option value="gpt-5-mini">GPT-5 Mini (Balanced, $0.10/$0.40 per 1M tokens)</option>
               <option value="gpt-5-nano">GPT-5 Nano (Fastest, $0.05/$0.20 per 1M tokens)</option>
             </select>
           </div>
+        </div>
+
+        {/* Main Form */}
+        <div className="space-y-6">
 
           {/* File Upload */}
           <div className="relative">
@@ -293,7 +320,7 @@ export default function Home() {
               value={textInput}
               onChange={handleTextChange}
               placeholder="Or paste your transcript here..."
-              className="w-full h-64 p-4 bg-white rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:outline-none focus:shadow-lg transition-all duration-200 resize-none"
+              className="w-full h-32 p-4 bg-white rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:outline-none focus:shadow-lg transition-all duration-200 resize-none"
             />
             {textInput && (
               <button
@@ -312,23 +339,23 @@ export default function Home() {
             </div>
           )}
 
-          {/* Action Buttons */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <button
-              onClick={handleExtractUserStories}
-              disabled={loading || (!uploadedFile && !textInput.trim())}
-              className="w-full cursor-pointer py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg active:scale-[0.98]"
-            >
-              {loading ? (
-                <span className="flex items-center justify-center gap-2">
-                  <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-                  Extracting User Stories...
-                </span>
-              ) : (
-                'Extract User Stories'
-              )}
-            </button>
+          {/* Custom Query Input - Only show in query mode */}
+          {mode === 'query' && (
+            <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
+              <label className="block text-white font-medium mb-2">
+                Custom Query
+              </label>
+              <textarea
+                value={customQuery}
+                onChange={(e) => setCustomQuery(e.target.value)}
+                placeholder="Ask a specific question about the transcript..."
+                className="w-full h-32 p-4 bg-white text-black rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-all duration-200 resize-none"
+              />
+            </div>
+          )}
 
+          {/* Submit Button */}
+          {mode === 'query' ? (
             <button
               onClick={handleCustomQuery}
               disabled={customQueryLoading || (!uploadedFile && !textInput.trim()) || !customQuery.trim()}
@@ -343,100 +370,112 @@ export default function Home() {
                 'Submit Custom Query'
               )}
             </button>
-          </div>
-
-          {/* Custom Query Input */}
-          <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
-            <label className="block text-white font-medium mb-2">
-              Custom Query (Optional)
-            </label>
-            <textarea
-              value={customQuery}
-              onChange={(e) => setCustomQuery(e.target.value)}
-              placeholder="Ask a specific question about the transcript..."
-              className="w-full h-24 p-4 bg-white text-black rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-all duration-200 resize-none"
-            />
-          </div>
+          ) : (
+            <button
+              onClick={handleExtractUserStories}
+              disabled={loading || (!uploadedFile && !textInput.trim())}
+              className="w-full cursor-pointer py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg active:scale-[0.98]"
+            >
+              {loading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+                  Extracting User Stories...
+                </span>
+              ) : (
+                'Extract User Stories'
+              )}
+            </button>
+          )}
         </div>
 
-        {/* Custom Query Response */}
-        {customQueryResponse && (
-          <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700">
-            <h3 className="text-xl font-semibold text-white mb-4">Custom Query Response</h3>
-            <div className="bg-white p-4 rounded-lg text-black whitespace-pre-wrap">
-              {customQueryResponse}
-            </div>
-          </div>
+        {/* Query Mode Results */}
+        {mode === 'query' && (
+          <>
+            {/* Custom Query Response */}
+            {customQueryResponse && (
+              <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700">
+                <h3 className="text-xl font-semibold text-white mb-4">Response</h3>
+                <div className="bg-white p-4 rounded-lg text-black whitespace-pre-wrap">
+                  {customQueryResponse}
+                </div>
+              </div>
+            )}
+
+            {/* Custom Query Usage Info */}
+            {customQueryUsage && (
+              <div className="mt-4 p-6 bg-gray-900 rounded-lg border border-gray-700">
+                <h3 className="text-xl font-semibold text-white mb-4">API Usage</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-white">
+                  <div>
+                    <p className="text-gray-400 text-sm">Input Tokens</p>
+                    <p className="text-lg font-semibold">{customQueryUsage.promptTokens.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Output Tokens</p>
+                    <p className="text-lg font-semibold">{customQueryUsage.completionTokens.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Total Tokens</p>
+                    <p className="text-lg font-semibold">{customQueryUsage.totalTokens.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Input Cost</p>
+                    <p className="text-lg font-semibold">${customQueryUsage.inputCost.toFixed(4)}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Output Cost</p>
+                    <p className="text-lg font-semibold">${customQueryUsage.outputCost.toFixed(4)}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Total Cost</p>
+                    <p className="text-lg font-semibold text-green-400">${customQueryUsage.totalCost.toFixed(4)}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
         )}
 
-        {/* Custom Query Usage Info */}
-        {customQueryUsage && (
-          <div className="mt-4 p-6 bg-gray-900 rounded-lg border border-gray-700">
-            <h3 className="text-xl font-semibold text-white mb-4">Custom Query API Usage</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-white">
-              <div>
-                <p className="text-gray-400 text-sm">Input Tokens</p>
-                <p className="text-lg font-semibold">{customQueryUsage.promptTokens.toLocaleString()}</p>
+        {/* User Stories Mode Results */}
+        {mode === 'user-stories' && (
+          <>
+            {/* User Stories Usage Info */}
+            {usage && (
+              <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700">
+                <h3 className="text-xl font-semibold text-white mb-4">API Usage</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-white">
+                  <div>
+                    <p className="text-gray-400 text-sm">Input Tokens</p>
+                    <p className="text-lg font-semibold">{usage.promptTokens.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Output Tokens</p>
+                    <p className="text-lg font-semibold">{usage.completionTokens.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Total Tokens</p>
+                    <p className="text-lg font-semibold">{usage.totalTokens.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Input Cost</p>
+                    <p className="text-lg font-semibold">${usage.inputCost.toFixed(4)}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Output Cost</p>
+                    <p className="text-lg font-semibold">${usage.outputCost.toFixed(4)}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Total Cost</p>
+                    <p className="text-lg font-semibold text-green-400">${usage.totalCost.toFixed(4)}</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-gray-400 text-sm">Output Tokens</p>
-                <p className="text-lg font-semibold">{customQueryUsage.completionTokens.toLocaleString()}</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Total Tokens</p>
-                <p className="text-lg font-semibold">{customQueryUsage.totalTokens.toLocaleString()}</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Input Cost</p>
-                <p className="text-lg font-semibold">${customQueryUsage.inputCost.toFixed(4)}</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Output Cost</p>
-                <p className="text-lg font-semibold">${customQueryUsage.outputCost.toFixed(4)}</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Total Cost</p>
-                <p className="text-lg font-semibold text-green-400">${customQueryUsage.totalCost.toFixed(4)}</p>
-              </div>
-            </div>
-          </div>
-        )}
+            )}
 
-        {/* User Stories Usage Info */}
-        {usage && (
-          <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700">
-            <h3 className="text-xl font-semibold text-white mb-4">User Story Extraction API Usage</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-white">
-              <div>
-                <p className="text-gray-400 text-sm">Input Tokens</p>
-                <p className="text-lg font-semibold">{usage.promptTokens.toLocaleString()}</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Output Tokens</p>
-                <p className="text-lg font-semibold">{usage.completionTokens.toLocaleString()}</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Total Tokens</p>
-                <p className="text-lg font-semibold">{usage.totalTokens.toLocaleString()}</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Input Cost</p>
-                <p className="text-lg font-semibold">${usage.inputCost.toFixed(4)}</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Output Cost</p>
-                <p className="text-lg font-semibold">${usage.outputCost.toFixed(4)}</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Total Cost</p>
-                <p className="text-lg font-semibold text-green-400">${usage.totalCost.toFixed(4)}</p>
-              </div>
-            </div>
-          </div>
+            {/* Results Table */}
+            <ResultsTable results={results} />
+          </>
         )}
-
-        {/* Results */}
-        <ResultsTable results={results} />
       </div>
     </div>
   );
