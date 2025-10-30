@@ -6,10 +6,26 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// Pricing per 1M tokens for different models
+const MODEL_PRICING = {
+  'gpt-5': {
+    input: 2.50,
+    output: 10.00,
+  },
+  'gpt-5-mini': {
+    input: 0.10,
+    output: 0.40,
+  },
+  'gpt-5-nano': {
+    input: 0.05,
+    output: 0.20,
+  },
+};
+
 export async function POST(request: NextRequest) {
   try {
     console.log('📥 [API] Received request to extract requirements');
-    const { transcript } = await request.json();
+    const { transcript, model = 'gpt-5-mini' } = await request.json();
 
     if (!transcript || typeof transcript !== 'string') {
       console.error('❌ [API] Invalid transcript provided');
@@ -56,11 +72,11 @@ ${transcript}
 
 Return ONLY valid JSON with the "requirements" array. Do not return a single object - always wrap in an array.`;
 
-    console.log('🤖 [API] Sending request to OpenAI GPT-5 mini...');
+    console.log('🤖 [API] Sending request to OpenAI', model, '...');
     const startTime = Date.now();
 
     const completion = await openai.responses.create({
-      model: 'gpt-5-mini',
+      model: model,
       input: [
         {
           role: 'user',
@@ -149,14 +165,10 @@ Return ONLY valid JSON with the "requirements" array. Do not return a single obj
       total: totalTokens
     });
 
-    // GPT-5 mini pricing (as of 2025)
-    // Input: $0.10 per 1M tokens
-    // Output: $0.40 per 1M tokens
-    const inputCostPer1M = 0.10;
-    const outputCostPer1M = 0.40;
-
-    const inputCost = (inputTokens / 1_000_000) * inputCostPer1M;
-    const outputCost = (outputTokens / 1_000_000) * outputCostPer1M;
+    // Calculate cost based on selected model
+    const pricing = MODEL_PRICING[model as keyof typeof MODEL_PRICING] || MODEL_PRICING['gpt-5-mini'];
+    const inputCost = (inputTokens / 1_000_000) * pricing.input;
+    const outputCost = (outputTokens / 1_000_000) * pricing.output;
     const totalCost = inputCost + outputCost;
 
     console.log('💵 [API] Estimated cost: $' + totalCost.toFixed(4));

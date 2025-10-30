@@ -16,6 +16,8 @@ interface UsageInfo {
   totalCost: number;
 }
 
+type GptModel = 'gpt-5' | 'gpt-5-mini' | 'gpt-5-nano';
+
 export default function Home() {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [textInput, setTextInput] = useState('');
@@ -23,6 +25,11 @@ export default function Home() {
   const [results, setResults] = useState<UserStory[]>([]);
   const [usage, setUsage] = useState<UsageInfo | null>(null);
   const [error, setError] = useState('');
+  const [selectedModel, setSelectedModel] = useState<GptModel>('gpt-5-mini');
+  const [customQuery, setCustomQuery] = useState('');
+  const [customQueryResponse, setCustomQueryResponse] = useState('');
+  const [customQueryUsage, setCustomQueryUsage] = useState<UsageInfo | null>(null);
+  const [customQueryLoading, setCustomQueryLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Update page title to show loading indicator
@@ -84,12 +91,7 @@ export default function Home() {
     setError('');
   };
 
-  const handleSubmit = async () => {
-    console.log('🚀 [Frontend] Submit button clicked');
-    setError('');
-    setResults([]);
-    setUsage(null);
-
+  const getTranscriptText = async (): Promise<string | null> => {
     let transcriptText = '';
 
     if (uploadedFile) {
@@ -102,16 +104,35 @@ export default function Home() {
       } catch (err) {
         console.error('❌ [Frontend] Failed to read file:', err);
         setError('Failed to read file');
-        return;
+        return null;
       }
     } else if (textInput.trim()) {
       console.log('📝 [Frontend] Using text input, length:', textInput.length);
-      transcriptText = textInput.trim();
+      // Also parse VTT if the text input looks like VTT content
+      const trimmedInput = textInput.trim();
+      if (trimmedInput.startsWith('WEBVTT') || trimmedInput.includes('-->')) {
+        transcriptText = parseVTT(trimmedInput);
+        console.log('✅ [Frontend] VTT parsed from text input, cleaned text length:', transcriptText.length);
+      } else {
+        transcriptText = trimmedInput;
+      }
     } else {
       console.warn('⚠️  [Frontend] No input provided');
       setError('Please provide a transcript file or text');
-      return;
+      return null;
     }
+
+    return transcriptText;
+  };
+
+  const handleExtractUserStories = async () => {
+    console.log('🚀 [Frontend] Extract User Stories button clicked');
+    setError('');
+    setResults([]);
+    setUsage(null);
+
+    const transcriptText = await getTranscriptText();
+    if (!transcriptText) return;
 
     setLoading(true);
     console.log('📤 [Frontend] Sending transcript to API...');
@@ -122,7 +143,10 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ transcript: transcriptText }),
+        body: JSON.stringify({
+          transcript: transcriptText,
+          model: selectedModel
+        }),
       });
 
       console.log('📥 [Frontend] API response status:', response.status);
@@ -148,6 +172,58 @@ export default function Home() {
     }
   };
 
+  const handleCustomQuery = async () => {
+    console.log('🚀 [Frontend] Custom Query button clicked');
+    setError('');
+    setCustomQueryResponse('');
+    setCustomQueryUsage(null);
+
+    if (!customQuery.trim()) {
+      setError('Please enter a custom query');
+      return;
+    }
+
+    const transcriptText = await getTranscriptText();
+    if (!transcriptText) return;
+
+    setCustomQueryLoading(true);
+    console.log('📤 [Frontend] Sending custom query to API...');
+
+    try {
+      const response = await fetch('/api/custom-query', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          transcript: transcriptText,
+          query: customQuery,
+          model: selectedModel
+        }),
+      });
+
+      console.log('📥 [Frontend] API response status:', response.status);
+
+      if (!response.ok) {
+        throw new Error('Failed to process custom query');
+      }
+
+      const data = await response.json();
+      console.log('📊 [Frontend] Response data:', data);
+
+      setCustomQueryResponse(data.response || '');
+      setCustomQueryUsage(data.usage || null);
+
+      console.log('✅ [Frontend] Custom query response set successfully');
+    } catch (err) {
+      console.error('❌ [Frontend] Error processing custom query:', err);
+      setError('Failed to process custom query. Please try again.');
+    } finally {
+      setCustomQueryLoading(false);
+      console.log('🏁 [Frontend] Custom query processing complete');
+    }
+  };
+
   return (
     <div className="min-h-screen text-black bg-black px-8 py-12">
       <div className="max-w-7xl mx-auto">
@@ -163,6 +239,22 @@ export default function Home() {
 
         {/* Main Form */}
         <div className="space-y-6">
+          {/* Model Selector */}
+          <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
+            <label className="block text-white font-medium mb-2">
+              Select GPT Model
+            </label>
+            <select
+              value={selectedModel}
+              onChange={(e) => setSelectedModel(e.target.value as GptModel)}
+              className="w-full p-3 bg-white text-black rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-all duration-200"
+            >
+              <option value="gpt-5">GPT-5 (Highest quality, $2.50/$10.00 per 1M tokens)</option>
+              <option value="gpt-5-mini">GPT-5 Mini (Balanced, $0.10/$0.40 per 1M tokens)</option>
+              <option value="gpt-5-nano">GPT-5 Nano (Fastest, $0.05/$0.20 per 1M tokens)</option>
+            </select>
+          </div>
+
           {/* File Upload */}
           <div className="relative">
             <label
@@ -220,27 +312,100 @@ export default function Home() {
             </div>
           )}
 
-          {/* Submit Button */}
-          <button
-            onClick={handleSubmit}
-            disabled={loading || (!uploadedFile && !textInput.trim())}
-            className="w-full cursor-pointer py-4 bg-white text-black font-semibold rounded-xl hover:bg-gray-200 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg active:scale-[0.98]"
-          >
-            {loading ? (
-              <span className="flex items-center justify-center gap-2">
-                <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-                Processing...
-              </span>
-            ) : (
-              'Submit'
-            )}
-          </button>
+          {/* Action Buttons */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button
+              onClick={handleExtractUserStories}
+              disabled={loading || (!uploadedFile && !textInput.trim())}
+              className="w-full cursor-pointer py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg active:scale-[0.98]"
+            >
+              {loading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+                  Extracting User Stories...
+                </span>
+              ) : (
+                'Extract User Stories'
+              )}
+            </button>
+
+            <button
+              onClick={handleCustomQuery}
+              disabled={customQueryLoading || (!uploadedFile && !textInput.trim()) || !customQuery.trim()}
+              className="w-full cursor-pointer py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg active:scale-[0.98]"
+            >
+              {customQueryLoading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+                  Processing Query...
+                </span>
+              ) : (
+                'Submit Custom Query'
+              )}
+            </button>
+          </div>
+
+          {/* Custom Query Input */}
+          <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
+            <label className="block text-white font-medium mb-2">
+              Custom Query (Optional)
+            </label>
+            <textarea
+              value={customQuery}
+              onChange={(e) => setCustomQuery(e.target.value)}
+              placeholder="Ask a specific question about the transcript..."
+              className="w-full h-24 p-4 bg-white text-black rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-all duration-200 resize-none"
+            />
+          </div>
         </div>
 
-        {/* Usage Info */}
+        {/* Custom Query Response */}
+        {customQueryResponse && (
+          <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700">
+            <h3 className="text-xl font-semibold text-white mb-4">Custom Query Response</h3>
+            <div className="bg-white p-4 rounded-lg text-black whitespace-pre-wrap">
+              {customQueryResponse}
+            </div>
+          </div>
+        )}
+
+        {/* Custom Query Usage Info */}
+        {customQueryUsage && (
+          <div className="mt-4 p-6 bg-gray-900 rounded-lg border border-gray-700">
+            <h3 className="text-xl font-semibold text-white mb-4">Custom Query API Usage</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-white">
+              <div>
+                <p className="text-gray-400 text-sm">Input Tokens</p>
+                <p className="text-lg font-semibold">{customQueryUsage.promptTokens.toLocaleString()}</p>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">Output Tokens</p>
+                <p className="text-lg font-semibold">{customQueryUsage.completionTokens.toLocaleString()}</p>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">Total Tokens</p>
+                <p className="text-lg font-semibold">{customQueryUsage.totalTokens.toLocaleString()}</p>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">Input Cost</p>
+                <p className="text-lg font-semibold">${customQueryUsage.inputCost.toFixed(4)}</p>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">Output Cost</p>
+                <p className="text-lg font-semibold">${customQueryUsage.outputCost.toFixed(4)}</p>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">Total Cost</p>
+                <p className="text-lg font-semibold text-green-400">${customQueryUsage.totalCost.toFixed(4)}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* User Stories Usage Info */}
         {usage && (
           <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700">
-            <h3 className="text-xl font-semibold text-white mb-4">API Usage</h3>
+            <h3 className="text-xl font-semibold text-white mb-4">User Story Extraction API Usage</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-white">
               <div>
                 <p className="text-gray-400 text-sm">Input Tokens</p>
