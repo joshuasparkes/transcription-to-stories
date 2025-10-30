@@ -36,7 +36,8 @@ export async function POST(request: NextRequest) {
     }
 
     console.log('📊 [API] Transcript length:', transcript.length, 'characters');
-    console.log('📝 [API] Transcript preview:', transcript.substring(0, 200) + '...');
+    console.log('📝 [API] Transcript preview (first 500 chars):', transcript.substring(0, 500) + '...');
+    console.log('📝 [API] Transcript preview (last 200 chars):', '...' + transcript.substring(transcript.length - 200));
 
     const prompt = `You are a business analyst expert. Analyze the following transcript from a meeting or conversation and extract all requirements, converting them into user stories.
 
