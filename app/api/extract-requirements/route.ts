@@ -47,6 +47,7 @@ For each requirement found, provide:
 3. Requirement - A brief description of what is needed
 4. User Story - In the format "As a [user type], I want to [action] so that [benefit]"
 5. Acceptance Criteria - Multiple specific, testable conditions (provide at least 4, but add more if needed)
+6. Supporting Quote - A direct quote from the transcript that supports this requirement (use exact words from the transcript)
 
 IMPORTANT: You MUST return a JSON object with a "requirements" array, even if there is only ONE requirement.
 
@@ -58,6 +59,7 @@ Example format:
       "requirementNumber": "REQ-001",
       "requirement": "Description of requirement",
       "userStory": "As a user, I want to do something so that I get value",
+      "supportingQuote": "Direct quote from transcript that supports this requirement",
       "acceptanceCriteria1": "Criteria 1",
       "acceptanceCriteria2": "Criteria 2",
       "acceptanceCriteria3": "Criteria 3",
@@ -67,6 +69,8 @@ Example format:
 }
 
 If there are more than 4 acceptance criteria for any requirement, add additional fields as acceptanceCriteria5, acceptanceCriteria6, etc.
+
+For the supporting quote, extract the exact relevant portion from the transcript that led you to identify this requirement. Keep quotes concise but meaningful (1-3 sentences).
 
 Transcript:
 ${transcript}

@@ -76,8 +76,14 @@ export default function ResultsTable({ results }: ResultsTableProps) {
             <tr className="bg-gray-800 text-white">
               <th className="p-3 text-left border border-gray-600">Select</th>
               {headers.map((header) => (
-                <th key={header} className="p-3 text-left border border-gray-600 whitespace-nowrap">
+                <th
+                  key={header}
+                  className={`p-3 text-left border border-gray-600 ${
+                    header === 'supportingQuote' ? 'bg-yellow-600' : ''
+                  } ${header === 'supportingQuote' ? '' : 'whitespace-nowrap'}`}
+                >
                   {header.replace(/([A-Z])/g, ' $1').trim().replace(/^\w/, c => c.toUpperCase())}
+                  {header === 'supportingQuote' && ' 📌'}
                 </th>
               ))}
             </tr>
@@ -99,7 +105,12 @@ export default function ResultsTable({ results }: ResultsTableProps) {
                   />
                 </td>
                 {headers.map((header) => (
-                  <td key={header} className="p-3 border border-gray-300">
+                  <td
+                    key={header}
+                    className={`p-3 border border-gray-300 ${
+                      header === 'supportingQuote' ? 'max-w-md italic text-gray-700 bg-yellow-50' : ''
+                    }`}
+                  >
                     {story[header] || ''}
                   </td>
                 ))}

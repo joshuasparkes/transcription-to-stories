@@ -48,14 +48,14 @@ export async function POST(request: NextRequest) {
     console.log('📝 [API] Query:', query);
     console.log('🤖 [API] Model:', model);
 
-    const prompt = `You are an AI assistant analyzing a transcript. Answer the following question about the transcript.
+    const prompt = `You are an AI assistant analyzing a transcript. Answer the following question about the transcript, and provide supporting quotes as evidence.
 
 Question: ${query}
 
 Transcript:
 ${transcript}
 
-Please provide a clear, detailed answer based on the transcript content.`;
+Please provide a clear, detailed answer based on the transcript content. After your answer, include a section titled "Supporting Quotes:" that contains direct quotes from the transcript that support your response. Use exact words from the transcript for the quotes.`;
 
     console.log('🤖 [API] Sending request to OpenAI', model, '...');
     const startTime = Date.now();

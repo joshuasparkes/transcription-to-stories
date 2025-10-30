@@ -46,23 +46,25 @@ export default function Home() {
   const [customQueryUsage, setCustomQueryUsage] = useState<UsageInfo | null>(null);
   const [customQueryLoading, setCustomQueryLoading] = useState(false);
   const [mode, setMode] = useState<Mode>('query');
-  const [selectedPreloadedFiles, setSelectedPreloadedFiles] = useState<Set<string>>(new Set());
+  const [loadingFiles, setLoadingFiles] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Update page title to show loading indicator
   useEffect(() => {
     const originalTitle = 'Transcription Analysis Tool';
-    if (loading) {
-      document.title = '⏳ Extracting User Stories...';
+    if (loadingFiles) {
+      document.title = '🔄 Loading Files...';
+    } else if (loading) {
+      document.title = '🔄 Extracting User Stories...';
     } else if (customQueryLoading) {
-      document.title = '⏳ Processing Query...';
+      document.title = '🔄 Processing Query...';
     } else {
       document.title = originalTitle;
     }
     return () => {
       document.title = originalTitle;
     };
-  }, [loading, customQueryLoading]);
+  }, [loading, customQueryLoading, loadingFiles]);
 
   const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -121,32 +123,56 @@ export default function Home() {
     setError('');
   };
 
-  const togglePreloadedFile = (filename: string) => {
+  const loadPreloadedFile = async (filename: string) => {
     if (textInput.trim()) {
       setError('Please use either file upload or text input, not both.');
       return;
     }
 
-    const newSelected = new Set(selectedPreloadedFiles);
-    if (newSelected.has(filename)) {
-      newSelected.delete(filename);
-    } else {
-      newSelected.add(filename);
-    }
-    setSelectedPreloadedFiles(newSelected);
-    setError('');
-  };
-
-  const loadPreloadedFiles = async () => {
-    if (selectedPreloadedFiles.size === 0) {
-      setError('Please select at least one pre-loaded file');
+    // Check if file is already loaded - if so, remove it
+    const isAlreadyLoaded = uploadedFiles.some(f => f.name === filename);
+    if (isAlreadyLoaded) {
+      setUploadedFiles(prev => prev.filter(f => f.name !== filename));
+      console.log('🗑️  [Frontend] Removed pre-loaded file:', filename);
       return;
     }
+
+    // Otherwise, load the file
+    setLoadingFiles(true);
+    setError('');
+
+    try {
+      const response = await fetch(`/${filename}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${filename}`);
+      }
+      const blob = await response.blob();
+      const file = new File([blob], filename, { type: 'text/vtt' });
+
+      setUploadedFiles(prev => [...prev, file]);
+
+      console.log('✅ [Frontend] Loaded pre-loaded file:', filename);
+    } catch (err) {
+      console.error('❌ [Frontend] Failed to load pre-loaded file:', err);
+      setError(`Failed to load ${filename}`);
+    } finally {
+      setLoadingFiles(false);
+    }
+  };
+
+  const loadAllPreloadedFiles = async () => {
+    if (textInput.trim()) {
+      setError('Please use either file upload or text input, not both.');
+      return;
+    }
+
+    setLoadingFiles(true);
+    setError('');
 
     try {
       const fileObjects: File[] = [];
 
-      for (const filename of selectedPreloadedFiles) {
+      for (const filename of PRELOADED_FILES) {
         const response = await fetch(`/${filename}`);
         if (!response.ok) {
           throw new Error(`Failed to fetch ${filename}`);
@@ -158,10 +184,12 @@ export default function Home() {
 
       setUploadedFiles(fileObjects);
       setError('');
-      console.log('✅ [Frontend] Loaded', fileObjects.length, 'pre-loaded files');
+      console.log('✅ [Frontend] Loaded all', fileObjects.length, 'pre-loaded files');
     } catch (err) {
       console.error('❌ [Frontend] Failed to load pre-loaded files:', err);
       setError('Failed to load pre-loaded files');
+    } finally {
+      setLoadingFiles(false);
     }
   };
 
@@ -294,7 +322,9 @@ export default function Home() {
       const data = await response.json();
       console.log('📊 [Frontend] Response data:', data);
 
-      setCustomQueryResponse(data.response || '');
+      // Parse response to separate main answer from supporting quotes
+      const fullResponse = data.response || '';
+      setCustomQueryResponse(fullResponse);
       setCustomQueryUsage(data.usage || null);
 
       console.log('✅ [Frontend] Custom query response set successfully');
@@ -365,35 +395,72 @@ export default function Home() {
           {/* Pre-loaded Files Selection */}
           <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-white font-medium">Pre-loaded Files (click to select)</h3>
-              {selectedPreloadedFiles.size > 0 && (
-                <button
-                  onClick={loadPreloadedFiles}
-                  className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
-                >
-                  Load {selectedPreloadedFiles.size} Selected File{selectedPreloadedFiles.size > 1 ? 's' : ''}
-                </button>
-              )}
+              <h3 className="text-white font-medium">
+                Pre-loaded Files (click to toggle)
+                {loadingFiles && <span className="ml-2 text-blue-400">🔄 Loading...</span>}
+              </h3>
+              <button
+                onClick={loadAllPreloadedFiles}
+                disabled={loadingFiles}
+                className="px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
+              >
+                Load All Files
+              </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-              {PRELOADED_FILES.map((filename) => (
-                <button
-                  key={filename}
-                  onClick={() => togglePreloadedFile(filename)}
-                  className={`p-3 rounded-lg text-sm text-left transition-all duration-200 cursor-pointer ${
-                    selectedPreloadedFiles.has(filename)
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                  }`}
-                >
-                  {filename}
-                </button>
-              ))}
+              {PRELOADED_FILES.map((filename) => {
+                const isLoaded = uploadedFiles.some(f => f.name === filename);
+                return (
+                  <button
+                    key={filename}
+                    onClick={() => loadPreloadedFile(filename)}
+                    disabled={loadingFiles}
+                    className={`p-3 rounded-lg text-sm text-left transition-all duration-200 cursor-pointer ${
+                      isLoaded
+                        ? 'bg-green-700 text-white shadow-lg hover:bg-green-800'
+                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                    } disabled:bg-gray-700 disabled:cursor-not-allowed`}
+                  >
+                    {isLoaded && '✓ '}
+                    {filename}
+                  </button>
+                );
+              })}
             </div>
+            {/* Display uploaded files */}
+          {uploadedFiles.length > 0 && (
+            <div className="bg-gray-900 mt-4 p-4 rounded-xl border border-gray-700">
+              <div className="flex justify-between items-center mb-3">
+                <h4 className="text-white font-medium">Loaded Files:</h4>
+                <button
+                  onClick={handleRemoveAllFiles}
+                  className="px-3 py-1 bg-red-500 text-white text-sm rounded-lg hover:bg-red-600 transition-colors duration-200"
+                >
+                  Remove All
+                </button>
+              </div>
+              <div className="space-y-2">
+                {uploadedFiles.map((file, index) => (
+                  <div
+                    key={index}
+                    className="flex justify-between items-center bg-gray-800 p-3 rounded-lg"
+                  >
+                    <span className="text-white text-sm">{file.name}</span>
+                    <button
+                      onClick={() => handleRemoveFile(index)}
+                      className="p-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors duration-200"
+                    >
+                      <FontAwesomeIcon icon={faTimes} className="text-sm" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           </div>
 
-          {/* File Upload */}
-          <div className="space-y-3">
+          {/* File Upload - Hidden/Commented Out */}
+          {/* <div className="space-y-3">
             <label
               htmlFor="file-upload"
               className="block w-full p-6 bg-white rounded-xl border-2 border-dashed border-gray-300 cursor-pointer hover:border-blue-500 hover:shadow-lg transition-all duration-200 focus-within:border-blue-500 focus-within:shadow-lg"
@@ -418,7 +485,6 @@ export default function Home() {
               />
             </label>
 
-            {/* Display uploaded files */}
             {uploadedFiles.length > 0 && (
               <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
                 <div className="flex justify-between items-center mb-3">
@@ -448,10 +514,10 @@ export default function Home() {
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
 
-          {/* Text Input */}
-          <div className="relative">
+          {/* Text Input - Hidden/Commented Out */}
+          {/* <div className="relative">
             <textarea
               value={textInput}
               onChange={handleTextChange}
@@ -466,7 +532,9 @@ export default function Home() {
                 Clear
               </button>
             )}
-          </div>
+          </div> */}
+
+          
 
           {/* Error Message */}
           {error && (
@@ -487,9 +555,6 @@ export default function Home() {
                 placeholder="Ask a specific question about the transcript..."
                 className="w-full h-32 p-4 bg-white text-black rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-all duration-200 resize-none"
               />
-            </div>
-          )}
-
           {/* Submit Button */}
           {mode === 'query' ? (
             <button
@@ -522,20 +587,62 @@ export default function Home() {
               )}
             </button>
           )}
+            </div>
+          )}
+
         </div>
 
         {/* Query Mode Results */}
         {mode === 'query' && (
           <>
             {/* Custom Query Response */}
-            {customQueryResponse && (
-              <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700">
-                <h3 className="text-xl font-semibold text-white mb-4">Response</h3>
-                <div className="bg-white p-4 rounded-lg text-black whitespace-pre-wrap">
-                  {customQueryResponse}
+            {customQueryResponse && (() => {
+              // Parse the response to separate main answer from supporting quotes
+              const parts = customQueryResponse.split(/Supporting Quotes?:/i);
+              const mainAnswer = parts[0]?.trim() || '';
+              const quotesSection = parts[1]?.trim() || '';
+
+              // Parse quotes from the quotes section (handles bullet points and line breaks)
+              const quotes = quotesSection
+                ? quotesSection
+                    .split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0)
+                    .map(line => line.replace(/^[-•*]\s*/, '').replace(/^[""](.*)[""]$/, '$1'))
+                    .filter(line => line.length > 0)
+                : [];
+
+              return (
+                <div className="mt-8 space-y-4">
+                  {/* Main Answer */}
+                  <div className="p-6 bg-gray-900 rounded-lg border border-gray-700">
+                    <h3 className="text-xl font-semibold text-white mb-4">Response</h3>
+                    <div className="bg-white p-4 rounded-lg text-black whitespace-pre-wrap">
+                      {mainAnswer}
+                    </div>
+                  {/* Supporting Quotes */}
+                  {quotes.length > 0 && (
+                    <div className="p-6 mt-4 bg-gray-900 rounded-lg border border-yellow-600">
+                      <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                        📌 Supporting Quotes from Transcript
+                      </h3>
+                      <div className="space-y-3">
+                        {quotes.map((quote, index) => (
+                          <div
+                            key={index}
+                            className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500"
+                          >
+                            <p className="text-gray-800 italic">"{quote}"</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  </div>
+
                 </div>
-              </div>
-            )}
+              );
+            })()}
 
             {/* Custom Query Usage Info */}
             {customQueryUsage && (
