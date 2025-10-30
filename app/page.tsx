@@ -20,7 +20,7 @@ type GptModel = 'gpt-5' | 'gpt-5-mini' | 'gpt-5-nano';
 type Mode = 'query' | 'user-stories';
 
 export default function Home() {
-  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [textInput, setTextInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<UserStory[]>([]);
@@ -48,8 +48,8 @@ export default function Home() {
   }, [loading]);
 
   const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
 
     if (textInput.trim()) {
       setError('Please use either file upload or text input, not both.');
@@ -59,20 +59,22 @@ export default function Home() {
       return;
     }
 
-    if (!file.name.endsWith('.vtt')) {
-      setError('Please upload a .vtt file');
+    // Validate all files are .vtt
+    const invalidFiles = Array.from(files).filter(file => !file.name.endsWith('.vtt'));
+    if (invalidFiles.length > 0) {
+      setError('Please upload only .vtt files');
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
       }
       return;
     }
 
-    setUploadedFile(file);
+    setUploadedFiles(Array.from(files));
     setError('');
   };
 
   const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    if (uploadedFile) {
+    if (uploadedFiles.length > 0) {
       setError('Please use either file upload or text input, not both.');
       return;
     }
@@ -80,8 +82,17 @@ export default function Home() {
     setError('');
   };
 
-  const handleRemoveFile = () => {
-    setUploadedFile(null);
+  const handleRemoveFile = (index: number) => {
+    const newFiles = uploadedFiles.filter((_, i) => i !== index);
+    setUploadedFiles(newFiles);
+    if (newFiles.length === 0 && fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+    setError('');
+  };
+
+  const handleRemoveAllFiles = () => {
+    setUploadedFiles([]);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -96,16 +107,25 @@ export default function Home() {
   const getTranscriptText = async (): Promise<string | null> => {
     let transcriptText = '';
 
-    if (uploadedFile) {
-      console.log('📁 [Frontend] Processing uploaded file:', uploadedFile.name);
+    if (uploadedFiles.length > 0) {
+      console.log('📁 [Frontend] Processing', uploadedFiles.length, 'uploaded file(s)');
       try {
-        const fileContent = await uploadedFile.text();
-        console.log('📄 [Frontend] File content loaded, length:', fileContent.length);
-        transcriptText = parseVTT(fileContent);
-        console.log('✅ [Frontend] VTT parsed, cleaned text length:', transcriptText.length);
+        const transcriptParts: string[] = [];
+
+        for (const file of uploadedFiles) {
+          console.log('📄 [Frontend] Processing file:', file.name);
+          const fileContent = await file.text();
+          console.log('📄 [Frontend] File content loaded, length:', fileContent.length);
+          const parsedContent = parseVTT(fileContent);
+          transcriptParts.push(parsedContent);
+          console.log('✅ [Frontend] VTT parsed, cleaned text length:', parsedContent.length);
+        }
+
+        transcriptText = transcriptParts.join('\n\n');
+        console.log('✅ [Frontend] Combined transcript length:', transcriptText.length);
       } catch (err) {
         console.error('❌ [Frontend] Failed to read file:', err);
-        setError('Failed to read file');
+        setError('Failed to read files');
         return null;
       }
     } else if (textInput.trim()) {
@@ -283,7 +303,7 @@ export default function Home() {
         <div className="space-y-6">
 
           {/* File Upload */}
-          <div className="relative">
+          <div className="space-y-3">
             <label
               htmlFor="file-upload"
               className="block w-full p-6 bg-white rounded-xl border-2 border-dashed border-gray-300 cursor-pointer hover:border-blue-500 hover:shadow-lg transition-all duration-200 focus-within:border-blue-500 focus-within:shadow-lg"
@@ -291,26 +311,52 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center gap-3">
                 <FontAwesomeIcon icon={faUpload} className="text-3xl text-gray-500" />
                 <span className="text-gray-700 font-medium">
-                  {uploadedFile ? uploadedFile.name : 'Upload .vtt file or drag and drop'}
+                  {uploadedFiles.length > 0
+                    ? `${uploadedFiles.length} file${uploadedFiles.length > 1 ? 's' : ''} selected`
+                    : 'Upload .vtt file(s) or drag and drop'}
                 </span>
-                <span className="text-sm text-gray-500">Click to browse files</span>
+                <span className="text-sm text-gray-500">Click to browse files (multiple allowed)</span>
               </div>
               <input
                 ref={fileInputRef}
                 id="file-upload"
                 type="file"
                 accept=".vtt"
+                multiple
                 onChange={handleFileUpload}
                 className="hidden"
               />
             </label>
-            {uploadedFile && (
-              <button
-                onClick={handleRemoveFile}
-                className="absolute top-4 right-4 p-2 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors duration-200"
-              >
-                <FontAwesomeIcon icon={faTimes} />
-              </button>
+
+            {/* Display uploaded files */}
+            {uploadedFiles.length > 0 && (
+              <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
+                <div className="flex justify-between items-center mb-3">
+                  <h4 className="text-white font-medium">Uploaded Files:</h4>
+                  <button
+                    onClick={handleRemoveAllFiles}
+                    className="px-3 py-1 bg-red-500 text-white text-sm rounded-lg hover:bg-red-600 transition-colors duration-200"
+                  >
+                    Remove All
+                  </button>
+                </div>
+                <div className="space-y-2">
+                  {uploadedFiles.map((file, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-between items-center bg-gray-800 p-3 rounded-lg"
+                    >
+                      <span className="text-white text-sm">{file.name}</span>
+                      <button
+                        onClick={() => handleRemoveFile(index)}
+                        className="p-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors duration-200"
+                      >
+                        <FontAwesomeIcon icon={faTimes} className="text-sm" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
             )}
           </div>
 
@@ -358,7 +404,7 @@ export default function Home() {
           {mode === 'query' ? (
             <button
               onClick={handleCustomQuery}
-              disabled={customQueryLoading || (!uploadedFile && !textInput.trim()) || !customQuery.trim()}
+              disabled={customQueryLoading || (uploadedFiles.length === 0 && !textInput.trim()) || !customQuery.trim()}
               className="w-full cursor-pointer py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg active:scale-[0.98]"
             >
               {customQueryLoading ? (
@@ -373,7 +419,7 @@ export default function Home() {
           ) : (
             <button
               onClick={handleExtractUserStories}
-              disabled={loading || (!uploadedFile && !textInput.trim())}
+              disabled={loading || (uploadedFiles.length === 0 && !textInput.trim())}
               className="w-full cursor-pointer py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg active:scale-[0.98]"
             >
               {loading ? (
