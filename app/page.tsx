@@ -19,6 +19,20 @@ interface UsageInfo {
 type GptModel = 'gpt-5' | 'gpt-5-mini' | 'gpt-5-nano';
 type Mode = 'query' | 'user-stories';
 
+// Pre-loaded VTT files available in the public folder
+const PRELOADED_FILES = [
+  'Cashiering transcript 1.vtt',
+  'Cashiering transcript 2.vtt',
+  'AP transcript 1.vtt',
+  'AP transcript 2.vtt',
+  'Billing transcript 1.vtt',
+  'Billing transcript 2.vtt',
+  'RAMA transcript 1.vtt',
+  'RAMA transcript 2.vtt',
+  'Ebilling Transcript 1.vtt',
+  'Ebilling transcript 2.vtt',
+];
+
 export default function Home() {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [textInput, setTextInput] = useState('');
@@ -32,6 +46,7 @@ export default function Home() {
   const [customQueryUsage, setCustomQueryUsage] = useState<UsageInfo | null>(null);
   const [customQueryLoading, setCustomQueryLoading] = useState(false);
   const [mode, setMode] = useState<Mode>('query');
+  const [selectedPreloadedFiles, setSelectedPreloadedFiles] = useState<Set<string>>(new Set());
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Update page title to show loading indicator
@@ -102,6 +117,50 @@ export default function Home() {
   const handleClearText = () => {
     setTextInput('');
     setError('');
+  };
+
+  const togglePreloadedFile = (filename: string) => {
+    if (textInput.trim()) {
+      setError('Please use either file upload or text input, not both.');
+      return;
+    }
+
+    const newSelected = new Set(selectedPreloadedFiles);
+    if (newSelected.has(filename)) {
+      newSelected.delete(filename);
+    } else {
+      newSelected.add(filename);
+    }
+    setSelectedPreloadedFiles(newSelected);
+    setError('');
+  };
+
+  const loadPreloadedFiles = async () => {
+    if (selectedPreloadedFiles.size === 0) {
+      setError('Please select at least one pre-loaded file');
+      return;
+    }
+
+    try {
+      const fileObjects: File[] = [];
+
+      for (const filename of selectedPreloadedFiles) {
+        const response = await fetch(`/${filename}`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${filename}`);
+        }
+        const blob = await response.blob();
+        const file = new File([blob], filename, { type: 'text/vtt' });
+        fileObjects.push(file);
+      }
+
+      setUploadedFiles(fileObjects);
+      setError('');
+      console.log('✅ [Frontend] Loaded', fileObjects.length, 'pre-loaded files');
+    } catch (err) {
+      console.error('❌ [Frontend] Failed to load pre-loaded files:', err);
+      setError('Failed to load pre-loaded files');
+    }
   };
 
   const getTranscriptText = async (): Promise<string | null> => {
@@ -301,6 +360,35 @@ export default function Home() {
 
         {/* Main Form */}
         <div className="space-y-6">
+          {/* Pre-loaded Files Selection */}
+          <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-white font-medium">Pre-loaded Files (click to select)</h3>
+              {selectedPreloadedFiles.size > 0 && (
+                <button
+                  onClick={loadPreloadedFiles}
+                  className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                >
+                  Load {selectedPreloadedFiles.size} Selected File{selectedPreloadedFiles.size > 1 ? 's' : ''}
+                </button>
+              )}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+              {PRELOADED_FILES.map((filename) => (
+                <button
+                  key={filename}
+                  onClick={() => togglePreloadedFile(filename)}
+                  className={`p-3 rounded-lg text-sm text-left transition-all duration-200 cursor-pointer ${
+                    selectedPreloadedFiles.has(filename)
+                      ? 'bg-blue-600 text-white shadow-lg'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  }`}
+                >
+                  {filename}
+                </button>
+              ))}
+            </div>
+          </div>
 
           {/* File Upload */}
           <div className="space-y-3">
