@@ -8,5 +8,5 @@ export interface UserStory {
   acceptanceCriteria2: string;
   acceptanceCriteria3: string;
   acceptanceCriteria4: string;
-  [key: string]: string; // For additional acceptance criteria and other fields
+  [key: string]: string | undefined; // For additional acceptance criteria and other fields
 }
