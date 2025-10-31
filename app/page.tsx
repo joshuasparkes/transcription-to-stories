@@ -17,7 +17,7 @@ interface UsageInfo {
 }
 
 type GptModel = 'gpt-5' | 'gpt-5-mini' | 'gpt-5-nano';
-type Mode = 'query' | 'user-stories';
+type Mode = 'query' | 'user-stories' | 'cleanup';
 
 // Pre-loaded VTT files available in the public folder
 const PRELOADED_FILES = [
@@ -47,6 +47,9 @@ export default function Home() {
   const [customQueryLoading, setCustomQueryLoading] = useState(false);
   const [mode, setMode] = useState<Mode>('query');
   const [loadingFiles, setLoadingFiles] = useState(false);
+  const [cleanedTranscript, setCleanedTranscript] = useState('');
+  const [cleanupLoading, setCleanupLoading] = useState(false);
+  const [cleanupUsage, setCleanupUsage] = useState<UsageInfo | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Update page title to show loading indicator
@@ -58,13 +61,15 @@ export default function Home() {
       document.title = '🔄 Extracting User Stories...';
     } else if (customQueryLoading) {
       document.title = '🔄 Processing Query...';
+    } else if (cleanupLoading) {
+      document.title = '🔄 Cleaning Transcript...';
     } else {
       document.title = originalTitle;
     }
     return () => {
       document.title = originalTitle;
     };
-  }, [loading, customQueryLoading, loadingFiles]);
+  }, [loading, customQueryLoading, loadingFiles, cleanupLoading]);
 
   const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -337,6 +342,52 @@ export default function Home() {
     }
   };
 
+  const handleCleanupTranscript = async () => {
+    console.log('🚀 [Frontend] Cleanup Transcript button clicked');
+    setError('');
+    setCleanedTranscript('');
+    setCleanupUsage(null);
+
+    const transcriptText = await getTranscriptText();
+    if (!transcriptText) return;
+
+    setCleanupLoading(true);
+    console.log('📤 [Frontend] Sending transcript to cleanup API...');
+
+    try {
+      const response = await fetch('/api/cleanup-transcript', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          transcript: transcriptText,
+          model: selectedModel
+        }),
+      });
+
+      console.log('📥 [Frontend] API response status:', response.status);
+
+      if (!response.ok) {
+        throw new Error('Failed to cleanup transcript');
+      }
+
+      const data = await response.json();
+      console.log('📊 [Frontend] Response data:', data);
+
+      setCleanedTranscript(data.cleanedTranscript || '');
+      setCleanupUsage(data.usage || null);
+
+      console.log('✅ [Frontend] Cleaned transcript set successfully');
+    } catch (err) {
+      console.error('❌ [Frontend] Error cleaning transcript:', err);
+      setError('Failed to clean transcript. Please try again.');
+    } finally {
+      setCleanupLoading(false);
+      console.log('🏁 [Frontend] Cleanup processing complete');
+    }
+  };
+
   return (
     <div className="min-h-screen text-black bg-black px-8 py-12">
       <div className="max-w-7xl mx-auto">
@@ -356,7 +407,7 @@ export default function Home() {
           <div className="flex gap-4">
             <button
               onClick={() => setMode('query')}
-              className={`px-8 py-3 rounded-xl font-semibold cursor-pointer transition-all duration-200 ${
+              className={`px-6 py-3 rounded-xl font-semibold cursor-pointer transition-all duration-200 ${
                 mode === 'query'
                   ? 'bg-green-600 text-white shadow-lg scale-105'
                   : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -366,13 +417,23 @@ export default function Home() {
             </button>
             <button
               onClick={() => setMode('user-stories')}
-              className={`px-8 py-3 rounded-xl font-semibold cursor-pointer transition-all duration-200 ${
+              className={`px-6 py-3 rounded-xl font-semibold cursor-pointer transition-all duration-200 ${
                 mode === 'user-stories'
                   ? 'bg-blue-600 text-white shadow-lg scale-105'
                   : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
               }`}
             >
               Extract User Stories
+            </button>
+            <button
+              onClick={() => setMode('cleanup')}
+              className={`px-6 py-3 rounded-xl font-semibold cursor-pointer transition-all duration-200 ${
+                mode === 'cleanup'
+                  ? 'bg-purple-600 text-white shadow-lg scale-105'
+                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              }`}
+            >
+              Cleanup Transcript
             </button>
           </div>
 
@@ -555,6 +616,9 @@ export default function Home() {
                 placeholder="Ask a specific question about the transcript..."
                 className="w-full h-32 p-4 bg-white text-black rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-all duration-200 resize-none"
               />
+            </div>
+          )}
+
           {/* Submit Button */}
           {mode === 'query' ? (
             <button
@@ -571,7 +635,7 @@ export default function Home() {
                 'Submit Custom Query'
               )}
             </button>
-          ) : (
+          ) : mode === 'user-stories' ? (
             <button
               onClick={handleExtractUserStories}
               disabled={loading || (uploadedFiles.length === 0 && !textInput.trim())}
@@ -586,10 +650,22 @@ export default function Home() {
                 'Extract User Stories'
               )}
             </button>
+          ) : (
+            <button
+              onClick={handleCleanupTranscript}
+              disabled={cleanupLoading || (uploadedFiles.length === 0 && !textInput.trim())}
+              className="w-full cursor-pointer py-4 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg active:scale-[0.98]"
+            >
+              {cleanupLoading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+                  Cleaning Transcript...
+                </span>
+              ) : (
+                'Clean & Improve Transcript'
+              )}
+            </button>
           )}
-            </div>
-          )}
-
         </div>
 
         {/* Query Mode Results */}
@@ -717,6 +793,64 @@ export default function Home() {
 
             {/* Results Table */}
             <ResultsTable results={results} />
+          </>
+        )}
+
+        {/* Cleanup Mode Results */}
+        {mode === 'cleanup' && (
+          <>
+            {/* Cleaned Transcript */}
+            {cleanedTranscript && (
+              <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-xl font-semibold text-white">Cleaned & Improved Transcript</h3>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(cleanedTranscript);
+                    }}
+                    className="px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors duration-200 cursor-pointer"
+                  >
+                    Copy to Clipboard
+                  </button>
+                </div>
+                <div className="bg-white p-6 rounded-lg text-black whitespace-pre-wrap max-h-96 overflow-y-auto">
+                  {cleanedTranscript}
+                </div>
+              </div>
+            )}
+
+            {/* Cleanup Usage Info */}
+            {cleanupUsage && (
+              <div className="mt-4 p-6 bg-gray-900 rounded-lg border border-gray-700">
+                <h3 className="text-xl font-semibold text-white mb-4">API Usage</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-white">
+                  <div>
+                    <p className="text-gray-400 text-sm">Input Tokens</p>
+                    <p className="text-lg font-semibold">{cleanupUsage.promptTokens.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Output Tokens</p>
+                    <p className="text-lg font-semibold">{cleanupUsage.completionTokens.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Total Tokens</p>
+                    <p className="text-lg font-semibold">{cleanupUsage.totalTokens.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Input Cost</p>
+                    <p className="text-lg font-semibold">${cleanupUsage.inputCost.toFixed(4)}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Output Cost</p>
+                    <p className="text-lg font-semibold">${cleanupUsage.outputCost.toFixed(4)}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Total Cost</p>
+                    <p className="text-lg font-semibold text-green-400">${cleanupUsage.totalCost.toFixed(4)}</p>
+                  </div>
+                </div>
+              </div>
+            )}
           </>
         )}
       </div>
