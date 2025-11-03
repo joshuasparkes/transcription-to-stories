@@ -2,7 +2,7 @@
 
 import { UserStory } from '@/lib/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import { faCopy, faThumbtack } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 interface ResultsTableProps {
@@ -83,7 +83,7 @@ export default function ResultsTable({ results }: ResultsTableProps) {
                   } ${header === 'supportingQuote' ? '' : 'whitespace-nowrap'}`}
                 >
                   {header.replace(/([A-Z])/g, ' $1').trim().replace(/^\w/, c => c.toUpperCase())}
-                  {header === 'supportingQuote' && ' 📌'}
+                  {header === 'supportingQuote' && <> <FontAwesomeIcon icon={faThumbtack} /></>}
                 </th>
               ))}
             </tr>

@@ -2,7 +2,7 @@
 
 import { useState, useRef, ChangeEvent, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpload, faTimes, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faUpload, faTimes, faSpinner, faCheck, faEye, faThumbtack, faCopy } from '@fortawesome/free-solid-svg-icons';
 import { parseVTT } from '@/lib/vttParser';
 import { UserStory } from '@/lib/types';
 import ResultsTable from '@/components/ResultsTable';
@@ -68,13 +68,13 @@ export default function Home() {
   useEffect(() => {
     const originalTitle = 'Transcription Analysis Tool';
     if (loadingFiles) {
-      document.title = '🔄 Loading Files...';
+      document.title = '⏳ Loading Files...';
     } else if (loading) {
-      document.title = '🔄 Extracting User Stories...';
+      document.title = '⏳ Extracting User Stories...';
     } else if (customQueryLoading) {
-      document.title = '🔄 Processing Query...';
+      document.title = '⏳ Processing Query...';
     } else if (cleanupLoading) {
-      document.title = '🔄 Cleaning Transcript...';
+      document.title = '⏳ Cleaning Transcript...';
     } else {
       document.title = originalTitle;
     }
@@ -508,7 +508,7 @@ export default function Home() {
             <div className="flex justify-between items-center mb-3">
               <h3 className="text-white font-medium">
                 {mode === 'file-viewer' ? 'Select File to View' : 'Pre-loaded Files (click to toggle)'}
-                {loadingFiles && <span className="ml-2 text-blue-400">🔄 Loading...</span>}
+                {loadingFiles && <span className="ml-2 text-blue-400"><FontAwesomeIcon icon={faSpinner} className="animate-spin mr-1" /> Loading...</span>}
               </h3>
               {mode !== 'file-viewer' && (
                 <button
@@ -539,7 +539,7 @@ export default function Home() {
                         : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                     } disabled:bg-gray-700 disabled:cursor-not-allowed`}
                   >
-                    {mode === 'file-viewer' ? (isSelected && '👁️ ') : (isLoaded && '✓ ')}
+                    {mode === 'file-viewer' ? (isSelected && <><FontAwesomeIcon icon={faEye} className="mr-2" /></>) : (isLoaded && <><FontAwesomeIcon icon={faCheck} className="mr-2" /></>)}
                     {filename}
                   </button>
                 );
@@ -757,7 +757,7 @@ export default function Home() {
                   {quotes.length > 0 && (
                     <div className="p-6 mt-4 bg-gray-900 rounded-lg border border-yellow-600">
                       <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                        📌 Supporting Quotes from Transcript
+                        <FontAwesomeIcon icon={faThumbtack} /> Supporting Quotes from Transcript
                       </h3>
                       <div className="space-y-3">
                         {quotes.map((quote, index) => (
@@ -865,8 +865,9 @@ export default function Home() {
                     onClick={() => {
                       navigator.clipboard.writeText(cleanedTranscript);
                     }}
-                    className="px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors duration-200 cursor-pointer"
+                    className="px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors duration-200 cursor-pointer flex items-center gap-2"
                   >
+                    <FontAwesomeIcon icon={faCopy} />
                     Copy to Clipboard
                   </button>
                 </div>
@@ -924,8 +925,9 @@ export default function Home() {
                     onClick={() => {
                       navigator.clipboard.writeText(viewedFileContent);
                     }}
-                    className="px-4 py-2 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors duration-200 cursor-pointer"
+                    className="px-4 py-2 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors duration-200 cursor-pointer flex items-center gap-2"
                   >
+                    <FontAwesomeIcon icon={faCopy} />
                     Copy to Clipboard
                   </button>
                 </div>
