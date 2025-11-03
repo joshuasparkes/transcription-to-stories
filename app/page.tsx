@@ -41,6 +41,8 @@ const PRELOADED_FILES = [
   'clean_Cashiering_2.vtt',
   'clean_AP_1.vtt',
   'clean_AP_2.vtt',
+  'CC & WIP 1.vtt',
+  'CC & WIP 2.vtt',
 ];
 
 export default function Home() {
