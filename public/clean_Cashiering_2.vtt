@@ -1,0 +1,37 @@
+START OF Cashiering CONVERSATION PART 2:
+
+Place well. I'm wondering: at the end of the day in ServiceNow, reviews are marked reviewed and closed as complete. We would have boxes called that almost act as a reminder — cheques at the end of each day and those tickets. This is the sort of thing that's reviewed through the cases. You can select them all and say that's a potential possibility. That's another audit trail available to you.
+
+Sitting in our dashboard, we can identify which requests have come through — trust receipts. Is it possible to tie those to a reminder to have the PHX paperwork ready for all of the funds that should have been recorded? We've got that pre-populated and we have two reports that we're sense-checking. Dashboards at the end of the day could mean that over time you don't need habit-forming reminders because you'll know the process, but in the first instance we should follow the trust workflow.
+
+On the trust side, you can open it up and say, "OK, through today, that's trust receipts." I've got my workflow already in ServiceNow and my three reports, and being able to see it visually is really helpful. Otherwise I'll be dealing with transactions from various accounts — payments out as well — and we're using formulas built on an Excel sheet that we just populate figures into.
+
+Maybe when a receipt is posted someone else should check it's posted to the correct number. As soon as a person posts it, they could see who's available to peer-review at that moment, rather than waiting until the end of the day. It could happen as it occurs to make sure it's presented properly. The peer checks would already be in place and you'd have that approval recorded by the end of the day.
+
+I'm building on that workflow and assigning tasks so that if someone has 10 minutes or only has time at the end of the day, they can complete the approval workflow then. The idea is to use that approval workflow for all live use: the cases are ended and done that way at the time when it's due.
+
+Sharing what that bulk process looks like: you're taking the report and processing it. It might be that, not on day one but in the future, it's not a report you take from SharePoint. What we take from the bank is a spreadsheet — a bank statement that we import. You're reminding yourself to take the transactions and match them so that only the diaries on the dashboard remain, replacing e-mails and diary entries. You can process in bulk or individually rather than only at the end of the day.
+
+Yes, I can certainly contract that. Good. If you didn't see — good morning — which is what I was calling out. No worries. Go ahead.
+
+Thank you. I didn't want to interrupt Deborah's flow in the middle of a workshop. ServiceNow has email triggers and we can route those based on states to centralise updates in ServiceNow. We could include some email structuring to help. I don't know if that's a function worth picking up as part of this, but it's helpful and will come from change management in ServiceNow as part of the transition from reliance on email.
+
+I love my email, but we need to transition. It's probably a conversation across teams, but having trust that everyone can go through the workflow and be kept up to date is important. A visual dashboard gives confidence: this is what it looks like, you can get it by change, Ross, etc. The nice thing with ServiceNow is I've got seven in my queue and you can just see it all. Transitioning, I can go in one by one.
+
+Thanks Marwin for the changes. No worries. Are we landing on anything before we break? Is that part of the check? Lunch is half 12 today, I think. I'm just thinking time for a break. Ten minutes? Five past? When do you want us back, Josh? Yeah, perfect. That's probably the one. When you're back, get into it.
+
+A lot of these items relate to what we've already done. We've done the third... he's hoping. Just like you've done 21, 25 up to 71. You still make it. I'm sitting going, it's a big gym. Last night, 10% in, so it's a lot of receipts. It's there, transfer is an audit, it's a query. Some of it's a little simpler than this but it's perfect.
+
+Ledger statements — are they part of the big assumption? Good question. Those ledger items are quite separate; each of those matters individually and what matters is not essentially uniform. I get the sense that it's a piece of the whole. Related to England and Wales trust, and Scottish shows that English — so we remind it. I don't see why you guys wouldn't want a client view. That has been a big point: someone might look for trust and it's not there. Terminology used to be probably global.
+
+Is there anything to build an example in the management workspace a bit more? It's pretty basic. You survive though. Complete. That has to... We don't have a bit longer actually. All right. Fine. Evening — it won't go on charge. I don't expect you to run off.
+
+I thought the gentleman took them and he didn't take them. They worked from church. What we take to method is called absolute roster. Copy is not secure. Keep that in mind. That one's a good play, next to it. Not a wall in the hole. If they have those traffic pains, they are amazing. Someone absolutely needs to call you. We're still in Scotland. We need to call. Right — the name. Bit of cheese and cream in the middle, but it's more sponge. It's obviously great stuff. We're not winning. I wouldn't — it's in the money scenario. It's a very... here lies the fundamental disappointment: I can see the food on the table, I can't get any of it. I'll have some coffee delivered next time. It's alright for my waistline.
+
+I've seen some of the branches — Barton is a bit of a view. It's all configurable. If you'd be interested to look, we've only got one example in here with all the important things you want. Drill into the case and anything you want to share with the team — people will find our team and they'll see. You can see that state and go from there.
+
+From the customer side, receipts saved a few months and we're still chasing them. Some failed through but no action was taken. We can send tasks to them if we get to that. These modern systems are pretty much able to handle that as long as we know what to do to help. If you're technology-inclined, you can actually create your own partner or anything like that.
+
+It's all just flavouring. We're sending to Brisbane and to our office in London. The first thing your body should do when it came — that's fun. Last month you cleared on... I just want to pass: do you know what you want to do next? Do you want to say there are basic things, general queries, and follow on the office management one? So it's called "fund." That's terribly wrong in itself. Sorry. OK.
+
+Admin should be basic things: managed payments, tying them in. We just got through it. Is it called "office"? I also remember we were talking about trust versus client versus firm — these are separate ones. This one is clearer to me, that one is clearer to you. As for the Ledger, I need to go back to ledgers, don't I? It sounded like there might be a separate ledger, but could that be part of Manage?

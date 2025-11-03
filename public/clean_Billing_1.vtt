@@ -1,0 +1,130 @@
+We can control assignment a bit more by using labels and metrics to help the work. I spoke to Mel yesterday about this. What we need to do is try to draft one view tonight, play back some of that, and figure out what this looks like in ServiceNow.
+
+One thing I'll say is that requests that come in now need to be categorised so they're easier for us to understand. Once we do that, we can start to think about putting some of those items into automated processes. Capturing these key elements really helps inform which services to prioritise. Deborah will own some of that, but the goal is to address as many of these issues as we can.
+
+We're not all familiar with the approach to the processes we’ve received. There are maybe 39 to 40 processes across the complex areas. It can feel like death by row-by-row detail. We should elevate that to the trigger points—what information you need upfront. That will lead to better intake, better SLAs, and make administration and the work itself easier. If we capture the right data upfront, completing tasks and generating invoices will be smoother.
+
+By the end of these workshops, we should have an end-to-end view of finance features at a process level—probably around 40 processes—rather than trying to document the minutiae of every task. Talking at a high level about services and scenarios will make processing easier.
+
+For the work sessions this week, we'll provide an overview and lead into all the information from the pro forma, credit control, etc. Correct me if I'm wrong, but can someone give a quick overall end-to-end process summary? This should include the UK and European countries. We'll also discuss region-specific billing where different teams pick up billing tasks. In the UK, a chunk of operations and responsibilities sits with the PE group there, but the BE role is different.
+
+There are parts of the process the finance team picks up here. The global question remains: should we push billing back to PEs? There’s complex billing which often sits with us right now. That’s a business decision rather than a process one. Capacity across regions varies: some offices do lots of billing, others less. When we tried to move tasks to PEs previously, they didn’t have the capacity or the knowledge, so it failed. If we were to move responsibility back to PEs, it would require a significant change in training and responsibilities.
+
+For example, PEs doing billing in Australia will come to Sandeep’s team there for support. Lisa Allenson’s team provides billing reversals and support. These tasks are on the watch list to see if they can be decentralised, but it's not a quick flip of a switch. If PEs don’t have capacity or knowledge, it fails. It would require restructuring and training, and that’s a broader business change.
+
+When we talk SLAs, think about month-end cutoffs—what’s posted by the end of the month and what gets processed in the following month. Different locations will have their own local nuances like regional taxation, but the billing method and core process are regional. We should create a clear overview of these differences.
+
+On the volume of requests: most are straightforward invoice requests—create an invoice and issue it. Many requests are simple time amendments or minor changes. However, these can still result in back-and-forth if we don't have the right information upfront. If the billing guide or required data were accurate on first submission, many complex cases would be much simpler.
+
+How do invoices start life today? Often they are generated from 3E, but you’ll also get pro formas and supporting billing guides from partners or PEs. Sometimes partners provide detailed billing guides that pre-populate the invoice; sometimes they don't and just send an email. If it’s a standard invoice (no splits), PEs can submit via 3E. We have an action list and work items that come into the team, which Bella manages—when Bella sends something back, it often goes straight to the PE.
+
+Are there controls on the pro forma? There is a degree of control. The pro forma has fields such as client name and default address, with options to change them. But people often don’t check them. We even finalise drafts that have wrong addresses. This is a recurring problem. When ServiceNow is implemented, it should include organisational steps to force people to check and approve basic fields. For example, if someone is being asked to check it, they should be required to confirm the details.
+
+Where are billing guides saved today? They may be on 3E, but partners don’t always provide a billing guide. If we try to build a structured intake form, we need to sync the data captured in the billing guide with the system. Often the partner or Fiona will review and complete parts of the billing guide. If we receive an accurate billing guide, will that solve many of the issues? Yes—accurate billing guides reduce rework. However, partners and PEs don't always complete them.
+
+We should make the billing guide mandatory where it adds value. Partners sometimes resist, but if it reduces back-and-forth and errors, it should be enforced. Billing guides and engagement letters should be stored centrally. When partners print a pro forma or draft invoice, that should pull data from the billing guide and 3E. Some fields—like currency—are often manually changed in error; ideally, the correct billing currency is set in the billing guide.
+
+Regarding write-offs and client-level decisions: some actions (for example, writing off travel time or small items) may be agreed locally and applied to the client. Those scenarios can vary. We should capture them and, where possible, automate or formalise the process in ServiceNow.
+
+I’ve started a list of discussion points and action items. We should map the main activities that come from a pro forma and follow the natural progression. Marwan and the WIP team are on this call—these are the processes for WIP that we can examine. Examples include time transfers (often retrospective), credit notes, cancellations, and reversals.
+
+Cancellations are usually post-issue: partners sometimes decide to cancel an invoice after it’s been generated. We need to differentiate cancellations and reversals in the system. A cancellation might simply be putting an invoice back into WIP; a reversal is an accounting reversal of the invoice. We need to capture these statuses clearly so we can track actions and metrics (e.g., return to WIP, rework, close complete).
+
+When an invoice is cancelled or reversed, we want the ServiceNow ticket to reflect that. For example, if an invoice is reversed and returned to WIP, the billing team should close their part of the ticket and WIP should pick it up. That way, you won’t keep getting a new ticket each time; instead, the workflow status changes.
+
+On reversals and status changes: many of these activities are performed in 3E, not ServiceNow. But ServiceNow could have alerts or checkpoints—closing a ticket in ServiceNow could trigger checks in 3E or at least show status updates to billing. We discussed how to ensure credit control and other stakeholders are copied or alerted on key status changes.
+
+WIP management activities and amendments often come from the WIP team. They have their own category and team that handle fee earner queries. We should capture the outcomes of these activities (e.g., what was billed, what was written off) and create a consistent way to record them. A simple manual entry showing the work completed and outcomes would help to track recurring themes and justify resourcing or training.
+
+Scheduled activities: some of the team’s tasks are calendared (e.g., weekly updates). We could capture those scheduled activities in ServiceNow for metrics—for example, time taken to resolve ad-hoc items or scheduled reconciliation tasks. Over time, these metrics will demonstrate workload and capacity issues across billing and support arguments for resource changes.
+
+On the intake form: instead of free text, require key fields. Make mandatory fields to reduce the need to chase for basic data. Auto-assign and categorise tickets so that work is evenly distributed. Allow reassignments across the team and make visibility of queues clear. Consider priority flags for urgent items, but keep the form simple; don’t overcomplicate it with too many conditional rules at the start.
+
+Urgency is subjective, so define clear prioritisation rules—e.g., administrative tasks versus time-sensitive matters like insolvency or company administration. Use the form to capture reasons for high priority and then ServiceNow can prioritise based on those fields.
+
+We should produce user stories and map scenarios. Capture the common queries and reversals, the typical reasons for them (e.g., rate changes, negotiated discounts, volume discounts), and incorporate them into the intake options. Some situations will require bespoke handling, but many will fit standard patterns.
+
+Behavioural change is required. We should flag where behaviours or poor data submissions regularly cause rework, and escalate those to decision-makers. Consider who’s responsible for PE training on billing—know who’s the head of the PE team for training and billing upskilling. This extends beyond billing; credit and other areas have training needs too.
+
+ServiceNow can host knowledge articles and FAQs to guide users. If the intake form links to a knowledge guide and shows required fields, that will reduce common errors. Knowledge articles can include examples like “what information is required for this type of request” and be surfaced in the ticket form.
+
+Regarding systems: we should consider whether 3E can be the primary intake mechanism. In a perfect world, 3E would be used by PEs to submit pro formas with full visibility. But current 3E functionality is limited—some items aren’t visible in sent items or the pro forma locks, so you don’t see drafts. We need to explore 3E upgrade plans and integration options between 3E and ServiceNow to increase visibility and tracking. If 3E can generate tickets in ServiceNow or sync data, that would be ideal.
+
+There is an ongoing upgrade programme for 3E; we should understand the roadmap and whether it adds functionality that impacts our design. If 3E can support the required capability, we should use it. If not, ServiceNow will be the place to manage workflow, tracking, and reporting, and 3E will remain the source of truth for pro formas and invoices.
+
+On pro formas: a pro forma is not always created before a request lands. Sometimes PEs will ask us to generate a pro forma, and other times they have created one already. For e-billing clients, the client billing requirements are usually captured on the pro forma. The team will check those requirements when processing.
+
+When we generate the pro forma in 3E, any billing guide provided should be attached to the pro forma. That attachment should remain visible and auditable. When an invoice is sent, we typically send a PDF copy back to the PE for their records.
+
+Checks we perform during processing include: verifying client name, address, VAT details, client ID, country, tax treatment, and other regulatory items. Some checks are automated in 3E, but we often need to sense-check data that doesn't map correctly. We should formalise a short checklist in the ServiceNow ticket to capture the key checks performed by billing before closing the ticket.
+
+Approvals: there aren’t many formal approvals in the billing flow, but queries on rates, addresses, or other billing guide details result in back-and-forth. If cases are part-paid or disputed, the billing team will handle those in collaboration with credit control.
+
+When the invoice is generated in 3E, we send the PDF to the PE. For e-billing clients, the invoice goes to the client portal. We should record that the invoice has been issued and provide a thumbnail or attachment in ServiceNow for the requester’s information.
+
+Common scenarios to map:
+- Cancellations and reversals (differentiate the two)
+- Invoice reissue (often handled as a new invoice request once the original is closed)
+- Time transfers and merging time cards (pre- or post-billing)
+- Splitting bills between matters or clients (co-client splits)
+- Write-offs and credit accounts (different terminology used by different teams)
+- Retainer invoices and money on account
+- Sundry invoices (non-client, office expenses like seminar fees)
+- Complex client groups (Goldman Sachs, Citigroup, JP Morgan) that have structured, high-volume processes and tight workflows
+
+Splitting bills: requests come from PEs or PAs and must include matter numbers and the basis of the split (percentages or amounts). We should require the matter number(s) and specify whether it’s a co-client split or another scenario. Validating matter numbers at intake can reduce errors.
+
+Write-offs and credit accounts: there’s confusion over terminology (credit account vs. value account). We should standardise the language in the intake form so the PE selects from defined options (e.g., write-off, credit account allocation) and provides the amount and any approval evidence. That gives a clear audit trail.
+
+Handling scribbled PDFs and manual annotation: partners and PEs sometimes submit hand-marked PDFs with highlights and hand notes. That leads to errors. The intake should provide a structured form where they can specify exact line items, time entries, or amounts to write off or amend. Capture the details in a consistent format rather than relying on annotated attachments.
+
+Complex billing: there are client-specific processes for large clients like Goldman Sachs, Citi, and JP Morgan. These are often run by specific people and include scheduled reports, bulk files, and client portal interactions. Rejections from client portals occur frequently; we need a workflow to capture, triage, and process rejected lines—ideally integrated with the client portals and ServiceNow for traceability.
+
+Goldman Sachs and other large clients have a tight, structured workflow. Often email communications and ad-hoc reports are used today; these should be moved into ServiceNow to give visibility (so if someone is out, others can see the status and communications). For bulk file submissions, the workflow must support batch handling and line-item rejections.
+
+E-billing rejections: e-billing portals will reject invoices for various reasons. We need a process to receive those rejections (either via portal integrations or standardised emails) and then issue tickets in ServiceNow to manage remediation and re-submission. Capturing examples of portal rejections will help define the workflow.
+
+Investment funds and APFA processes: some investment fund billing tasks are currently handled by the PF/PA or PFA role. These activities may remain with the billing team but they are scheduled tasks. We should confirm whether these are still required and capture them as scheduled processes or automated reports where appropriate.
+
+Retainers and money on account: these are infrequent but necessary categories. We should keep categories for them and ensure the intake form captures the purpose and GL code if relevant.
+
+Sundry invoices: these are non-client invoices (e.g., internal seminar charges or office expenses). These should be directed to the appropriate AP/GL code and be handled as non-client billing, not client invoicing.
+
+ServiceNow design considerations:
+- Keep forms simple with mandatory fields for critical data.
+- Auto-categorise and auto-assign where possible, but allow team reassignments.
+- Capture checklists for common checks (address, VAT, pro forma attachments).
+- Provide knowledge article links and guidance in the form.
+- Track scheduled activities and ad-hoc tasks for metrics on capacity.
+- Provide workflows for e-billing rejections, reversals, cancellations, and splits.
+- Record attachments (pro formas, billing guides, PDFs) centrally and associate them to tickets.
+- Use consistent terminology (write-off, credit account, reversal, cancellation).
+
+Next steps:
+- Map user stories and common scenarios into ServiceNow.
+- Capture the common fields and mandatory data required for each scenario.
+- Document approvals and responsibilities, and identify training needs for PEs.
+- Review 3E upgrade roadmap and integration options with ServiceNow.
+- Run a separate workshop on e-billing and client portal rejections.
+- Produce a standardised intake form and knowledge guidance for partners/PEs.
+- Pilot the workflow for simple invoices, reversals, and one complex client process (e.g., Goldman Sachs) to test end-to-end functionality.
+
+Break plan and next meeting:
+- We agreed a 10-minute break and to reconvene at 10:45.
+- After the break, we focused on pro forma intake (user flows), the difference between email and 3E submissions, and how to drive PEs toward using a controlled route (3E or the ServiceNow form) rather than free-form email.
+
+Summary of current operations:
+- Simple invoices often start in 3E or via email. 3E submissions can include a pro forma and billing guide; email submissions lead to more manual work.
+- The action list in 3E and the Cherwell/Share setup are in use, but visibility is inconsistent.
+- We perform several automatic checks in 3E but still require manual sense checks for addresses, VAT, and client IDs.
+- Generated invoices are attached and a PDF is sent to the PE; for e-billing clients, invoices go to the portal.
+- Common activities include reversals, cancellations, reissues, splits, write-offs, credit account allocations, time transfers, retainer billing, and sundry invoices.
+
+Operational priorities:
+- Reduce manual errors and rework by requiring structured input and billing guides.
+- Improve visibility and workflow for complex client billing processes.
+- Implement ServiceNow workflows for cancellations, reversals, and e-billing rejections.
+- Standardise terminology and training for PEs to reduce confusion about write-offs vs. credit accounts.
+- Capture and present metrics to make the case for capacity and resourcing changes.
+
+Thanks, everyone. We captured a lot of scenarios to systematise. We’ll pick up the remaining items—complex billing, detailed workflows, and reporting—in follow-up workshops. Today’s session has given us a strong set of requirements to start designing ServiceNow workflows and the associated knowledge content.

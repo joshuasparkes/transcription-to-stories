@@ -55,7 +55,8 @@ Question: ${query}
 Transcript:
 ${transcript}
 
-Please provide a clear, detailed answer based on the transcript content. After your answer, include a section titled "Supporting Quotes:" that contains direct quotes from the transcript that support your response. Use exact words from the transcript for the quotes.`;
+Please provide a clear, detailed answer based on the transcript content. 
+`;
 
     console.log('🤖 [API] Sending request to OpenAI', model, '...');
     const startTime = Date.now();

@@ -1,0 +1,95 @@
+START OF Accounts Payable CONVERSATION PART 1:
+
+I tried to put the items into logical order. We'll start with managing, which includes multiple processes. From this we'll probably look at what should be incorporated into the workflow.
+
+On new vendor requests: we discussed the details and an automated notification was triggered — Awa 6A Wax, I think — which I saw. Essentially, vendor onboarding is what you did yesterday. Consolidating vendor onboarding is the point: it's happening in many places today. For onboarding a new supplier, we actually get an automated feed through 3E. We need to understand how a new vendor payee is created and how it fits into the P2P procurement process.
+
+Currently, someone raises a request to add or update a vendor in a spreadsheet, which sends a request into 3E for review. There is an automatic notification email that comes through; no one manually enters that notification. New vendor payees are discovered through invoices we receive — we don't always know about a new payee until an invoice arrives and we process it. So, in practice, business users don't often directly create vendor payees; it's triggered by activity, usually receiving an invoice and asking us to process it through our P2P workflow.
+
+In the scenario where an invoice needs payment and a new vendor creation is required, you would create a task for different team members. Creating a vendor payee is effectively a sub-process, which is why we have two separate process maps — it's an exception to the main flow, so we've separated it.
+
+The trigger most of the time is invoice receipt. Should vendor creation be a subtask of the managing invoice service? Possibly — it may be better as a subtask within the manage-invoice workflow. Requests can be specific and span different categories, so we need the possibility to categorize them, which will help us measure how many vendor creations we perform and the impact on invoice processing.
+
+Categorization matters for internal tracking even if it doesn't affect the external process. Even simple metrics like number of invoices split or moved would be useful. However, a ticket can only be assigned to one category, and invoices are subject to different processes, so we can't capture everything in one ticket right now.
+
+ServiceNow can auto-assign tickets based on thresholds and categories, which is helpful. There are two main options to get a new vendor into the process: 1) a new invoice comes in, which triggers the vendor intake; or 2) someone within the firm proactively requests to add a vendor through the P2P process. The latter is the proactive workflow that avoids the reactive onboarding when an invoice arrives.
+
+Proactive vendor onboarding saves time and reduces failure demand because external parties — partners and those outside AP — don't always get it right. If they did, we'd see less reactive work downstream. So capturing the automated P2P emails is important.
+
+The team asked: is the P2P automated email captured in Cherwell? Those automated emails come into Cherwell from various sources. The subject line for new vendor payee requests is consistent and identifiable, which makes them easy to detect. We could trigger a task from that notification. We need to explore the level of feeds and whether they can show the level of failure demand, so we can incentivize the communities to do vendor onboarding correctly upfront.
+
+Currently, when a vendor is created in the business, it goes into 3E for approval. The EP supervisor/manager is the approver for payees. A notification goes to the user if a vendor is approved, though it's unclear if approval notifications always reach the submitter. We should review those notifications and see if we can provide earlier insight upstream. Email notifications are useful, but if staff are actioning things directly in 3E, additional alerts can be pointless. Principle: if someone is already acting in the source system (3E), we should avoid duplicative notifications from ServiceNow.
+
+We can use ServiceNow’s workflow to send multi-party notifications where needed, but eliminate notifications that merely create pointless work. Regarding localization: in 3E the Australia and UK payee requests are handled; globally, payee requests come through the US instance. The work and updates can be done through 3E’s workflow table.
+
+Procurement currently initiates vendor setups; that technical process will be upgraded to a new version. There will be a period where procurement will handle vendor setups manually while the new P2P system is implemented. The new P2P system may not be integrated with 3E, so we might end up with a new vendor workflow in the P2P portal separate from 3E. We must consider this when designing our ServiceNow workflows, as the process will change in 2026 and 2027. Stay connected with the 3E team since they may push CDP or another update that affects integration.
+
+There are different portals across jurisdictions; e-invoicing portals are regulatory in parts of Europe (Belgium, etc.). That's slightly out of scope here but important to note.
+
+We need to think about the solution that comes into ServiceNow for handling new vendors. The two use cases we have: new invoice triggers vendor intake, and proactive vendor onboarding via a request. ServiceNow can create subtasks for bank detail updates and approvals. For example, when suppliers ask to change bank details, our current manual process checks invoice bank details against our system and then does offline checks. In ServiceNow, we can create a subtask for bank details with approval and evidence.
+
+If vendor intake is built into the new P2P workflow that would make things easier. The ARAX report is scheduled and someone tells AP to run it. That scheduled email is the request to the banking portal, and it runs weekly — typically every Friday — as a calendar event. We track that weekly in our team calendar: check the report, update bank details in 3E, and then send them to Chair? (I think "Chair" or a team called "ShareWell" was mentioned).
+
+The only notification in ShareWell is that it's OK, everything else is done in 3E. For bank detail updates, the AP manager can go in and act. We record metrics each week for handling time, missed tasks, etc., and could auto-schedule reminders or SLAs. For Australia, payroll triggers some automatic process into our system for sensitivity issues; the UK handles vendor management as part of the managing-invoice process.
+
+Required invoice fields: legal name, tax number, bank details, company number — we generally cannot accept an invoice that isn't valid or missing tax invoice details. Compliance checks are done by other teams outside AP in most cases. For new suppliers over £10,000, additional checks are done.
+
+Approvals: the vendor onboarding in 3E has thresholds that trigger additional authorization. You input details and a workflow for authorization kicks off; the workflow seems to support the check and sign-off functions.
+
+We can provide dashboards that show how many vendors are being added, SLA breaches, and approvals. It will help to have drill-down on vendors over certain thresholds and approval history (who approved what). Country-specific certificates and reporting can be part of that.
+
+In invoice processing, if an invoice is wrong we may put it on hold rather than reject it outright. A "hold" state with reasons is better. Workflow should allow returning invoices to suppliers to provide missing info like bank details before processing continues. We should incorporate a pre-checklist into the vendor intake workflow to avoid repetitive manual checks. Mandatory fields and attachments should be enforced so you cannot progress without required documentation and evidence. There should be a "callback" field and timestamps for all interactions to create an audit trail that you can report on (e.g., how long did vendor onboarding take?).
+
+In 3E, there are some controls such as checking ABN uniqueness in Australia. The ABN is a unique identifier and 3E will flag duplicates, but it’s not a hard stop: users can still submit. We should talk to the 3E team about preventing duplicate entries and improving upstream validation to reduce failure demand downstream.
+
+We need to separate value demand (work that adds value) from failure demand (work caused by errors or omissions). Tasks record time and effort, and if we structure tasks so they stop the clock on waiting, we can capture the real effort and demonstrate failure demand data to influence the business.
+
+Think ahead about how vendor pay will look when the new P2P system is live in a few months. If processes change in 2026/2027, we must update ServiceNow to reflect the new flows.
+
+For higher-value invoices (for example, over £10,000), we should include a field in the workflow to record authentication of bank details and the person who verified them, including a timestamp and supporting evidence. This must be auditable in 3E and ServiceNow. Australia might use AUD 15,000 as a threshold in practice for additional checks.
+
+Regarding subscription portals and vendor-managed services: some of these are managed in procurement as subscriptions rather than one-off vendors; treat them accordingly.
+
+When an invoice is rejected, that should move the invoice to a "hold" state with documented reasons and tasks for further information. When the supplier supplies the missing data (e.g., bank details), the invoice should then return into the workflow for approval and payment. That continuation must be tracked.
+
+SLA guidance: invoices that need to be paid immediately (urgent) are prioritised; vendor creation is often done ASAP to allow payment. Prioritization can be based on due date or urgency. There may be VIP invoices or ones with legal deadlines that need to be prioritized. The manager can set priorities and the dashboards can surface urgent items.
+
+We’ll come back to the fields we need on invoice steps, but we must capture name, legal name, tax ID, bank details, and required supporting evidence as mandatory items. Use checklists in the workflow to ensure these checks happen once and are auditable.
+
+Now moving to corporate cards:
+
+We need to consolidate corporate card processes. There are many related workflows: new card applications, queries (pin numbers, troubleshooting), joiners/movers/leavers, cancellations, secondments, limits and approvals, reconciliation, and deductions. Corporate card requests currently start with an email to AP where requesters provide a business case, manager details, and reason. The form should capture estimated monthly spend and requested credit limit.
+
+We should implement a matrix of eligibility and limits by role (partners, managers, operations) so some roles are pre-approved while others require further approval. Partners in Australia are typically given automatic eligibility at onboarding. In the UK, rules are similar but approvals have recently moved to a new setup with defined approvers. We need to align matrices globally, allow local variations, and ensure the workflow routes to the correct approver.
+
+The bank (Amex/Westpac) sometimes rejects applications due to KYC issues. We are not directly responsible for the bank's KYC process but the workflow should capture the status changes, including when an application is awaiting bank action. Currently the team is unaware when the bank is processing it. ServiceNow can reflect external statuses: awaiting approval, sent to bank, pending bank response, on hold, rejected, etc. That will improve metrics and allow AP to follow up proactively.
+
+Amex and other card providers may require personal identification documents (passport, driving license) and correct name/marital name details. If the applicant completes applications online with the correct supporting evidence, approvals and bank processing should be smoother. Provide guidance (knowledge articles) explaining the process, expected timelines, and required documents — host forms on the intranet and link to them in the ServiceNow workflow rather than storing them in ServiceNow as documents.
+
+When the applicant completes the bank application and returns evidence, we get notification and can check it before submission. Once approved and the card is issued, we arrange card delivery or pick-up — sometimes cards are couriered to regional offices. The card is not active until the bank has completed their checks; this should be tracked within the workflow.
+
+For global consistency, the card application forms in the UK and Australia should be aligned and attached or linked from the ServiceNow task. For the US, their forms might be different; we need to incorporate them when Amex releases them.
+
+Joiners, movers, and leavers: we should integrate card management with HR events. When a leaver or secondment is recorded, that should trigger tasks to cancel or suspend cards, reduce limits, or set effective end dates. Some secondments are short-term and will need temporary adjustments rather than full cancellations. Notifications and dashboard views that surface upcoming secondments or leave-related actions will help avoid leaving cards active unnecessarily. Avoid relying on manual monthly lists; integrate the triggers so tasks are created automatically.
+
+Cancellation scenarios: sometimes we reduce a card limit instead of cancelling (suspension) — we should formalize the cancellation and suspension processes with defined parameters. There are also dormant cards (unused for six to 12 months) that could be cancelled to reduce costs; build a report/dashboard to identify and action these.
+
+We must consider whether to treat cards as assets assigned to individuals for better visibility and governance. There are data protection and PCI considerations if we store card data in ServiceNow, so check compliance before capturing sensitive card data.
+
+Reconciliation and salary deductions: there are monthly reconciliation processes for Amex and other cards. In Australia, reconciliation and payroll deductions may be processed fortnightly, while the UK does it monthly. The reconciliation process typically extracts data from 3E or the expense management system and sends reconciled items to payroll for deductions. This process should be formalized: generate scheduled tasks to reconcile, track exceptions, and capture adjustments as tasks so they’re auditable and can inform behaviour change.
+
+Expense management and corporate card spend: some users prefer to get reimbursed rather than have a corporate card. We should use policy and data to influence usage behaviour. We can flag low-value card requests and redirect to alternatives like subscriptions or department budgets.
+
+Cash cards and department cards: AP manages cash cards used for events or temporary needs. These are loaded with funds and topped up as required. Issue, receipt handling, statements, and reconciliation are weekly activities. Department cards are typically assigned 1:1, but sometimes shared, which complicates reconciliation. The same reconciliation pattern applies: statements are sent to cardholders for receipts and approvals, then processed for direct debits.
+
+Action items and next steps: capture the 11 processes discussed and consolidate them into the manage-invoice and corporate card workflows. We should create dashboards and reports for approvals, SLAs, status tracking, high-value items, rejections/holds, bank verification evidence, and vendor onboarding metrics to quantify failure demand vs value demand.
+
+Meeting housekeeping:
+- We’ll reconvene after lunch at 1:45. Some follow-ups are planned within an hour for reports and dashboards.
+- Ivan, you mentioned you need to take a quick call; you may rejoin later.
+- We'll share files offline where needed (forms, intranet links).
+- Look to align with the 3E team and procurement for integration changes over 2026–2027.
+
+Casual closing: a few people chatted about travel and personal trips (Scotland, family). Lunch break and follow-up coordination were confirmed.
+
+END OF TRANSCRIPT.

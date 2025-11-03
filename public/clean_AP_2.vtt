@@ -1,0 +1,82 @@
+START OF Accounts PAYABLE CONVERSATION PART 2:
+
+We discussed third-party intake: you make your requests and they fill them in. We can work on the matrix to capture a particular customer or the effective end rather than letting them determine the source. Those are the metrics you can manage. You can create the task, receive it in your queue, and process it across all teams. We need to define the way you handle ingestion.
+
+We have the ingestion in progress. When you receive an invoice, dig deep on what you do with it. It’s not just performing the activity; it’s handling the request. You’re using 3E for this. That’s the first step in the workflow, and you’re also checking different processes and how they are differentiated between the UK and Australia. There are two different ways we handle invoices: either they come through P2P with a PO, or they come in non-PO.
+
+When we receive an invoice with a PO, we have a copy of the invoice and the purchase order, we process the invoice, and then we close it because the invoice is fully processed. However, sometimes the vendor is APO applicable and a purchase order hasn’t been raised yet. We register them on 3E as a meeting purchase and include the subject line so we can tie it to the invoice, the invoice number, and the business. When an invoice is pending, it goes back into your queues and tiers. If you’re on holiday, someone else in Europe may pack things up; occasionally a new ticket is generated and someone else could pick it up. That can create already-resolved tickets that are hard to manage because we don’t move someone off a workflow until they’ve done their part.
+
+Receiving an invoice is EO-specific, but if it’s PO-based, the first gating question is: is there a valid PO? If not, what is the reason it’s not there? We should have a notification for missing PO information. Things often go into a pending state while waiting for clarification. The first gate is a valid PO; the second gate is whether the PO is processed.
+
+I normally send it to the business and choose when it comes back. If I don’t get a response, it flags to me and I chase it. ServiceNow can help with that notification. If the PO is missing or doesn’t match, you can assign the task in ServiceNow to someone else. If the automated system fails, you can reassign tasks. The ticket remains in your queue as the owner. For example, if a person shouldn’t be handling it and it’s outside their scope, you still set the state to "awaiting" so you know it’s waiting for an invoice or action.
+
+There are concerns in ServiceNow when tickets are reassigned frequently. You can bulk reassign when someone is away. Teammates can look across the team; for instance, if Josh is out for some time, others pick up his work. ServiceNow allows that flexibility. If the ticket is assigned to a group, any active person in that group can action it. We need to manage visibility and ensure non-finance people don’t see everything they shouldn’t.
+
+For non-PO invoices, once confirmed, they go through the normal process and must still be paid. We might separate them out if they use different payment methods. Once fully authorised, they run in payment cycles for the UK and Luxembourg. We also have weekly foreign payment runs and some payments that must be executed manually. We run payment runs monthly and also hold ad hoc payment runs when needed.
+
+We have integrations for our expense providers; those should flow through to 3E. If a posting isn’t right, there’s a flag. Any vouchers that haven’t been fully processed will get flagged so they’re not included in a payment run. Before starting payments, we check that all invoices are processed.
+
+For the weekly payment run, each invoice on that job picks up details from the weekly file. We check that entries are posted in 3E before we carry out the payment. There can be hundreds of invoices in a run. The workflow moves an invoice from waiting to clear, then it’s added to the weekly batch and processed for payment. We run payment runs off due dates; a request for payment is standard practice. You might process an invoice earlier but request payment on its due date.
+
+Regarding the vendor information we need to capture: legal name, address, contacts, mandatory fields, and regulatory information. You asked whether we could share the checklist we use to verify vendors — yes, we can provide the list of mandatory fields. It’s useful to have enrichment fields you can report on so you can allocate tasks more easily, for example a head contact field or a value field for the invoice that helps detect spikes in volume.
+
+Dashboards: you asked how live they would be. They can be near real-time. We can log invoice value as a field so dashboards show volume and spikes. That insight helps you see whether you normally get ten invoices and suddenly get thirty in a month.
+
+For approvals: in the UK we have two levels of approvals. The workflow should document at which stages approvals are required and potentially set them by value thresholds. Approvers like Jill and others approve payments, but the team prepares a payment schedule and then Jim and I approve it. We could incorporate a scheduler plus approval step so approvals are scheduled monthly or weekly as needed.
+
+We need coverage for approvers who might be on holiday. Ideally the system would notify all approvers or an approver group and allow delegation. ServiceNow can be configured so approvers sit in an assignment group; anyone in that group can pick up the task. You can set a service-level expectation for how quickly approvals must be actioned and flag overdue approvals.
+
+This is controlled by AD roles — we’ll need to formally verify those AD groups. ServiceNow will inherit assignment group membership from AD, and you can include non-finance individuals in an approver group if required. We’ll need to classify visibility to maintain segregation: non-finance users shouldn’t see everything. ServiceNow can handle segregated visibility and limited access.
+
+Terminology: "request for payment" moves from "new vendor" or "new invoice" into a request-for-payment batch. Approvals are for the batch to release funds, not necessarily approving each underlying invoice. Treasury then executes the banking once approvals are complete. The Treasury manager will sign off as evidence for the payment. Once the payment is approved by the approver and Treasury, it is executed and the process is complete — approved, closed, complete.
+
+Supporting evidence must be attached to the payment request. If there are issues — for example, wrong currency or wrong reference — you can send it back to the team to correct. We want to avoid double handling, but sometimes invoices need to be held for checks. The payment file comes to the final approver for the final check; we verify totals, currency, bank account details, and the cut-off times (e.g., a 5:00 p.m. cut-off). We perform checks to ensure the bank accounts have funds and that reference details are correct before executing.
+
+There are cases where invoices shouldn’t be paid, and those should be identified before payment run inclusion. We capture these holds during the payment run so they are not paid. When both payment approval and payment execution are done by the same team or person, errors can be picked up quickly because both activities are handled concurrently.
+
+On approval thresholds: where amounts exceed certain thresholds, we need additional approvals for the UK and Australia. The bank used can also influence who signs off on payments — two banking partners with different requirements exist. From a cashier and client payments perspective, there are specific processes and checks outside the main AP task.
+
+Overall process: invoices go through ingestion, P2P or non-PO processes, then into request for payment, approvals, payment run, and finally closure. There are many touchpoints and notifications across these states. We want to provide visibility to the business so requesters can see the ticket status in the portal rather than emailing for updates. The portal will show assignment, state, and activity history.
+
+Notifications: you asked when requesters should be notified. For urgent items, the business will contact us manually. For batch payments, they expect to be informed once the payment run is generated or when funds are released. We can create rules to notify depending on the urgency or if it’s being paid outside the normal cycle. For example, invoices due soon (in three days) or overdue should generate stronger notifications. For typical batch payments, we might not notify every requester for every invoice, but we should notify for urgent cases and provide access to portal status for everyone else.
+
+Recurring items and payment schedules: some invoices are processed on a monthly schedule, others weekly. Australia often pays on the last day of the month while other regions vary. We have scheduled runs as well as ad hoc runs. You asked if we could set scheduled tasks or calendar items to remind teams to run or review processes — yes, ServiceNow can manage those scheduled requests.
+
+Non-invoice payments: inter-account transfers, currency trades, and top-ups (e.g., cash card top-ups) are processed from specific requests — typically via controlled groups or a portal form rather than freeform email. These requests should be captured as forms with required fields (from account, to account, amount, date). They are approved by the relevant managers outside of AP but will be actioned by treasury or payments. We can create a dedicated request form and an approval workflow for these.
+
+Cash cards and top-up accounts: these are monitored and sometimes require weekly checks. We may need scheduled flows for these to top up accounts. Some card transactions only appear in a weekly file, so we reconcile and top up as required. We mentioned cash cards and property-related payments; operations like Knight Frank (for property management) will consolidate and send us batches for property invoices, and they’ll be onboarded to the portal for invoice submission.
+
+Pexa invoices and settlement fees (Australia): Pexa invoices are different. They debit our accounts on settlement day and require processing in 3E for the fees, but they often don’t need additional approvals because they’re part of the settlement process. We will process them as tasks assigned and then close them — they’re simpler.
+
+Expense management: our travel and expense providers send a file that imports into the system, generally on a monthly basis. The bulk of our work here is queries and coding. Chrome River is the expense system we use. Expenses flow into 3E and then into our action lists; errors pop up and need manual intervention. Staff reimbursements tend to be processed weekly. We need to clarify the scheduled request flow for Chrome River processing, and we may create reminders to check and process these queues.
+
+Support and IT involvement: sometimes tickets require IT or Finance Systems team intervention (e.g., application support). The ticket should be raised in ServiceNow and if IT needs to act, we can mirror or route tasks to them. The initiating team should keep ownership of the ticket so they maintain sight of progress. ServiceNow supports launching subtasks to other teams while maintaining the main ticket for visibility. Permissions can limit what other teams see; they can receive tasks and update them without seeing full financial details if required.
+
+Notifications and client-visible notes: you can add client-visible notes and trigger manual notifications when you want to communicate with the requester. There should be an option to select whether to send a notification or not. We can build processes where certain workflow states automatically notify requesters, while other states do not.
+
+Other portals and scheduled uploads: some vendors upload invoices into vendor portals or we receive scheduled files. We need to reconcile those with emails and ensure everything is captured and processed. If a vendor has its own portal (e.g., Knight Frank), they will consolidate and provide batches to us; that should be onboarded into our process.
+
+Inter-region differences: Australia and UK have variations in processes and stakeholders. Australia sometimes has a simpler approval chain for certain payments, and their local finance managers act as approvers. We’ll capture those regional nuances when mapping workflows. Implementation of ServiceNow for these processes is planned in the next few months; we expect to roll out parts of it within six months for properties and other areas.
+
+Reporting and dashboards: we should capture data that helps manage throughput, rework, and failure demand. Dashboards should highlight where effort concentrates, which partners cause rework, urgency, and daily activity. We’ll bring standard reports and tailor them to show metrics that matter to AP teams.
+
+Next steps and timing: we will write up user stories with you, review the content and start configuration. We have sessions coming up and will commence work on the 3rd across finance. We’ll feed back the storytelling and specifics captured from AP in Australia and the UK. We’ll follow up with teams for any missing information and schedule leadership reviews.
+
+Miscellaneous process points captured:
+- AP tasks: invoice ingestion via portal, vendor email, or third party.
+- PO vs non-PO handling.
+- 3E registration and processing.
+- ServiceNow queue and ticket assignment, reassignments, and bulk reassignments.
+- Approval workflows with AD-managed groups and delegation.
+- Payment runs: weekly, monthly, ad hoc; foreign payments and manual interventions.
+- Treasury approvals and final banking checks.
+- Evidence capture and mandatory vendor fields.
+- Dashboards for spikes, volumes, and exception reporting.
+- Expense management via Chrome River and integration into 3E.
+- Non-invoice payments (inter-account transfers) via a form and approved workflow.
+- Portal visibility for requesters and client-visible communication options.
+- Regional specifics (UK, Australia, Knight Frank, Pexa).
+
+We’ve consolidated the processes into a handful of core services, and we’ll prioritise by value, volume, and compliance improvement. The heavy lifting is done; now it’s about prioritising where automation will be most impactful.
+
+We’ll follow up with reports, user stories, and specific sessions to finalise requirements. Thank you all for your input today. We’ll pick this up after a short break.

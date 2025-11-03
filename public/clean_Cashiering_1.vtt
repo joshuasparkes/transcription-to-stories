@@ -1,0 +1,86 @@
+START OF Cashiering CONVERSATION PART 1:
+
+We managed payments yesterday differently from the UK. That’s all right. There are many reasons for that, and one I’m aware of is that invoices are handled by different teams. It’s a reflection of how Australian AP is structured in general.
+
+In most law firms you generally find client accounts and invoices handled together rather than separated. Over in the UK, the cashiering team handles client monies and funds received from clients. That’s reflected in their process. At the end of the day, cashiers operate within their regulatory environments. In the UK we’re governed by the SRA, and they require specific audits on the cashiering process.
+
+So there’s a regulatory difference between Australia and the UK. The UK has five jurisdictions with slight differences, and there are layers of regulatory requirements. It would be interesting to understand whether we can adopt each other’s requirements or streamline them. From a compliance perspective, your workflow might need triggers depending on the country you’re in. We need a global foundation that allows for regulatory differences while enabling standard workflows where possible.
+
+We’re trying to streamline our processes, but you have to meet local regulatory requirements. Our external auditors will jump on it quickly if something’s off. My goal isn’t to force a single global process for the sake of it; it’s to streamline where possible while ensuring compliance.
+
+Both locations — UK and Australia — are heavily regulated. There’s more risk here in Australia with the type of work they do, but I feel proud saying that in both locations our cashiering function is among the best. That’s the principle: this function must be able to respond locally while fitting into a global framework. We’re looking at workflow and evidence to support the audit trail. The intention is not to strip controls but to enhance them — provide checklists and metrics to support the process, and have time-stamped records rather than adding things retrospectively.
+
+There are overlaps between credit control and cashiers; they work hand in hand. We need bandwidth to cover that. Note that some processes could be combined across accounts, and that’s fine where audit and regulatory requirements allow. Trustee accounts (client accounts) are critical: they hold and manage client money that must be ring-fenced from firm funds.
+
+For example, if you buy a house and put down a deposit, that deposit goes into a client account for that matter. The lender provides the mortgage and the solicitor handles distribution on completion. The point is that solicitors and lawyers have the privilege and responsibility to hold and manage client money on behalf of clients. For retail investment, it’s different because people are depositing their own funds; in legal matters it’s money held on behalf of third parties.
+
+There are stricter rules here, and sometimes one invoice can be excluded under local rules. Going back a step, how are these client accounts set up? There’s a form called New Business (NVI) for the front office. It’s a fairly long form with details and tick boxes for bank accounts, etc. That form gets signed off and forms part of the engagement terms before a transaction happens.
+
+Where do you store client documents? We have a library that stores client documents and records. For transactions we gather figures through various systems, but fundamentally there’s an engagement letter and authorised signatories for a transaction. That step is usually done upfront. If an unusual situation arises, we’ll go through the set-up process as needed.
+
+At what point is a client number assigned? The client code is established in Intact, and the actual assignment of the physical code is done in that system. Typically, when using Intact you can pick the client from a dropdown list. That integration conversation will be important.
+
+We currently get a lot of information via email. For trust receipts we get an email notifying us of an expected amount and the date. That email is the bare minimum: it contains trust receipt information and the expected amount. We check that against the bank statement when funds are received.
+
+You mentioned a checklist and ServiceNow. Interrupt me at any time. We receive an email notifying us that we’re expecting money, and usually a PE (partner/partner executive) is included. The request often comes from partners or lawyers, and the PE is normally the first point of contact.
+
+Sometimes not everyone knows a payment is coming. Receiving an email in advance is helpful — it informs us that money is coming in. In most cases the PE signs off or authorises things on the form saying they expect the funds. Money actually hits our account and we then confirm where it needs to go and that it’s allocated to the right client.
+
+We have a table of information we require. Once funds arrive, we cross-check the details and wait for the money to clear. We could probably standardise that information better across jurisdictions. In the UK there’s a single standard, whereas in Australia practices can vary.
+
+Sometimes we don’t get an email and we end up scrambling to figure out what a bank credit is for. If it’s a repeat client using an established trust account, the payor will use the trust account details we’ve already provided. Occasionally payors use incorrect details, so we have to reconcile.
+
+When you get a request, do you receive one per matter or can one email cover multiple matters? Often one email is per matter. However, in the case of property settlements, you might receive multiple deposits for different matters on the same day. In those cases you’d need attachments or rows on the form to specify which deposit applies to which matter.
+
+We handle multiple rows per deposit. The paperwork needs to be provided for each matter so there’s proper supporting evidence. Even if one payment covers multiple matters, the one-to-one relationship between matter and allocation must be maintained in the record.
+
+If a request comes in and the actual payment amount differs from the expected amount, we handle that by closing the request and expecting a second payment, or capturing the change in the record. That reconciliation between expected and actual amounts should be captured in ServiceNow so we have an audit trail.
+
+We’d like the ServiceNow form to provide a PDF record and to be able to store notes and time-stamped audit entries. We need readable, auditable records that auditors can review. Time stamps are important — the created date and the audit trail entries should be included in exported PDFs.
+
+Parikh mentioned that time stamps (creation date, etc.) can be included in any integrated PDF so each entry has its audit trail. Dashboards are also useful: a dashboard showing case details and statuses can be exported to PDF for auditors.
+
+For audit purposes, we need the following checks: that the request has been received, that the information matches, that the money has been booked against the correct matter, and the time stamps to show the sequence of events before money lands in the account. That helps demonstrate compliance with regulatory timelines.
+
+ServiceNow can capture many of the fields we need: matter details, expected amount, dates, and other fields. Ideally many of these fields will be populated automatically from the matter system so we reduce manual entry and avoid errors.
+
+We can create states and sub-states in ServiceNow — for example, pending, pending transfer, waiting for completion — and tie workflows to those states. That allows automation of next steps and scheduled actions and supports reporting. There are also capabilities for SLAs and alerts which can be leveraged to flag when expected dates are breached.
+
+We should capture expected settlement dates on the form, especially for settlements. If the request relates to a settlement, the requester should indicate that. That can prompt additional fields, such as the expected settlement date, so the team can monitor timelines and prioritise work.
+
+We also have statutory deposit and regulatory obligations: certain trust account balances must be maintained, and transfers sometimes have minimum processing times — for example, a 24-hour rule for depositing funds before they’re available. Capturing settlement dates and ensuring sufficient lead time is important for liquidity and compliance.
+
+ServiceNow can also hold options for the requester to select a reason for funds (e.g., prepayment of legal fees, settlement) and pop up required additional fields accordingly. Structured reasons reduce free-text entries and help with reporting.
+
+We need the ability to add free-text notes and root causes when the expected amount differs, because sometimes a change in funds requires explanation (e.g., a payer changed source). Work notes should capture these communications rather than sending separate emails. That creates a full chain in ServiceNow.
+
+Regarding dashboards and reporting: we need to be able to run reports for upcoming settlements (next seven days, past seven days), overdue expected dates, and other metrics. We can schedule reports, export them, and distribute as required.
+
+Prioritisation is important. For example, settlements due today should be at the top of the queue and assigned higher priority. The requester should be able to flag priority (e.g., settlement vs. general trust receipt). The dashboard should allow the team to view items in order of priority and expected dates.
+
+Team structure: how many cashiers in each location? In Australia we’re five people including a team leader. You should be able to assign tasks or have auto-routing based on role, skills or rotation. We rotate tasks quarterly, but the system should allow assignment to a specific person and view who’s working on which items. We have skills and some people handle specific types of transactions, so role-based routing makes sense.
+
+Payment types: incoming payments are generally electronic into the bank account. We rarely receive cheques for client funds; cheques are mostly office expenses or outgoing funds. The incoming payment path is usually electronic transfers into trust ledgers.
+
+Workflow summary: requests come in, checklists are completed, money arrives, we check allocation and supporting evidence, and notifications can be sent back to the requester. When the matter is closed, or when money is paid out, a ServiceNow task can reflect those actions. For interest accounts and other banking actions, ServiceNow can capture the state and details even if the actual bank change is done outside the system.
+
+Interest accounts: when money is held for a significant period (e.g., property settlements that can take months), clients may want interest to be earned. We ask on the request whether the client wants interest. If yes, we open a specific interest account and move funds into it. These are virtual accounts on our system — the banking platform has cut-off times (e.g., 4:00pm) so some actions happen the next business day. Opening some bank accounts (e.g., CMA accounts) requires bank-specific forms and signatures; we prepare the documentation and the bank executes the account opening, so ServiceNow should capture the status of that external approval process.
+
+Approvals: some actions require approvals outside the cashiering team — for example, partner sign-off for opening client accounts or bank processes. ServiceNow should capture the approval workflow and the resulting state even if the execution is external. Two signatures may be required for some banking instructions; we need a record of that.
+
+Peer checks and reconciliation: at the end of the day we do peer review and reconcile bank statements to ensure postings are correct. We would like ServiceNow to support a reviewed/closed status and to generate reports that show items reviewed and completed.
+
+Operational considerations: we can iterate the ServiceNow form and workflow as we move forward. Initially, use a dashboard as your daily worklist, then evolve routing and automation based on workload and skill sets. The system should support public queues and personal assignments, and allow managers to reassign tasks based on daily priorities.
+
+In summary, the key needs are:
+- A ServiceNow form to capture expected receipts with structured fields (matter, amount, expected date, reason, interest preference).
+- A checklist and time-stamped audit trail, exportable to PDF for auditors.
+- Integration with Intact (client codes, matter details) to reduce manual entry.
+- Dashboards and reports for prioritisation (settlements, due dates, breaches).
+- Workflow states and sub-states to reflect processing stages.
+- Ability to capture external approvals and bank actions, plus free-text work notes for exceptions.
+- Role-based routing and assignment, with capacity to rotate tasks and view team workload.
+
+That covers the overall path: request coming in, work performed with checklists, supporting evidence recorded, notifications back to requesters, and final reconciliation and peer review.
+
+END OF TRANSCRIPT.

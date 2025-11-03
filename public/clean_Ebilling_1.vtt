@@ -1,0 +1,117 @@
+All of that positive stuff is what we're trying to disrupt. This is what we spoke about last week. We discussed having an e-billing UK overall group and a method for automated routing. When a case lands, it should go to someone who is specialised so routing is automated. I think automated routing will address one of the pain points.
+
+Can we go back to the previous slide? What's the purpose of understanding the different groupings — teams or roles? Is that the plan going forward? Within the localised teams there are different roles and rights. The slide shows different roles within different teams: horizontal and vertical. It also compares what we do today versus the plan. From my perspective, this is what good looks like and an opportunity to explore.
+
+Is e-billing something we can centralise in one team, or does it have to be split between UK and other offices? Could it be "first cab off the rank" and then routed? The direction of travel is: you get an invoice coming in, you have to process it, and the question is how it starts its journey. Today the heavy lifting could come from ServiceNow. If an invoice is over a certain value, perhaps it needs more authorization. The underlying aim is to get the right ticket to the person who can resolve it most effectively.
+
+We should organise groupings geographically in a way that ensures the person who can resolve it fastest gets the ticket. Does that thinking help? What we want to land on is a global standard model: lawyers will get the e-billing response they need as quickly as possible. It’s about having the right structure while aligning to a global standard so all processes are consistent later.
+
+This is an Australia-focused process, so we have more granular detail here. The first phase is about standardization and simplification. We can further consolidate in future phases; this is very much first phase with future consolidation in mind. E-billing is likely the best opportunity to deliver country-level improvements.
+
+Whether the bill is raised in London or elsewhere, we need to make sure the process is consistent. I want to make sure we don't overcomplicate things. Apart from people sitting in different locations, the core process could be globalized. We should focus on admin efficiency: how much retrospective admin can be done upfront to reduce error rates. ServiceNow can do heavy lifting — capturing data, applying rules, scheduling tasks, and routing based on availability.
+
+Last week’s intake exercise was excellent — one of the best I've seen. This is a high-level summary. Keep these points in mind as we dig into the details. We're nearly done with the setup.
+
+Debra, do you want to go through the key questions? As we step through processes like upload invoice, we can identify that different teams handle different clients and different values. Some situations will follow different routes, for example if an invoice is over a certain value. We should consider whether we can consolidate scenarios or if the client has already been onboarded. I only want invoices for active clients, so we should include lookups for that.
+
+We will go through the processes in a sensible order. There are two complex ones that need further clarification once we've handled the others. This shouldn't be a checklist exercise that takes forever. The intent is to think about priorities: is this a VIP? Is it time-sensitive? As we transform the process and the form, we can make it more efficient and reduce the seconds wasted. Keep those things in mind.
+
+When we get to the processes, we'll identify what can be grouped logically so employees have fewer, clearer items. We must avoid creating 150 items that make the user experience terrible. If there are only a few well-structured items, it becomes manageable. We can handle different requests within one form or workbook where possible.
+
+Deborah, on e-billing admin — uploading and amending — it seemed like about 18% of work was admin. I consolidated the tasks into an order: rate management, then managing invoices. There’s an underlying spreadsheet and I’ve tried to explain each part of the process. The red initial view indicates work already done and processes we think could be improved or included in ServiceNow. If something doesn’t work, tell us and we’ll adapt; these are workshop decisions.
+
+On client onboarding: is this process sufficient? Will it be from the requester side — name, client, and vendor onboarding? From a service catalogue perspective we should align the language with Lauren and Megan. The dialogue will cover who makes requests, why there are multiple managers, and how onboarding is consistent. Onboarding should cover new clients, reactivations, or subsidiaries (child/parent relationships). We need to confirm whether matters are ever onboarded with clients, and the answer is yes — sometimes matters are part of that process.
+
+Client onboarding may be handled centrally or by specific offices. For specific offices, there might be checks such as right-to-work, which legal might do. Consolidating those onboarding requests makes sense. Who makes the onboarding request? It could come from finance, the London office PAS, or a partner. Often the e-billing team doesn't get told early enough when a partner signs something. We are often reactive; partners create matters and the process is kicked off late. Ideally we want early triggers so the team can be proactive.
+
+There are about 22 people involved in the end-to-end client matter lifecycle. Visualising that could help give early insight and might not change the process today, but it will help planning. We have a terms module in a system (I can’t recall the name) but not all terms are stored there, which is a challenge. John has been working on terms; this team may be able to share more. The terms repository could be a trigger point for e-billing or other workflows.
+
+For onboarding, compliance and conflict checks need to be completed first. If a client is cleared, we can proceed to board them and give access to the portal or payment systems. We want to standardize the terms: vendor, client, third party — align terminology across the firm. That will help reduce confusion.
+
+Ad hoc requests still happen. Visibility on the portal is important so people know where to raise requests. Parex raised his hand earlier but we couldn't see him; his point was that clients may already exist in other platforms, including Ashurst or other third-party portals. We must account for clients existing across multiple systems.
+
+There are existing systems and processes that initiate onboarding. The key point is effectiveness of use and visibility. If you have a terms repository, that could trigger onboarding or related tasks. Not all terms sit in the central terms module today, which reduces automation potential.
+
+For e-billing triggers: doing conflict checks and compliance will indicate it's okay to do business with a client. If compliance is done, that should trigger the client onboarding state. If the team receives invoices retrospectively, there needs to be a process to handle exceptions. We discussed the employee life cycle and third-party invoicing: we need to capture third-party vendors distinctly so users aren't confused.
+
+Standardising vendor and client terms will help. Once we get alignment on terminology, implementation will be easier.
+
+Requests may be scheduled or ad hoc. For example, the team might receive an invoice via email or from a portal. You might need access to multiple portals. Visibility and routing are important. It's reassuring to hear that onboarding will be more consistent, removing manual contact to set clients up.
+
+Regarding portals: clients can have multiple portals and often a client might be on a third-party portal such as Legal Tracker. Some clients require specific portals. When onboarding to a new portal, you may need to deactivate the old portal or set an effective date. We will manage client on- and off-boarding events in ServiceNow and ensure there is visibility across teams.
+
+Approvals and regulatory checks are generally pre-approved. Some clients (e.g., Bank of America) may be exceptions with special SLAs. We’ll have follow-ups in a couple of weeks to decide specifics. We need measures: for example, 90% of onboarding hitting expected targets. Targets won’t always be one day; they’ll be practical and account for missing data.
+
+We must capture where processes get stuck — for example, if public liability insurance documents are missing, that causes delays. Capture the status changes: new requests, work in progress, information requested, closed complete, and rejections. Those statuses help reporting and prevent duplicate requests.
+
+Reporting: this is an important area. If we capture onboarding events, invoice uploads, and other activities, ServiceNow can consolidate fields and improve reporting. We'll identify required reports and then design forms to capture data supporting those reports.
+
+ServiceNow can be both the front door for users and provide backend access for administrators. We should design forms to guide requesters so we capture the required data upfront and reduce back-and-forth. Guided forms will prevent retrospective checks and reduce failure demand.
+
+Globalisation: the same form can be used globally with country-specific fields. On the dashboard, you can filter by hemisphere or country so teams see relevant items. A level 1 triage team could recognise where items should go and route accordingly; routing can also be based on form fields and skill metrics. This enables greater control and more efficient resolution.
+
+About the structure of teams and triage: the initial triage team can route tickets to the right resolver team. We should define fields that help the system auto-assign to the best resolver based on skills, client, or region. If an individual is unavailable, assignments can fall back to a pool.
+
+For the requester, the form should avoid free text where possible and enforce structured inputs. Intelligent input from the form will support auto-routing. Ideally, 90% of incoming items should be correctly routed automatically.
+
+On onboarding data fields: we need to capture name, contact, client code, portal details, rates, and any agreed terms. Getting the form right will reduce the need to go back for information. Fields should prevent incomplete submissions and guide requesters to provide required evidence.
+
+On timekeeper rates and maintenance process: you must log rate details and timekeeper profiles. These need to be approved by clients. If timekeepers aren’t in the system, invoice upload may be rejected. The team performs timekeeper rates maintenance every two weeks; this captures changes and new timekeepers. Rates change annually, and panel agreements may require updates. Timekeepers and rate information matter because errors can cause invoice failures downstream.
+
+We should consider creating a ServiceNow-based process for timekeeper rate maintenance — one record that can be new, updated, approved, or rejected. Automate prompts based on scheduled reports and create tasks for SMEs to pick up the necessary changes. The report could be an input into ServiceNow, and ideally bots or automation could compare current and required rates to output differences.
+
+Fields for timekeeper rates should include person ID, rate, effective date, end date, skill metrics, location, and currency. Some clients have multi-currency needs; exchange rates are applied monthly by the finance team. The output must be carefully reconciled.
+
+Timekeeper rate approvals and rate changes should be logged as discrete tasks that we can report on. We may set a scheduled maintenance activity that generates tasks and SLAs.
+
+On recurring or scheduled activities: some clients require regular scheduled updates; this could be modelled as a recurring task with an SLA and visibility on dashboards. Capture status changes and automate notifications for upcoming windows.
+
+Dashboards and notifications: For high-volume activities, dashboards are preferable to lots of notifications. Requesters should receive status notifications, but the team should rely on dashboards for management. Dashboards can show items near breach, items waiting for client input, and work-in-progress. Requesters should have an employee workspace showing requests they raised and their status. The system can allow targeting notifications only when appropriate.
+
+Statuses we should capture: new, work in progress, waiting for information, closed complete, rejected. Also capture rejection reasons and whether rejections are end-to-end or part of onboarding. Avoid duplicate requests. Those statuses will support SLA measurement and MI.
+
+On client portal specifics: many clients use third-party portals and require particular formats. For example, some portals reject invoices with commas or grammatical issues. Capture which portal to use so uploads are correct. If a client switches portals, we'll onboard them to the new one and set a deactivation date for the old portal.
+
+Reporting and MI: capture client and client code, portal, invoice dates, effective dates, and when invoices are uploaded. This helps with reporting retrospectively and understanding growth in invoicing. If invoices are backdated, capture both invoice date and upload date for accurate reporting.
+
+On acceptance windows and response deadlines: clients have different windows (for example two or three days). ServiceNow can manage notifications and SLA windows. Dashboards should flag approaching deadlines or potential breaches. Ensure working hours and holidays are considered in SLA calculations.
+
+On the causes of reversals and non-billing behavior: capture the cause of reversals and delays so we can report on failure demand. Partners sometimes hold invoices in drawers or delay billing for strategic reasons. Capturing reasons and escalation paths (e.g., partner involvement) will give us data to influence behaviour and drive improvements.
+
+On billing and collections targets: billing behaviour is driven by collections targets and partner incentives. We might use early signposting and reporting to shift behaviours. Automation can trigger billing if an invoice hasn’t been issued within a specified timeframe (e.g., auto-issue after X days of bill creation), subject to business rules. This will be a later-phase automation.
+
+On integration points: we need to identify authoritative sources of data for each integration. For example, 3E is the core system for client and contacts. We also have Intap and other systems in play. Some teams use two systems, which impacts data quality. We need to know the master data source for each integration and design data flows accordingly. Julian flagged data structure work for integrations.
+
+On client codes and reference numbers: capturing the client’s unique reference number (CLU or equivalent) in the request is very helpful. If we can expose that in the form and pull the client name based on that code, it will enrich our process and reduce lookup work in Excel.
+
+On the skills matrix and routing: once we have skill metrics, routing will get much smarter. We can auto-assign tasks based on client, role, or skillset. This avoids single points of failure; if the primary person is unavailable, the ticket goes to the team queue.
+
+On the number of portals and client entries: a client might exist once in our system but multiple times across portals. We must make decisions about whether to upload to one portal or multiple. Often you upload to the portal that the client will process; many clients only require one portal entry. For reporting, capture which portal is used and the effective dates for portal use.
+
+On case numbers and linking: each ticket will have a case number. Communications should link to the related case or matter. If the portal triggers an email, we should link that into ServiceNow so all activity is traceable against a case record.
+
+On maintenance frequency: timekeeper maintenance and rate updates are run monthly or bi-weekly depending on the client. Capture triggers for scheduled runs and ensure tasks are visible in dashboards.
+
+On volume: many of you have high volumes. The team with the highest activity will benefit most from automation and connectors. ServiceNow should be the central connector wherever possible, and we should document what each team pulls from which system so we can design the right integrations.
+
+On recurring templates: for repetitive tasks such as recurring invoices or scheduled rate checks, we can create recurring tasks in ServiceNow with SLAs. That reduces manual scheduling.
+
+On exceptions and approvals: have structured approval flows with predefined rejection reasons rather than free text so we can report on common causes for rework. When a record is rejected, capture the reason.
+
+On next steps and scope: we will consolidate processes and designs for client onboarding, rates maintenance, invoice upload, and rejections. We’ll prioritise what to implement first — e.g., centralize onboarding, then move to invoice management and accruals. ServiceNow will be used as the central ticketing system and will help connect to other systems.
+
+On training, language, and change: ensure consistent use of terminology (client, vendor, third party). We also need to be mindful of change management: managers should be prepared for adoption and escalation if new ways of working don’t fit legacy behaviour.
+
+Operational points:
+- Capture required fields on forms to prevent back-and-forth.
+- Use guided forms to model good behaviour and prevent missing data.
+- Design dashboards for the team to manage workload and for requesters to track their requests.
+- Implement a triage group to route tickets based on form inputs and skill metrics.
+- Automate scheduled activities and consider automation for rate comparisons.
+- Capture rejection reasons, windows, and delays for MI to identify failure demand.
+- Identify one authoritative data source per integration (3E, Intap, etc.).
+- Ensure SLAs consider working hours and holidays.
+
+We covered all major items: onboarding, portals, timekeeper rates, approvals, dashboards, SLAs, reporting, and next steps. The approach feels sensible and thorough. We should reconvene to finalise the design and prioritise integrations.
+
+We’ll break for lunch now and come back after the break. Meeting reconvenes at 10:20 or 10:30 depending on the agenda. Thank you everyone for the input this morning.

@@ -17,20 +17,30 @@ interface UsageInfo {
 }
 
 type GptModel = 'gpt-5' | 'gpt-5-mini' | 'gpt-5-nano';
-type Mode = 'query' | 'user-stories' | 'cleanup';
+type Mode = 'query' | 'user-stories' | 'cleanup' | 'file-viewer';
 
 // Pre-loaded VTT files available in the public folder
 const PRELOADED_FILES = [
-  'Cashiering transcript 1.vtt',
-  'Cashiering transcript 2.vtt',
-  'AP transcript 1.vtt',
-  'AP transcript 2.vtt',
-  'Billing transcript 1.vtt',
-  'Billing transcript 2.vtt',
   'RAMA transcript 1.vtt',
   'RAMA transcript 2.vtt',
   'Ebilling Transcript 1.vtt',
   'Ebilling transcript 2.vtt',
+  'Billing transcript 1.vtt',
+  'Billing transcript 2.vtt',
+  'Cashiering transcript 1.vtt',
+  'Cashiering transcript 2.vtt',
+  'AP transcript 1.vtt',
+  'AP transcript 2.vtt',
+  'clean_RAMA_1.vtt',
+  'clean_RAMA_2.vtt',
+  'clean_Ebilling_1.vtt',
+  'clean_Ebilling_2.vtt',
+  'clean_Billing_1.vtt',
+  'clean_Billing_2.vtt',
+  'clean_Cashiering_1.vtt',
+  'clean_Cashiering_2.vtt',
+  'clean_AP_1.vtt',
+  'clean_AP_2.vtt',
 ];
 
 export default function Home() {
@@ -50,6 +60,8 @@ export default function Home() {
   const [cleanedTranscript, setCleanedTranscript] = useState('');
   const [cleanupLoading, setCleanupLoading] = useState(false);
   const [cleanupUsage, setCleanupUsage] = useState<UsageInfo | null>(null);
+  const [selectedFileForViewing, setSelectedFileForViewing] = useState<string>('');
+  const [viewedFileContent, setViewedFileContent] = useState<string>('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Update page title to show loading indicator
@@ -129,6 +141,12 @@ export default function Home() {
   };
 
   const loadPreloadedFile = async (filename: string) => {
+    // In file-viewer mode, display the file instead of loading it
+    if (mode === 'file-viewer') {
+      await viewFileContent(filename);
+      return;
+    }
+
     if (textInput.trim()) {
       setError('Please use either file upload or text input, not both.');
       return;
@@ -160,6 +178,28 @@ export default function Home() {
     } catch (err) {
       console.error('❌ [Frontend] Failed to load pre-loaded file:', err);
       setError(`Failed to load ${filename}`);
+    } finally {
+      setLoadingFiles(false);
+    }
+  };
+
+  const viewFileContent = async (filename: string) => {
+    setLoadingFiles(true);
+    setError('');
+    setSelectedFileForViewing(filename);
+
+    try {
+      const response = await fetch(`/${filename}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${filename}`);
+      }
+      const text = await response.text();
+      setViewedFileContent(text);
+      console.log('✅ [Frontend] Loaded file for viewing:', filename);
+    } catch (err) {
+      console.error('❌ [Frontend] Failed to load file for viewing:', err);
+      setError(`Failed to load ${filename}`);
+      setViewedFileContent('');
     } finally {
       setLoadingFiles(false);
     }
@@ -435,6 +475,16 @@ export default function Home() {
             >
               Cleanup Transcript
             </button>
+            <button
+              onClick={() => setMode('file-viewer')}
+              className={`px-6 py-3 rounded-xl font-semibold cursor-pointer transition-all duration-200 ${
+                mode === 'file-viewer'
+                  ? 'bg-amber-600 text-white shadow-lg scale-105'
+                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              }`}
+            >
+              File Viewer
+            </button>
           </div>
 
           {/* Model Selector */}
@@ -457,39 +507,46 @@ export default function Home() {
           <div className="bg-gray-900 p-4 rounded-xl border border-gray-700">
             <div className="flex justify-between items-center mb-3">
               <h3 className="text-white font-medium">
-                Pre-loaded Files (click to toggle)
+                {mode === 'file-viewer' ? 'Select File to View' : 'Pre-loaded Files (click to toggle)'}
                 {loadingFiles && <span className="ml-2 text-blue-400">🔄 Loading...</span>}
               </h3>
-              <button
-                onClick={loadAllPreloadedFiles}
-                disabled={loadingFiles}
-                className="px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
-              >
-                Load All Files
-              </button>
+              {mode !== 'file-viewer' && (
+                <button
+                  onClick={loadAllPreloadedFiles}
+                  disabled={loadingFiles}
+                  className="px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
+                >
+                  Load All Files
+                </button>
+              )}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
               {PRELOADED_FILES.map((filename) => {
                 const isLoaded = uploadedFiles.some(f => f.name === filename);
+                const isSelected = mode === 'file-viewer' && selectedFileForViewing === filename;
                 return (
                   <button
                     key={filename}
                     onClick={() => loadPreloadedFile(filename)}
                     disabled={loadingFiles}
                     className={`p-3 rounded-lg text-sm text-left transition-all duration-200 cursor-pointer ${
-                      isLoaded
+                      mode === 'file-viewer'
+                        ? isSelected
+                          ? 'bg-amber-700 text-white shadow-lg hover:bg-amber-800'
+                          : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                        : isLoaded
                         ? 'bg-green-700 text-white shadow-lg hover:bg-green-800'
                         : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                     } disabled:bg-gray-700 disabled:cursor-not-allowed`}
                   >
-                    {isLoaded && '✓ '}
+                    {mode === 'file-viewer' ? (isSelected && '👁️ ') : (isLoaded && '✓ ')}
                     {filename}
                   </button>
                 );
               })}
             </div>
             {/* Display uploaded files */}
-          {uploadedFiles.length > 0 && (
+          {uploadedFiles.length > 0 && mode !== 'file-viewer' && (
             <div className="bg-gray-900 mt-4 p-4 rounded-xl border border-gray-700">
               <div className="flex justify-between items-center mb-3">
                 <h4 className="text-white font-medium">Loaded Files:</h4>
@@ -619,7 +676,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* Submit Button */}
+          {/* Submit Button - Not shown in file-viewer mode */}
           {mode === 'query' ? (
             <button
               onClick={handleCustomQuery}
@@ -650,7 +707,7 @@ export default function Home() {
                 'Extract User Stories'
               )}
             </button>
-          ) : (
+          ) : mode === 'cleanup' ? (
             <button
               onClick={handleCleanupTranscript}
               disabled={cleanupLoading || (uploadedFiles.length === 0 && !textInput.trim())}
@@ -665,7 +722,7 @@ export default function Home() {
                 'Clean & Improve Transcript'
               )}
             </button>
-          )}
+          ) : null}
         </div>
 
         {/* Query Mode Results */}
@@ -849,6 +906,41 @@ export default function Home() {
                     <p className="text-lg font-semibold text-green-400">${cleanupUsage.totalCost.toFixed(4)}</p>
                   </div>
                 </div>
+              </div>
+            )}
+          </>
+        )}
+
+        {/* File Viewer Mode */}
+        {mode === 'file-viewer' && (
+          <>
+            {viewedFileContent ? (
+              <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-xl font-semibold text-white">
+                    {selectedFileForViewing}
+                  </h3>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(viewedFileContent);
+                    }}
+                    className="px-4 py-2 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors duration-200 cursor-pointer"
+                  >
+                    Copy to Clipboard
+                  </button>
+                </div>
+                <div className="bg-gray-950 p-6 rounded-lg text-gray-200 font-mono text-sm whitespace-pre-wrap max-h-[600px] overflow-y-auto border border-gray-700">
+                  {viewedFileContent}
+                </div>
+                <div className="mt-4 text-gray-400 text-sm">
+                  File size: {viewedFileContent.length.toLocaleString()} characters
+                </div>
+              </div>
+            ) : (
+              <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-gray-700 text-center">
+                <p className="text-gray-400 text-lg">
+                  Select a file above to view its contents
+                </p>
               </div>
             )}
           </>
