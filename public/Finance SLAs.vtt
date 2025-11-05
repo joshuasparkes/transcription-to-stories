@@ -1,0 +1,4355 @@
+WEBVTT
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/23-0
+00:00:03.611 --> 00:00:06.789
+<v Josh Sparkes>So as I said today,
+posting on service level agreements,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/23-1
+00:00:06.789 --> 00:00:09.744
+<v Josh Sparkes>operational level agreements underpinning
+contracts,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/23-2
+00:00:09.744 --> 00:00:13.925
+<v Josh Sparkes>which are essentially those commitments
+that we make about how quickly and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/23-3
+00:00:13.925 --> 00:00:18.329
+<v Josh Sparkes>effectively finance services delivered
+and how they're managed through service</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/23-4
+00:00:18.329 --> 00:00:19.611
+<v Josh Sparkes>now, see if that works.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/22-0
+00:00:19.891 --> 00:00:20.011
+<v Iqbal, Rhiannon 14601>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/30-0
+00:00:20.251 --> 00:00:23.605
+<v Josh Sparkes>And just to Orient to you this morning or
+afternoon,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/30-1
+00:00:23.605 --> 00:00:28.225
+<v Josh Sparkes>we we kicked off way back when and did
+service design cover integrations</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/30-2
+00:00:28.225 --> 00:00:33.098
+<v Josh Sparkes>yesterday now on Slas and after this
+there may be some ongoing ad hoc design</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/30-3
+00:00:33.098 --> 00:00:37.211
+<v Josh Sparkes>sessions where needed if people wouldn't
+mind letting people in.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/28-0
+00:00:36.411 --> 00:00:36.531
+<v Iqbal, Rhiannon 14601>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/36-0
+00:00:37.891 --> 00:00:40.893
+<v Josh Sparkes>And each of these sessions building on
+each other,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/36-1
+00:00:40.893 --> 00:00:45.485
+<v Josh Sparkes>and SLA's are an important piece of of
+making ServiceNow work effectively for</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/36-2
+00:00:45.485 --> 00:00:48.957
+<v Josh Sparkes>finance. So we'll,
+we'll let you know where we're we're at</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/36-3
+00:00:48.957 --> 00:00:52.136
+<v Josh Sparkes>decision wise.
+This is that old famous slide with all</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/40-0
+00:00:51.211 --> 00:00:55.289
+<v Pandya, Sandeep 14402>OK, So what do you do, Lauren?
+Now I can like so you go to the connect</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/36-4
+00:00:52.136 --> 00:00:52.371
+<v Josh Sparkes>the.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/40-1
+00:00:55.289 --> 00:00:59.251
+<v Pandya, Sandeep 14402>bit down here and then it's like all the
+Wi-Fi bits thing. Yeah, so.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/38-0
+00:00:55.611 --> 00:00:56.971
+<v Josh Sparkes>We we can hear you, Sandeep.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/46-0
+00:01:01.611 --> 00:01:05.675
+<v Josh Sparkes>Put you on mute, Sandy pub. It's OK.
+So this is that old slide of everything</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/41-0
+00:01:01.651 --> 00:01:02.211
+<v Collins, Gillian 14363>Mm-hmm.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/46-1
+00:01:05.675 --> 00:01:09.370
+<v Josh Sparkes>we need to to get through to put a design
+together for for our build.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/46-2
+00:01:09.370 --> 00:01:13.592
+<v Josh Sparkes>You just know the angle on just how much
+we've covered together and the journey</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/44-0
+00:01:13.451 --> 00:01:13.611
+<v Pandya, Sandeep 14402>What?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/46-3
+00:01:13.592 --> 00:01:14.331
+<v Josh Sparkes>we've been on.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/52-0
+00:01:14.811 --> 00:01:20.279
+<v Josh Sparkes>So far, so we've reached. We're OK. Hey,
+Sandy, we've, we've reached that out.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/47-0
+00:01:15.331 --> 00:01:15.451
+<v Pandya, Sandeep 14402>Chair.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/52-1
+00:01:20.279 --> 00:01:25.124
+<v Josh Sparkes>Morning, Sandy, just in time.
+So we're we've reached that outstanding</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/49-0
+00:01:20.291 --> 00:01:21.011
+<v Pandya, Sandeep 14402>Hi, good morning.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/52-2
+00:01:25.124 --> 00:01:29.069
+<v Josh Sparkes>piece of Slas,
+which is fantastic and on track progress.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/52-3
+00:01:29.069 --> 00:01:31.491
+<v Josh Sparkes>So thanks everyone for your inputs.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/57-0
+00:01:31.891 --> 00:01:34.665
+<v Josh Sparkes>And drive so far in the programme,
+it's been there,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/57-1
+00:01:34.665 --> 00:01:38.558
+<v Josh Sparkes>it's been a good one and here's what
+we'll cover in the next 45 minutes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/57-2
+00:01:38.558 --> 00:01:41.971
+<v Josh Sparkes>It may not take that long,
+but objectives I'm going to help you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/57-3
+00:01:41.971 --> 00:01:46.291
+<v Josh Sparkes>understand the three types of Slas and
+looking at the recommendations that we're</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/57-4
+00:01:46.291 --> 00:01:47.411
+<v Josh Sparkes>making for phase one.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/62-0
+00:01:47.851 --> 00:01:51.382
+<v Josh Sparkes>The next steps and saving a bit of time
+for Q&amp;A as well.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/62-1
+00:01:51.382 --> 00:01:56.129
+<v Josh Sparkes>So let's start with what success looks
+like for today. By the end of the session,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/62-2
+00:01:56.129 --> 00:01:59.833
+<v Josh Sparkes>we'll have achieved two things or three
+things actually, sorry.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/62-3
+00:01:59.833 --> 00:02:04.001
+<v Josh Sparkes>First understanding the SLA types.
+There are three types we'll take you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/62-4
+00:02:04.001 --> 00:02:04.811
+<v Josh Sparkes>through those.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/66-0
+00:02:05.731 --> 00:02:08.432
+<v Josh Sparkes>They may sound a bit jargony,
+but they're actually quite</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/66-1
+00:02:08.432 --> 00:02:12.222
+<v Josh Sparkes>straightforward and we'll explain what
+each of them means and which ones matter</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/66-2
+00:02:12.222 --> 00:02:14.875
+<v Josh Sparkes>most for financing phase one.
+Most importantly, second,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/66-3
+00:02:14.875 --> 00:02:17.434
+<v Josh Sparkes>we'll clarify the principles for defining
+these Slas.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/66-4
+00:02:17.434 --> 00:02:20.371
+<v Josh Sparkes>We would like to have principles around
+everything we design.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/71-0
+00:02:21.331 --> 00:02:25.085
+<v Josh Sparkes>And we're not defining specific
+individual targets today like finance</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/71-1
+00:02:25.085 --> 00:02:28.409
+<v Josh Sparkes>team will respond to a vendor set up
+within 4 hours. Instead,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/71-2
+00:02:28.409 --> 00:02:32.699
+<v Josh Sparkes>we're going to be agreeing just on the
+principles that will guide how we define</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/71-3
+00:02:32.699 --> 00:02:36.828
+<v Josh Sparkes>them and things like they should be
+measurable and they should be realistic.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/71-4
+00:02:36.828 --> 00:02:38.651
+<v Josh Sparkes>For example, those type of things.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/76-0
+00:02:39.371 --> 00:02:43.879
+<v Josh Sparkes>And 3rd and I'm sure what you're all
+interested in most is we're going to be</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/76-1
+00:02:43.879 --> 00:02:48.504
+<v Josh Sparkes>sharing the the current recommended
+approach for Olas and Slas in ask finance.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/76-2
+00:02:48.504 --> 00:02:52.309
+<v Josh Sparkes>And I think we're working on finalisation
+in, in the background,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/76-3
+00:02:52.309 --> 00:02:56.349
+<v Josh Sparkes>but I I am able to share our
+recommendations as it stands right now,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/76-4
+00:02:56.349 --> 00:02:57.051
+<v Josh Sparkes>so eager to.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/80-0
+00:02:57.371 --> 00:03:01.588
+<v Josh Sparkes>To get your feedback on that,
+what we're not doing today is we're not</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/80-1
+00:03:01.588 --> 00:03:06.226
+<v Josh Sparkes>committing to specific response or
+resolution times for individual services.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/80-2
+00:03:06.226 --> 00:03:10.924
+<v Josh Sparkes>We're not finalising targets for each
+service and it's not a formal sign off.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/80-3
+00:03:10.924 --> 00:03:12.731
+<v Josh Sparkes>That's kind of happening at a.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/86-0
+00:03:13.611 --> 00:03:18.183
+<v Josh Sparkes>A broader level, and that's, as I say,
+that's just because ask and enterprise</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/86-1
+00:03:18.183 --> 00:03:22.812
+<v Josh Sparkes>level decisions are needed for for that.
+So it's it's kind of for information,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/86-2
+00:03:22.812 --> 00:03:27.559
+<v Josh Sparkes>but also eager to get your views as well.
+So I'll just show you all kind of what</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/86-3
+00:03:27.559 --> 00:03:31.251
+<v Josh Sparkes>the art of the possible is around Slas
+etcetera in the system.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/90-0
+00:03:31.971 --> 00:03:36.038
+<v Josh Sparkes>The principles needed in a transformation
+and those recommendations.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/90-1
+00:03:36.038 --> 00:03:38.631
+<v Josh Sparkes>So we'll get into the meat and gravy of
+it.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/90-2
+00:03:38.631 --> 00:03:41.813
+<v Josh Sparkes>So just demystifying the terms I've
+mentioned so far,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/90-3
+00:03:41.813 --> 00:03:46.881
+<v Josh Sparkes>there's there's three types of agreements,
+and they all essentially support the next.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/90-4
+00:03:46.881 --> 00:03:49.651
+<v Josh Sparkes>So Olas are your operational level
+agreements.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/95-0
+00:03:50.131 --> 00:03:54.239
+<v Josh Sparkes>And these are those kind of internal
+promises that teams make to each other to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/95-1
+00:03:54.239 --> 00:03:57.099
+<v Josh Sparkes>deliver a service.
+Think of them as kind of behind the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/95-2
+00:03:57.099 --> 00:04:00.063
+<v Josh Sparkes>scenes commitments that make external
+promises possible.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/95-3
+00:04:00.063 --> 00:04:03.703
+<v Josh Sparkes>So you may have been using these so far
+in some form, but an example,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/95-4
+00:04:03.703 --> 00:04:07.915
+<v Josh Sparkes>when finance receives a new vendor set up
+request will create that vendor record</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/95-5
+00:04:07.915 --> 00:04:09.371
+<v Josh Sparkes>within three within a few 3.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/99-0
+00:04:09.451 --> 00:04:13.424
+<v Josh Sparkes>Working days, for example,
+it's a behind the scenes thing that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/99-1
+00:04:13.424 --> 00:04:18.153
+<v Josh Sparkes>customers don't necessarily see and they
+they help you meet those external</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/99-2
+00:04:18.153 --> 00:04:23.009
+<v Josh Sparkes>promises, your Slas for phase one,
+what we're proposing is that if a service</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/99-3
+00:04:23.009 --> 00:04:25.531
+<v Josh Sparkes>does not have an agreed SLA today as is.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/103-0
+00:04:26.691 --> 00:04:30.571
+<v Josh Sparkes>We'll be working on a broad soft SLA
+which are Ola, sorry,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/103-1
+00:04:30.571 --> 00:04:35.370
+<v Josh Sparkes>which I'll explain afterwards and that
+will just help us measure service</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/103-2
+00:04:35.370 --> 00:04:40.105
+<v Josh Sparkes>delivery so it stays internal.
+It's not something the customer sees and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/103-3
+00:04:40.105 --> 00:04:42.011
+<v Josh Sparkes>it it just means that we can.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/108-0
+00:04:42.491 --> 00:04:45.977
+<v Josh Sparkes>In the future,
+iterate on the the definition of that for</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/108-1
+00:04:45.977 --> 00:04:49.035
+<v Josh Sparkes>longer term Slas that are useful and
+appropriate,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/108-2
+00:04:49.035 --> 00:04:51.726
+<v Josh Sparkes>I'll show you a simple diagram.
+After this,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/108-3
+00:04:51.726 --> 00:04:56.740
+<v Josh Sparkes>just of a a decision tree of of the two
+kind of branches of overlays and Slas for</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/108-4
+00:04:56.740 --> 00:05:00.104
+<v Josh Sparkes>the for the project. So yeah,
+if there's no SLA today,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/108-5
+00:05:00.104 --> 00:05:01.571
+<v Josh Sparkes>we're proposing a broad.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/113-0
+00:05:01.851 --> 00:05:05.535
+<v Josh Sparkes>Find the scenes Ola.
+I think the the number of that I need to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/113-1
+00:05:05.535 --> 00:05:08.445
+<v Josh Sparkes>get hold of, but that's the the approach.
+Again.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/113-2
+00:05:08.445 --> 00:05:12.129
+<v Josh Sparkes>I'll elaborate that on a second those
+underpinning contracts.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/113-3
+00:05:12.129 --> 00:05:16.703
+<v Josh Sparkes>So we're not proposing these specifically
+in phase one, make them in future,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/113-4
+00:05:16.703 --> 00:05:19.851
+<v Josh Sparkes>but they're essentially external vendor
+commitments.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/117-0
+00:05:20.131 --> 00:05:24.124
+<v Josh Sparkes>So the contracts with your external
+suppliers or vendors that might support</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/117-1
+00:05:24.124 --> 00:05:28.484
+<v Josh Sparkes>your service delivery and these are kind
+of the constraints you're working within,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/117-2
+00:05:28.484 --> 00:05:31.688
+<v Josh Sparkes>not commitments you're making.
+So I'd say not for right now,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/117-3
+00:05:31.688 --> 00:05:35.786
+<v Josh Sparkes>but but are useful things to have in
+future when when the solution matures in</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/117-4
+00:05:35.786 --> 00:05:36.731
+<v Josh Sparkes>in further phases.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/121-0
+00:05:37.611 --> 00:05:40.597
+<v Josh Sparkes>But yeah,
+we won't be looking at these in phase one</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/121-1
+00:05:40.597 --> 00:05:43.640
+<v Josh Sparkes>and the Slas.
+So these are your external promises to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/121-2
+00:05:43.640 --> 00:05:47.258
+<v Josh Sparkes>customers and these are the promises that
+we make to you know,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/121-3
+00:05:47.258 --> 00:05:51.851
+<v Josh Sparkes>all the all the different users. So the,
+the PES, the partners, the fee owners.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/125-0
+00:05:52.251 --> 00:05:55.486
+<v Josh Sparkes>Et cetera,
+about how fast and how well services will</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/125-1
+00:05:55.486 --> 00:05:58.598
+<v Josh Sparkes>be delivered.
+So this is what people really see in</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/125-2
+00:05:58.598 --> 00:06:01.894
+<v Josh Sparkes>experience.
+I think we talked to a couple of these in</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/125-3
+00:06:01.894 --> 00:06:04.701
+<v Josh Sparkes>in most of the sessions,
+it may have come up.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/125-4
+00:06:04.701 --> 00:06:08.546
+<v Josh Sparkes>So for phase one look,
+So what we're suggesting is that if you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/125-5
+00:06:08.546 --> 00:06:08.851
+<v Josh Sparkes>have.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/130-0
+00:06:09.411 --> 00:06:13.610
+<v Josh Sparkes>Slas on your services today will ensure
+these remain in place in service now and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/130-1
+00:06:13.610 --> 00:06:17.654
+<v Josh Sparkes>we'll be capturing these as part of the
+requirements in our user stories that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/130-2
+00:06:17.654 --> 00:06:21.386
+<v Josh Sparkes>we're working on and the the reasoning
+behind that is essentially if if</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/130-3
+00:06:21.386 --> 00:06:24.393
+<v Josh Sparkes>customers are expecting a certain level
+of service today,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/130-4
+00:06:24.393 --> 00:06:28.229
+<v Josh Sparkes>we don't want to take that away.
+We want to ensure they they keep getting</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/130-5
+00:06:28.229 --> 00:06:28.851
+<v Josh Sparkes>the service.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/135-0
+00:06:28.891 --> 00:06:31.666
+<v Josh Sparkes>Service.
+So I think it makes sense to maintain</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/135-1
+00:06:31.666 --> 00:06:36.330
+<v Josh Sparkes>those Slas for where they exist today.
+And as I said before, where they don't,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/135-2
+00:06:36.330 --> 00:06:41.171
+<v Josh Sparkes>we'll be applying that broader LA so that
+we can learn what those future SLA's is</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/135-3
+00:06:41.171 --> 00:06:45.008
+<v Josh Sparkes>and we'll fill the gap.
+So I've got a super simple decision tree</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/135-4
+00:06:45.008 --> 00:06:48.491
+<v Josh Sparkes>I like. I like to keep,
+keep things simple where I can so.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/139-0
+00:06:49.131 --> 00:06:52.025
+<v Josh Sparkes>Is the.
+Does the service have SLA in current</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/139-1
+00:06:52.025 --> 00:06:55.755
+<v Josh Sparkes>states? If yes,
+will apply an existing SLA will implement</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/139-2
+00:06:55.755 --> 00:07:00.128
+<v Josh Sparkes>that in the system? If no,
+will apply that general soft Ola so that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/139-3
+00:07:00.128 --> 00:07:02.571
+<v Josh Sparkes>we can measure, learn, iterate on the?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/144-0
+00:07:04.011 --> 00:07:08.720
+<v Josh Sparkes>The measurements in future and build on
+that. So I think I'll go through, yeah,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/144-1
+00:07:08.720 --> 00:07:13.428
+<v Josh Sparkes>I'll go through the principles, that's OK.
+And then I do have time for Q&amp;A,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/144-2
+00:07:13.428 --> 00:07:17.901
+<v Josh Sparkes>maybe some of you've got questions.
+So just kind of explain maybe why we've</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/144-3
+00:07:17.901 --> 00:07:20.667
+<v Josh Sparkes>got to where we are,
+the principles behind it.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/144-4
+00:07:20.667 --> 00:07:22.491
+<v Josh Sparkes>So now we understand the types.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/149-0
+00:07:23.491 --> 00:07:26.732
+<v Josh Sparkes>These are just the guard rails that
+ensure we we create good,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/149-1
+00:07:26.732 --> 00:07:29.607
+<v Josh Sparkes>workable commitments rather than
+aspirational targets.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/149-2
+00:07:29.607 --> 00:07:32.639
+<v Josh Sparkes>That kind of set everyone up to fail.
+So the soft launch,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/149-3
+00:07:32.639 --> 00:07:35.567
+<v Josh Sparkes>that's what we just spoke about will
+track performance,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/149-4
+00:07:35.567 --> 00:07:39.539
+<v Josh Sparkes>learn what's realistic and iterate and
+soft launch as a hopefully have made</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/149-5
+00:07:39.539 --> 00:07:42.571
+<v Josh Sparkes>clear just means measuring and tracking.
+But we are very.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/153-0
+00:07:42.691 --> 00:07:45.454
+<v Josh Sparkes>Much in in learning mode and simple,
+measurable,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/153-1
+00:07:45.454 --> 00:07:50.020
+<v Josh Sparkes>actionable so everyone understands what
+the commitment is. There's no ambiguity.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/153-2
+00:07:50.020 --> 00:07:54.756
+<v Josh Sparkes>Service now can track these automatically.
+You're not manually reporting just to to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/153-3
+00:07:54.756 --> 00:07:58.251
+<v Josh Sparkes>make clear on everybody is something.
+The service now tracks.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/158-0
+00:07:59.171 --> 00:08:02.696
+<v Josh Sparkes>Make sure it's actionable,
+so if you're at risk of missing it,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/158-1
+00:08:02.696 --> 00:08:06.389
+<v Josh Sparkes>you can actually do something about it so
+a bad SLA, for example,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/158-2
+00:08:06.389 --> 00:08:11.145
+<v Josh Sparkes>is finance will provide excellent service.
+It's not measurable, it's not actionable,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/158-3
+00:08:11.145 --> 00:08:15.398
+<v Josh Sparkes>but a good example is finance will
+respond to vendor set up requests within</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/158-4
+00:08:15.398 --> 00:08:17.971
+<v Josh Sparkes>one day, for example,
+kind of a smart target.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/162-0
+00:08:18.251 --> 00:08:23.112
+<v Josh Sparkes>We're all familiar with that framework.
+We will try to keep a business face in</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/162-1
+00:08:23.112 --> 00:08:27.788
+<v Josh Sparkes>language, so minimising technical jargon,
+making sure everybody on the team</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/162-2
+00:08:27.788 --> 00:08:32.649
+<v Josh Sparkes>understands it and customers will include
+any escalation paths and exceptions.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/162-3
+00:08:32.649 --> 00:08:34.371
+<v Josh Sparkes>So when we talk about those.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/166-0
+00:08:34.731 --> 00:08:37.712
+<v Josh Sparkes>Slas that exist at the moment for an
+escalation,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/166-1
+00:08:37.712 --> 00:08:42.153
+<v Josh Sparkes>if it's at risk of being missed,
+then who gets notified and when will be</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/166-2
+00:08:42.153 --> 00:08:45.255
+<v Josh Sparkes>try and keep that in in the system and
+exceptions.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/166-3
+00:08:45.255 --> 00:08:49.878
+<v Josh Sparkes>Are there any legitimate reasons why an
+SLA wouldn't apply for like example</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/166-4
+00:08:49.878 --> 00:08:50.851
+<v Josh Sparkes>public holidays?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/171-0
+00:08:51.331 --> 00:08:55.183
+<v Josh Sparkes>We'll we'll keep that in as well.
+We'll carry that across principle five</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/171-1
+00:08:55.183 --> 00:08:57.294
+<v Josh Sparkes>there.
+We've got measurement of Windows</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/171-2
+00:08:57.294 --> 00:09:00.038
+<v Josh Sparkes>measurement,
+windows business hours and time rules.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/171-3
+00:09:00.038 --> 00:09:04.260
+<v Josh Sparkes>We'll make sure they're all present as
+well in the system. That's all feasible,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/171-4
+00:09:04.260 --> 00:09:07.056
+<v Josh Sparkes>tiered alerts.
+So that means that ServiceNow will be</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/171-5
+00:09:07.056 --> 00:09:10.011
+<v Josh Sparkes>able to send automated alerts before Slas
+are breached.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/175-0
+00:09:10.371 --> 00:09:14.825
+<v Josh Sparkes>For example, at fifty time,
+over time elapsed, we'll give a heads up.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/175-1
+00:09:14.825 --> 00:09:19.724
+<v Josh Sparkes>This case has been open for 2.5 days.
+Let's say your five days delays at 50%</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/175-2
+00:09:19.724 --> 00:09:24.622
+<v Josh Sparkes>and we can give another warning at 80%
+and say there's only one day left for</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/175-3
+00:09:24.622 --> 00:09:25.131
+<v Josh Sparkes>example.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/180-0
+00:09:25.651 --> 00:09:30.166
+<v Josh Sparkes>And and as you can imagine,
+we'll also be given a notification when</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/180-1
+00:09:30.166 --> 00:09:35.544
+<v Josh Sparkes>there's a breach. So if the SLA breaches,
+it covers that one consistent approach</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/180-2
+00:09:35.544 --> 00:09:38.532
+<v Josh Sparkes>for NPS and CSAT. So NPS net,
+promote score,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/180-3
+00:09:38.532 --> 00:09:43.777
+<v Josh Sparkes>how likely we're likely to recommend
+finance services to a colleague and we'll</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/180-4
+00:09:43.777 --> 00:09:45.171
+<v Josh Sparkes>put a scale in there.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/185-0
+00:09:45.611 --> 00:09:49.256
+<v Josh Sparkes>We'll make sure there's a consistent
+approach to that cross.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/185-1
+00:09:49.256 --> 00:09:52.304
+<v Josh Sparkes>Ask and see sat as well.
+So customer satisfaction,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/185-2
+00:09:52.304 --> 00:09:57.203
+<v Josh Sparkes>we'll we'll measure these across the the
+organisation consistently so they are to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/185-3
+00:09:57.203 --> 00:10:00.311
+<v Josh Sparkes>be included as well and agent workspace
+visibility.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/185-4
+00:10:00.311 --> 00:10:04.971
+<v Josh Sparkes>So if you remember Agent Workspace was
+that kind of area in the system where.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/189-0
+00:10:05.011 --> 00:10:09.146
+<v Josh Sparkes>Where you guys will be working,
+where you see your your own personal</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/189-1
+00:10:09.146 --> 00:10:13.701
+<v Josh Sparkes>dashboard of of outstanding items,
+finance team members will be able to see</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/189-2
+00:10:13.701 --> 00:10:16.457
+<v Josh Sparkes>all their own SLA performance in the
+service.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/189-3
+00:10:16.457 --> 00:10:21.251
+<v Josh Sparkes>Now workspace we can have you've closed X
+cases this month. X have reached SLA.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/195-0
+00:10:21.731 --> 00:10:26.654
+<v Josh Sparkes>A certain amount breached and that can be
+extrapolated up to to team leads as well,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/195-1
+00:10:26.654 --> 00:10:29.701
+<v Josh Sparkes>depending on the the setup of those
+dashboards. OK,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/195-2
+00:10:29.701 --> 00:10:34.448
+<v Josh Sparkes>hopefully that kind of makes sense and
+we've kind of clarified what Slas are and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/195-3
+00:10:34.448 --> 00:10:39.019
+<v Josh Sparkes>all the the different options and the
+different features of those that can be</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/195-4
+00:10:39.019 --> 00:10:41.011
+<v Josh Sparkes>included. And as you can see it's.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/200-0
+00:10:41.251 --> 00:10:45.203
+<v Josh Sparkes>A mature area of service now it's been
+there since the start.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/200-1
+00:10:45.203 --> 00:10:49.920
+<v Josh Sparkes>It's ServiceNow is bread and butter.
+So we can we can build on those next</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/200-2
+00:10:49.920 --> 00:10:54.254
+<v Josh Sparkes>things we're going to do.
+So Deborah is working on the user stories</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/200-3
+00:10:54.254 --> 00:10:59.417
+<v Josh Sparkes>right now for for finance and we're going
+to be drawing out of those where SLA's</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/200-4
+00:10:59.417 --> 00:11:00.691
+<v Josh Sparkes>exist at the moment.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/204-0
+00:11:00.771 --> 00:11:06.017
+<v Josh Sparkes>Moment and I said we'll be carrying those
+across and therefore by looking at what</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/204-1
+00:11:06.017 --> 00:11:09.535
+<v Josh Sparkes>isn't there,
+we'll be able to see what fill fills that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/204-2
+00:11:09.535 --> 00:11:12.605
+<v Josh Sparkes>Ola category.
+Then of course we'll get into the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/204-3
+00:11:12.605 --> 00:11:16.891
+<v Josh Sparkes>configuration and when we go live,
+we'll launch in that soft mode.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/208-0
+00:11:17.491 --> 00:11:21.986
+<v Josh Sparkes>Start measuring and learning and refine,
+and then in future times not.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/208-1
+00:11:21.986 --> 00:11:25.531
+<v Josh Sparkes>Doesn't that necessarily have to be a
+subsequent phase?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/208-2
+00:11:25.531 --> 00:11:29.583
+<v Josh Sparkes>But to be to be defined we can implement
+those updates to Slas.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/208-3
+00:11:29.583 --> 00:11:34.331
+<v Josh Sparkes>Once we've got a a realistic view on what
+they should be for each service.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/209-0
+00:11:35.251 --> 00:11:35.371
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/214-0
+00:11:36.851 --> 00:11:39.581
+<v Josh Sparkes>OK,
+so flow through what it is and hopefully</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/214-1
+00:11:39.581 --> 00:11:44.129
+<v Josh Sparkes>that's clear on the approach here.
+I think this is maybe the the pertinent</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/214-2
+00:11:44.129 --> 00:11:48.739
+<v Josh Sparkes>slide open to to questions around how
+this is going to work or the decision</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/214-3
+00:11:48.739 --> 00:11:51.771
+<v Josh Sparkes>what what are your questions everybody,
+anything?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/220-0
+00:11:56.531 --> 00:11:59.228
+<v Mark Sedge>Josh,
+can I just add something to the soft?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/220-1
+00:11:59.228 --> 00:12:03.210
+<v Mark Sedge>Yeah, your soft launch,
+so it's worth for the team to understand</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/216-0
+00:11:59.251 --> 00:11:59.811
+<v Josh Sparkes>Please yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/220-2
+00:12:03.210 --> 00:12:05.907
+<v Mark Sedge>that we'll go through a baselining
+process.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/220-3
+00:12:05.907 --> 00:12:09.645
+<v Mark Sedge>So when you think about the measures that
+we are collecting,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/220-4
+00:12:09.645 --> 00:12:13.811
+<v Mark Sedge>what we will be able to do is we'll be
+able to look over a sort of.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/226-0
+00:12:14.171 --> 00:12:17.454
+<v Mark Sedge>You know,
+2-3 month period depending on on how fast</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/226-1
+00:12:17.454 --> 00:12:21.179
+<v Mark Sedge>you want to move.
+We will look across that we will look at</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/226-2
+00:12:21.179 --> 00:12:25.598
+<v Mark Sedge>the typical range of say you know a
+certain task item in terms of its</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/226-3
+00:12:25.598 --> 00:12:28.944
+<v Mark Sedge>completion.
+We will look at sort of the range you'll</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/226-4
+00:12:28.944 --> 00:12:33.931
+<v Mark Sedge>have the odd exception that pop up the
+baselining process will be to rule out.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/233-0
+00:12:34.091 --> 00:12:38.981
+<v Mark Sedge>Some of those exceptions to get you to a
+norm and then from there we'll set the,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/227-0
+00:12:36.411 --> 00:12:36.531
+<v Josh Sparkes>Yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/233-1
+00:12:38.981 --> 00:12:41.456
+<v Mark Sedge>you know,
+your sort of indicative Ola or</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/233-2
+00:12:41.456 --> 00:12:46.165
+<v Mark Sedge>performance objective against those and
+what that will mean is that that will</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/230-0
+00:12:45.291 --> 00:12:45.411
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/233-3
+00:12:46.165 --> 00:12:51.235
+<v Mark Sedge>give you a controlled state to be able to
+then pitch what is it that we know we can</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/233-4
+00:12:51.235 --> 00:12:53.891
+<v Mark Sedge>fairly consistently achieve bar in the
+odd.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/241-0
+00:12:54.091 --> 00:12:57.457
+<v Mark Sedge>Spikes that may well occur,
+and then how do we use that to then</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/241-1
+00:12:57.457 --> 00:13:01.663
+<v Mark Sedge>underpin what we commit to the customer
+with a little bit of a safety factor on</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/235-0
+00:12:59.051 --> 00:12:59.171
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/236-0
+00:13:00.851 --> 00:13:00.971
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/241-2
+00:13:01.663 --> 00:13:04.134
+<v Mark Sedge>there.
+So that's the process that we will help</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/241-3
+00:13:04.134 --> 00:13:07.131
+<v Mark Sedge>you through to get those in place.
+Hopefully that helps.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/238-0
+00:13:05.451 --> 00:13:05.571
+<v Josh Sparkes>Yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/239-0
+00:13:06.811 --> 00:13:06.931
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/242-0
+00:13:08.251 --> 00:13:10.726
+<v Josh Sparkes>Thank you, mark. Yeah,
+so we've got a few hands up. Think,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/242-1
+00:13:10.726 --> 00:13:11.691
+<v Josh Sparkes>Sandeep, you are first.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/248-0
+00:13:14.491 --> 00:13:18.782
+<v Pandya, Sandeep 14402>Yeah, sorry,
+still trying to set this laptop up in the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/245-0
+00:13:18.411 --> 00:13:18.611
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/248-1
+00:13:18.782 --> 00:13:24.555
+<v Pandya, Sandeep 14402>meeting room. Yeah. So, I mean,
+just wanted to understand on that S on on</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/248-2
+00:13:24.555 --> 00:13:30.171
+<v Pandya, Sandeep 14402>that, setting up an SLA process.
+So how will it work? Will it be SL as?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/254-0
+00:13:30.731 --> 00:13:34.118
+<v Pandya, Sandeep 14402>On each and every single process as per
+the MPL,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/254-1
+00:13:34.118 --> 00:13:39.786
+<v Pandya, Sandeep 14402>because MPL will be MPL will be set up on
+ServiceNow as well as per the tasks and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/254-2
+00:13:39.786 --> 00:13:43.657
+<v Pandya, Sandeep 14402>the categories.
+What we discussed through you know like</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/254-3
+00:13:43.657 --> 00:13:48.771
+<v Pandya, Sandeep 14402>we gave you like 50 but you said Oh no
+these fifty can be classed into 5.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/257-0
+00:13:49.051 --> 00:13:51.579
+<v Pandya, Sandeep 14402>So how? How will how what is it?
+What what?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/257-1
+00:13:51.579 --> 00:13:54.336
+<v Pandya, Sandeep 14402>How will it be broken down like you know
+where?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/257-2
+00:13:54.336 --> 00:13:58.587
+<v Pandya, Sandeep 14402>Where is the SLA on the overall task or
+on the individual incident tasks,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/257-3
+00:13:58.587 --> 00:14:01.171
+<v Pandya, Sandeep 14402>you know, e-mail response,
+how does it work?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/259-0
+00:14:02.811 --> 00:14:04.811
+<v Josh Sparkes>I think Deborah,
+you'll be eager to answer 1 yet.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/264-0
+00:14:03.051 --> 00:14:06.782
+<v Debra Howard>Actually, yeah.
+I was just going to actually before you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/264-1
+00:14:06.782 --> 00:14:11.912
+<v Debra Howard>hand your hand up to probably talk to
+that is that to have end to end SLA as</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/264-2
+00:14:11.912 --> 00:14:16.175
+<v Debra Howard>well as you said Sandeep,
+it's obvious reading through like for</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/264-3
+00:14:16.175 --> 00:14:20.173
+<v Debra Howard>example the SLA is currently for one step
+might be 4 hours,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/264-4
+00:14:20.173 --> 00:14:21.971
+<v Debra Howard>but actually it's probably.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/269-0
+00:14:22.051 --> 00:14:22.451
+<v Debra Howard>Four hours.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/271-0
+00:14:22.571 --> 00:14:27.870
+<v Debra Howard>Talking into the overall process,
+you could break it down that over the SLA</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/271-1
+00:14:27.870 --> 00:14:33.029
+<v Debra Howard>is like you have to first, you know,
+respond to an approval that might be</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/271-2
+00:14:33.029 --> 00:14:38.746
+<v Debra Howard>within one hour of the overall process,
+but the actual end to end to achieve that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/271-3
+00:14:38.746 --> 00:14:42.371
+<v Debra Howard>for the for the requester might be 8
+hours. So yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/276-0
+00:14:42.571 --> 00:14:46.007
+<v Debra Howard>There could be Slas clear from the user
+stories,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/276-1
+00:14:46.007 --> 00:14:51.265
+<v Debra Howard>and we're writing everything up that the
+response within the process has a</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/273-0
+00:14:50.851 --> 00:14:51.131
+<v Mark Sedge>So.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/276-2
+00:14:51.265 --> 00:14:55.051
+<v Debra Howard>internal SLA as well as the end to end as
+well, yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/275-0
+00:14:53.251 --> 00:14:53.411
+<v Mark Sedge>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/282-0
+00:14:54.011 --> 00:14:57.732
+<v Pandya, Sandeep 14402>Right. OK.
+Because that in that makes sense for in</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/282-1
+00:14:57.732 --> 00:15:03.349
+<v Pandya, Sandeep 14402>the sense of like you know internal right
+because within the working capital</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/282-2
+00:15:03.349 --> 00:15:07.507
+<v Pandya, Sandeep 14402>finance space,
+11 matter or one matter request right can</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/282-3
+00:15:07.507 --> 00:15:13.051
+<v Pandya, Sandeep 14402>go through multiple teams, right?
+So it is not something that you know say.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/280-0
+00:15:09.611 --> 00:15:10.011
+<v Mark Sedge>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/281-0
+00:15:10.851 --> 00:15:11.091
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/287-0
+00:15:13.491 --> 00:15:17.177
+<v Pandya, Sandeep 14402>Even if I set up an SLA for E billing
+like for four hours,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/284-0
+00:15:15.771 --> 00:15:15.891
+<v Debra Howard>Yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/287-1
+00:15:17.177 --> 00:15:21.611
+<v Pandya, Sandeep 14402>but then you know rates team will have to
+try and get in something so.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/294-0
+00:15:19.171 --> 00:15:22.418
+<v Mark Sedge>Yeah.
+So send Sandy pivot if it helps some some</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/286-0
+00:15:20.811 --> 00:15:21.051
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/294-1
+00:15:22.418 --> 00:15:27.761
+<v Mark Sedge>for some bits you will just use your Ola
+structure to do the task to make sure</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/294-2
+00:15:27.761 --> 00:15:33.308
+<v Mark Sedge>people are on top of their task because
+to your point you can't have a single SLA</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/294-3
+00:15:33.308 --> 00:15:38.651
+<v Mark Sedge>when you've got such variances in terms
+of what you get asked to do. But what?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/291-0
+00:15:36.611 --> 00:15:36.891
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/292-0
+00:15:38.731 --> 00:15:38.851
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/298-0
+00:15:38.731 --> 00:15:39.171
+<v Mark Sedge>You can do.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/300-0
+00:15:39.291 --> 00:15:41.836
+<v Mark Sedge>As an organisation, as you can say,
+say to,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/300-1
+00:15:41.836 --> 00:15:46.580
+<v Mark Sedge>you can sort of present to your business
+entities that actually the service level</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/300-2
+00:15:46.580 --> 00:15:50.686
+<v Mark Sedge>is more about an experience based,
+one that says we will manage these,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/300-3
+00:15:50.686 --> 00:15:55.082
+<v Mark Sedge>we will do the to your satisfaction,
+but you drive the behaviours at a task</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/300-4
+00:15:55.082 --> 00:15:59.131
+<v Mark Sedge>level and that's the important
+differentiator is you because you the.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/305-0
+00:15:59.371 --> 00:16:02.622
+<v Mark Sedge>Tasks, you know,
+they're fairly consistent in terms of</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/305-1
+00:16:02.622 --> 00:16:06.404
+<v Mark Sedge>what you can achieve,
+which is hence why I was saying about the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/305-2
+00:16:06.404 --> 00:16:09.595
+<v Mark Sedge>baselining,
+what we'll end up doing is we'll identify</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/305-3
+00:16:09.595 --> 00:16:13.378
+<v Mark Sedge>what the parameters might be in terms of
+task X against task Y,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/305-4
+00:16:13.378 --> 00:16:17.219
+<v Mark Sedge>your or the OR the same task,
+but they have different variances.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/305-5
+00:16:17.219 --> 00:16:19.051
+<v Mark Sedge>We'll be able to look at those.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/309-0
+00:16:19.451 --> 00:16:23.747
+<v Mark Sedge>And may even be able to structure service
+levels against a different type of</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/309-1
+00:16:23.747 --> 00:16:26.258
+<v Mark Sedge>variance,
+but we will mature that over time.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/309-2
+00:16:26.258 --> 00:16:30.665
+<v Mark Sedge>The initial piece is just to get your
+measures running to support some sort of</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/309-3
+00:16:30.665 --> 00:16:34.570
+<v Mark Sedge>positioning piece with the business to
+say we've got control of this.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/309-4
+00:16:34.570 --> 00:16:36.411
+<v Mark Sedge>Because here's how we measure it.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/310-0
+00:16:38.611 --> 00:16:38.891
+<v Pandya, Sandeep 14402>OK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/311-0
+00:16:38.971 --> 00:16:39.531
+<v Mark Sedge>Make sense?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/313-0
+00:16:40.811 --> 00:16:44.251
+<v Pandya, Sandeep 14402>Yeah, I have a question,
+but I'll let Jill ask her question first.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/315-0
+00:16:46.491 --> 00:16:48.519
+<v Collins, Gillian 14363>You can go if you like, Sandy,
+if it's related,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/315-1
+00:16:48.519 --> 00:16:50.251
+<v Collins, Gillian 14363>mine is probably just slightly different.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/320-0
+00:16:48.771 --> 00:16:53.174
+<v Pandya, Sandeep 14402>No, Sir, no, Sir. I mean,
+I understand the logic completely, mark.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/320-1
+00:16:53.174 --> 00:16:57.971
+<v Pandya, Sandeep 14402>So that's that's fine. Helpful.
+Will this be driven by MPLS? Then again,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/320-2
+00:16:57.971 --> 00:17:03.360
+<v Pandya, Sandeep 14402>because why I'm asking why I'm focusing
+on MPLS because we will have user stories</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/320-3
+00:17:03.360 --> 00:17:06.251
+<v Pandya, Sandeep 14402>at the back of these broken down
+processes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/324-0
+00:17:06.531 --> 00:17:10.122
+<v Pandya, Sandeep 14402>So when we are you,
+when we are reviewing the user stories,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/324-1
+00:17:10.122 --> 00:17:14.671
+<v Pandya, Sandeep 14402>shall we also start thinking that OK,
+that step or that piece of work might</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/324-2
+00:17:14.671 --> 00:17:19.519
+<v Pandya, Sandeep 14402>take this much time and then let's try
+and you know, argue or debate on the SLA.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/324-3
+00:17:19.519 --> 00:17:22.571
+<v Pandya, Sandeep 14402>So it's like two things done together
+rather than.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/327-0
+00:17:23.171 --> 00:17:26.508
+<v Pandya, Sandeep 14402>I mean, I'm just gonna. I'm. I'm just,
+like, not getting the detection of.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/325-0
+00:17:24.371 --> 00:17:24.491
+<v Debra Howard>None.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/331-0
+00:17:25.851 --> 00:17:26.731
+<v Collins, Gillian 14363>Play song.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/327-1
+00:17:26.508 --> 00:17:27.931
+<v Pandya, Sandeep 14402>How should I assess that really.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/333-0
+00:17:26.771 --> 00:17:30.968
+<v Mark Sedge>So ideally what you would do is right,
+it's not necessarily through that story</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/333-1
+00:17:30.968 --> 00:17:33.411
+<v Mark Sedge>piece,
+because what you'll do is you'll track</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/333-2
+00:17:33.411 --> 00:17:37.289
+<v Mark Sedge>that once you start to measure.
+So once you actually start to get all of</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/333-3
+00:17:37.289 --> 00:17:40.848
+<v Mark Sedge>the controls that you need,
+you'll be able to look across each one</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/333-4
+00:17:40.848 --> 00:17:44.938
+<v Mark Sedge>and look at the typical behaviour,
+look at what your teams are able to do to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/333-5
+00:17:44.938 --> 00:17:46.691
+<v Mark Sedge>joshie's point and Deborah Point.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/340-0
+00:17:46.811 --> 00:17:51.397
+<v Mark Sedge>About them being realistic in terms of
+what you've got to achieve and then make</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/340-1
+00:17:51.397 --> 00:17:55.983
+<v Mark Sedge>it appropriate to get the objective set
+against that task delivery and then you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/334-0
+00:17:51.451 --> 00:17:51.571
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/340-2
+00:17:55.983 --> 00:17:58.506
+<v Mark Sedge>can say, well, what do I need to,
+you know,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/336-0
+00:17:56.731 --> 00:17:56.851
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/340-3
+00:17:58.506 --> 00:18:02.977
+<v Mark Sedge>present back to my business in terms of a
+service level because typically the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/340-4
+00:18:02.977 --> 00:18:06.531
+<v Mark Sedge>service level is obviously your client,
+your customer facing.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/344-0
+00:18:06.851 --> 00:18:11.023
+<v Mark Sedge>Your overlays about the management of
+your community and at the moment what we</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/339-0
+00:18:08.251 --> 00:18:08.371
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/342-0
+00:18:09.571 --> 00:18:09.691
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/344-1
+00:18:11.023 --> 00:18:14.878
+<v Mark Sedge>need to do is understand what the
+management cycle is to then be able to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/344-2
+00:18:14.878 --> 00:18:16.251
+<v Mark Sedge>say what can we commit to.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/346-0
+00:18:19.731 --> 00:18:20.051
+<v Pandya, Sandeep 14402>OK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/347-0
+00:18:20.571 --> 00:18:21.011
+<v Mark Sedge>That help?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/349-0
+00:18:22.651 --> 00:18:24.971
+<v Pandya, Sandeep 14402>Yep, Yep.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/350-0
+00:18:25.211 --> 00:18:25.451
+<v Mark Sedge>OK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/351-0
+00:18:27.131 --> 00:18:27.251
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/358-0
+00:18:27.691 --> 00:18:30.978
+<v Collins, Gillian 14363>So what I'm probably hearing just for
+what you said there, Mark,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/358-1
+00:18:30.978 --> 00:18:35.022
+<v Collins, Gillian 14363>is that from the user story perspective,
+we don't want to consider Slas 'cause.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/358-2
+00:18:35.022 --> 00:18:38.207
+<v Collins, Gillian 14363>I'm just probably conscious of if we get
+into debates of that,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/358-3
+00:18:38.207 --> 00:18:41.949
+<v Collins, Gillian 14363>it will slow down that process.
+So just to make sure that's really clear,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/355-0
+00:18:39.211 --> 00:18:39.971
+<v Mark Sedge>Yep, Yep.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/358-4
+00:18:41.949 --> 00:18:45.741
+<v Collins, Gillian 14363>we will pick this up afterwards after
+those user stories in place and it's</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/358-5
+00:18:45.741 --> 00:18:47.611
+<v Collins, Gillian 14363>probably easier to see 'cause you'll.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/364-0
+00:18:47.931 --> 00:18:51.049
+<v Collins, Gillian 14363>Maybe have seen some of it in the system
+by then,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/364-1
+00:18:51.049 --> 00:18:53.917
+<v Collins, Gillian 14363>so it might help you to answer that
+question.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/359-0
+00:18:51.691 --> 00:18:51.931
+<v Mark Sedge>Yep.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/364-2
+00:18:53.917 --> 00:18:58.593
+<v Collins, Gillian 14363>Sandeep around MPL level service level,
+whereas those kind of measures are</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/364-3
+00:18:58.593 --> 00:19:02.147
+<v Collins, Gillian 14363>certain etcetera.
+My question was going to be around for</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/364-4
+00:19:02.147 --> 00:19:03.331
+<v Collins, Gillian 14363>like finance group.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/369-0
+00:19:04.291 --> 00:19:07.381
+<v Collins, Gillian 14363>When we did service catalogue and all
+that,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/369-1
+00:19:07.381 --> 00:19:10.752
+<v Collins, Gillian 14363>there was SL as provided through that
+exercise.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/369-2
+00:19:10.752 --> 00:19:16.020
+<v Collins, Gillian 14363>What I'm keen to understand I suppose,
+is how real are those SL as and the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/369-3
+00:19:16.020 --> 00:19:20.093
+<v Collins, Gillian 14363>service catalogue?
+Have they been dealt with with kind of</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/369-4
+00:19:20.093 --> 00:19:22.691
+<v Collins, Gillian 14363>stakeholders and things like that so.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/373-0
+00:19:23.851 --> 00:19:26.219
+<v Collins, Gillian 14363>They agreed.
+Have our stakeholders and customers</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/373-1
+00:19:26.219 --> 00:19:29.843
+<v Collins, Gillian 14363>agreed to that service level or was it
+something that was done internally?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/373-2
+00:19:29.843 --> 00:19:33.709
+<v Collins, Gillian 14363>I'm just keen to hear about the approach
+at the time to understand whether it's</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/373-3
+00:19:33.709 --> 00:19:37.140
+<v Collins, Gillian 14363>actually something we can use for certain
+services or processes or no.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/373-4
+00:19:37.140 --> 00:19:39.411
+<v Collins, Gillian 14363>Actually we probably want to start this
+again.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/380-0
+00:19:42.851 --> 00:19:46.119
+<v Elsworth, Tim 14011>So Jill,
+I think I can talk through that one.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/374-0
+00:19:43.371 --> 00:19:43.491
+<v Pandya, Sandeep 14402>Good.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/375-0
+00:19:44.331 --> 00:19:44.451
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/380-1
+00:19:46.119 --> 00:19:49.884
+<v Elsworth, Tim 14011>So when I populated the the data sets for
+the teams,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/380-2
+00:19:49.884 --> 00:19:54.999
+<v Elsworth, Tim 14011>I used the service catalogue as a
+foundation and if there was an SLA in</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/380-3
+00:19:54.999 --> 00:19:56.491
+<v Elsworth, Tim 14011>there, I included it.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/379-0
+00:19:56.931 --> 00:19:57.491
+<v Collins, Gillian 14363>Mm-hmm.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/383-0
+00:20:04.371 --> 00:20:04.491
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/384-0
+00:20:04.731 --> 00:20:04.851
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/387-0
+00:20:13.171 --> 00:20:13.291
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/394-0
+00:20:13.331 --> 00:20:17.764
+<v Elsworth, Tim 14011>It's a big succession that they have been
+agreed in the the sneeze and everyone.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/388-0
+00:20:14.011 --> 00:20:14.131
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/394-1
+00:20:17.764 --> 00:20:21.320
+<v Elsworth, Tim 14011>We're happy with them.
+I also included it where there was no SLA</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/394-2
+00:20:21.320 --> 00:20:23.837
+<v Elsworth, Tim 14011>identified in the guides or the maps as
+well.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/394-3
+00:20:23.837 --> 00:20:28.051
+<v Elsworth, Tim 14011>So there were times where there was just
+something in the service catalogue,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/394-4
+00:20:28.051 --> 00:20:31.553
+<v Elsworth, Tim 14011>but I personally haven't gone through
+with the sneeze and said,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/394-5
+00:20:31.553 --> 00:20:32.811
+<v Elsworth, Tim 14011>do you agree with this?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/393-0
+00:20:31.691 --> 00:20:31.851
+<v Debra Howard>No.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/395-0
+00:20:33.091 --> 00:20:34.091
+<v Collins, Gillian 14363>Yeah, that's cool.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/400-0
+00:20:33.451 --> 00:20:38.110
+<v Debra Howard>Having, yeah, having had a look at them,
+I think that sometimes they're generous</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/400-1
+00:20:38.110 --> 00:20:41.733
+<v Debra Howard>and sometimes they might be under,
+you know, like for example,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/400-2
+00:20:41.733 --> 00:20:45.126
+<v Debra Howard>a request for turning off a notification
+in ROM. You know,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/400-3
+00:20:45.126 --> 00:20:49.611
+<v Debra Howard>it's like 4 hours or six. You know,
+I thought, actually that's a long SLA so.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/407-0
+00:20:50.331 --> 00:20:54.497
+<v Debra Howard>And and actually for a lot of them,
+they're the same amount of hours.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/407-1
+00:20:54.497 --> 00:20:57.294
+<v Debra Howard>So maybe there is an opportunity,
+as you said,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/407-2
+00:20:57.294 --> 00:21:01.520
+<v Debra Howard>to have a look at the service level and
+the story. And so for example,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/407-3
+00:21:01.520 --> 00:21:05.031
+<v Debra Howard>if it's one contact, one person,
+no approval, I think Tim,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/407-4
+00:21:05.031 --> 00:21:09.851
+<v Debra Howard>you've already marked them in that way.
+There could be an SLA that maps to that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/409-0
+00:21:09.891 --> 00:21:14.048
+<v Debra Howard>Type of amount of activity within there
+and how many handoffs there are,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/409-1
+00:21:14.048 --> 00:21:17.691
+<v Debra Howard>so there could be an opportunity to,
+you know, to revisit that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/413-0
+00:21:19.691 --> 00:21:23.896
+<v Collins, Gillian 14363>OK. Sandeep, from your perspective,
+like when the service catalogue was done,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/413-1
+00:21:23.896 --> 00:21:27.291
+<v Collins, Gillian 14363>how comfortable are you that the SL ES
+and there are accurate?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/411-0
+00:21:26.411 --> 00:21:26.531
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/420-0
+00:21:28.651 --> 00:21:33.092
+<v Pandya, Sandeep 14402>So you you have to,
+I mean the the question is 2 layers gaol.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/420-1
+00:21:33.092 --> 00:21:38.464
+<v Pandya, Sandeep 14402>So internally they are accurate.
+So what we should be doing and what we're</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/420-2
+00:21:38.464 --> 00:21:42.261
+<v Pandya, Sandeep 14402>supposed to do, yes,
+I mean that's how it is framed.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/420-3
+00:21:42.261 --> 00:21:47.131
+<v Pandya, Sandeep 14402>And so I'm comfortable like from internal
+perspective, but I think.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/418-0
+00:21:46.651 --> 00:21:47.251
+<v Collins, Gillian 14363>Mm-hmm.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/427-0
+00:21:47.491 --> 00:21:52.798
+<v Pandya, Sandeep 14402>Your quick the second question or the
+second layer is around the stakeholders.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/422-0
+00:21:52.291 --> 00:21:52.611
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/427-1
+00:21:52.798 --> 00:21:56.693
+<v Pandya, Sandeep 14402>Now I know that from cashier's site like
+both AUS and UK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/427-2
+00:21:56.693 --> 00:22:01.999
+<v Pandya, Sandeep 14402>And when we are dealing with the partners
+or when we are dealing with say Anna</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/427-3
+00:22:01.999 --> 00:22:06.298
+<v Pandya, Sandeep 14402>deals with the operations team,
+those Slas are defined with our</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/425-0
+00:22:03.731 --> 00:22:03.771
+<v Collins, Gillian 14363>I.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/427-4
+00:22:06.298 --> 00:22:07.171
+<v Pandya, Sandeep 14402>stakeholders.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/430-0
+00:22:07.291 --> 00:22:10.932
+<v Pandya, Sandeep 14402>Folders and and that's what we always
+refer back to,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/430-1
+00:22:10.932 --> 00:22:16.565
+<v Pandya, Sandeep 14402>but I don't know from a billing E billing
+perspective that we have ever discussed</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/430-2
+00:22:16.565 --> 00:22:19.931
+<v Pandya, Sandeep 14402>with our stakeholders.
+And in fact Rama as well.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/432-0
+00:22:21.011 --> 00:22:25.291
+<v Collins, Gillian 14363>OK. So it's maybe something so on you go,
+Mark.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/439-0
+00:22:22.291 --> 00:22:27.781
+<v Mark Sedge>Joe, I think now I was just going to say,
+I think the real question around the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/433-0
+00:22:26.931 --> 00:22:27.051
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/439-1
+00:22:27.781 --> 00:22:33.341
+<v Mark Sedge>validity of your SL as is how many times
+do you have a service review with your</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/439-2
+00:22:33.341 --> 00:22:37.371
+<v Mark Sedge>stakeholders and how many times do your
+stakeholders say?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/436-0
+00:22:34.091 --> 00:22:34.211
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/437-0
+00:22:35.171 --> 00:22:35.411
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/438-0
+00:22:35.411 --> 00:22:35.851
+<v Pandya, Sandeep 14402>And then.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/448-0
+00:22:37.931 --> 00:22:40.828
+<v Mark Sedge>We're not happy or this hasn't worked or
+whatever,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/448-1
+00:22:40.828 --> 00:22:45.542
+<v Mark Sedge>because if that's if that's not often or
+not at all, then it kind of sort of says,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/442-0
+00:22:43.171 --> 00:22:43.291
+<v Pandya, Sandeep 14402>OK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/448-2
+00:22:45.542 --> 00:22:47.984
+<v Mark Sedge>well,
+they may be just numbers on the page</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/448-3
+00:22:47.984 --> 00:22:52.414
+<v Mark Sedge>because the follow through of service
+levels is that there's a regular review</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/448-4
+00:22:52.414 --> 00:22:54.912
+<v Mark Sedge>that says,
+are we as a team supporting you,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/448-5
+00:22:54.912 --> 00:22:57.411
+<v Mark Sedge>Mr customer in terms of what you're
+trying?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/454-0
+00:22:57.491 --> 00:23:02.374
+<v Mark Sedge>Trying to achieve and are we supporting
+you in terms of your fulfilment of your</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/449-0
+00:23:02.011 --> 00:23:02.131
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/454-1
+00:23:02.374 --> 00:23:06.462
+<v Mark Sedge>business objectives? If that.
+If there's none of that dialogue and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/451-0
+00:23:03.851 --> 00:23:03.971
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/454-2
+00:23:06.462 --> 00:23:10.795
+<v Mark Sedge>there's no escalations back against that
+other than the odd exception,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/454-3
+00:23:10.795 --> 00:23:12.931
+<v Mark Sedge>you kind of look at it and go well.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/461-0
+00:23:14.251 --> 00:23:17.234
+<v Pandya, Sandeep 14402>Yeah. No, no, no, mark,
+we are not there yet. So I mean,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/455-0
+00:23:14.291 --> 00:23:15.611
+<v Mark Sedge>Has it really been agreed?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/461-1
+00:23:17.234 --> 00:23:20.165
+<v Pandya, Sandeep 14402>I can don't do that and we want to do
+that desperately.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/456-0
+00:23:17.811 --> 00:23:18.011
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/461-2
+00:23:20.165 --> 00:23:24.090
+<v Pandya, Sandeep 14402>And I think somewhere some like say for
+example E billing would send start</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/461-3
+00:23:24.090 --> 00:23:27.334
+<v Pandya, Sandeep 14402>sending the reports like you know what is
+there with the BES,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/461-4
+00:23:27.334 --> 00:23:31.626
+<v Pandya, Sandeep 14402>what is there sitting with the partners,
+what is there sitting with us out of the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/461-5
+00:23:31.626 --> 00:23:33.771
+<v Pandya, Sandeep 14402>whole population of invoices pending but.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/464-0
+00:23:34.451 --> 00:23:37.265
+<v Pandya, Sandeep 14402>It is not.
+It is not a case where I would sit with</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/464-1
+00:23:37.265 --> 00:23:41.678
+<v Pandya, Sandeep 14402>one of the B managers and discuss those
+things with them. So I mean it happens,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/464-2
+00:23:41.678 --> 00:23:44.492
+<v Pandya, Sandeep 14402>but you know in,
+in specific teams due to specific</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/464-3
+00:23:44.492 --> 00:23:46.091
+<v Pandya, Sandeep 14402>escalation reasons, you know.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/465-0
+00:23:46.771 --> 00:23:47.531
+<v Mark Sedge>Yeah, understood.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/466-0
+00:23:46.851 --> 00:23:48.131
+<v Collins, Gillian 14363>Yeah, and that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/470-0
+00:23:47.531 --> 00:23:51.840
+<v Pandya, Sandeep 14402>And then this is where I was going for
+the. I mean on a couple of other slides,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/470-1
+00:23:51.840 --> 00:23:56.310
+<v Pandya, Sandeep 14402>which you did show to show Josh like the
+what was it called the G SAT and you know</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/470-2
+00:23:56.310 --> 00:23:58.680
+<v Pandya, Sandeep 14402>the two abbreviations,
+what you used right?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/470-3
+00:23:58.680 --> 00:24:02.611
+<v Pandya, Sandeep 14402>Because that's basically the scoring
+metrics what we might want to have.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/471-0
+00:24:03.011 --> 00:24:03.451
+<v Pandya, Sandeep 14402>Now.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/476-0
+00:24:05.411 --> 00:24:07.998
+<v Pandya, Sandeep 14402>I mean the question is the question
+sometimes,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/476-1
+00:24:07.998 --> 00:24:12.345
+<v Pandya, Sandeep 14402>I mean the question is sitting with us,
+whether we have the right Slas to have</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/476-2
+00:24:12.345 --> 00:24:15.371
+<v Pandya, Sandeep 14402>those NPS and CSAT, you know,
+numbers to prove or not.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/477-0
+00:24:16.491 --> 00:24:16.731
+<v Mark Sedge>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/489-0
+00:24:17.531 --> 00:24:19.712
+<v Collins, Gillian 14363>Yeah,
+and that's that's what I'm trying to get</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/489-1
+00:24:19.712 --> 00:24:23.283
+<v Collins, Gillian 14363>to through this conversation, right,
+because we we don't measure Slas at the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/479-0
+00:24:21.171 --> 00:24:21.291
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/480-0
+00:24:21.731 --> 00:24:21.851
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/489-2
+00:24:23.283 --> 00:24:27.087
+<v Collins, Gillian 14363>moment. Mark, we might have them in place,
+but we don't measure them and actively</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/489-3
+00:24:27.087 --> 00:24:29.685
+<v Collins, Gillian 14363>talk about them.
+So it's just to make sure we have this</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/482-0
+00:24:28.331 --> 00:24:28.451
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/489-4
+00:24:29.685 --> 00:24:32.561
+<v Collins, Gillian 14363>discussion so that we know the
+information that we have isn't</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/484-0
+00:24:30.891 --> 00:24:31.091
+<v Mark Sedge>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/489-5
+00:24:32.561 --> 00:24:36.411
+<v Collins, Gillian 14363>necessarily valid and it's something that
+we probably need to revisit and look at.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/485-0
+00:24:33.931 --> 00:24:34.131
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/496-0
+00:24:36.931 --> 00:24:39.340
+<v Debra Howard>Yeah,
+and they might be set to the point that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/487-0
+00:24:37.091 --> 00:24:37.331
+<v Mark Sedge>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/488-0
+00:24:37.611 --> 00:24:37.731
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/496-1
+00:24:39.340 --> 00:24:42.062
+<v Debra Howard>you never breach them. They might be. So,
+you know,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/496-2
+00:24:42.062 --> 00:24:44.471
+<v Debra Howard>like 4 hours to do one five minute,
+you know.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/491-0
+00:24:42.691 --> 00:24:43.131
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/496-3
+00:24:44.471 --> 00:24:48.555
+<v Debra Howard>And it makes the picture look rosy,
+whether it's true and you can report upon</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/496-4
+00:24:48.555 --> 00:24:52.691
+<v Debra Howard>it effectively as a different matter.
+So it's probably having writing the user</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/494-0
+00:24:51.451 --> 00:24:51.571
+<v Mark Sedge>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/496-5
+00:24:52.691 --> 00:24:56.251
+<v Debra Howard>stories and looking got, you know,
+I'm actually looking at the SLA.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/501-0
+00:24:56.571 --> 00:24:59.399
+<v Debra Howard>The same time,
+think God that was generous,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/501-1
+00:24:59.399 --> 00:25:02.613
+<v Debra Howard>so there might be an opportunity,
+as you say, to,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/501-2
+00:25:02.613 --> 00:25:07.755
+<v Debra Howard>to revisit that and probably just one
+quick question for the MPL references for</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/498-0
+00:25:03.411 --> 00:25:03.611
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/501-3
+00:25:07.755 --> 00:25:11.226
+<v Debra Howard>the processes,
+because we took 70 processes at a time</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/501-4
+00:25:11.226 --> 00:25:13.411
+<v Debra Howard>and rolled it up to five services.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/506-0
+00:25:14.171 --> 00:25:19.696
+<v Debra Howard>A lot of those MPL references were of the
+same process but with a different</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/506-1
+00:25:19.696 --> 00:25:23.258
+<v Debra Howard>scenario,
+so that might be another consideration</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/506-2
+00:25:23.258 --> 00:25:27.620
+<v Debra Howard>when reviewing them,
+of which MPL that you're referring to.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/506-3
+00:25:27.620 --> 00:25:30.091
+<v Debra Howard>I would probably say there's some.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/505-0
+00:25:30.211 --> 00:25:30.331
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/512-0
+00:25:31.211 --> 00:25:37.172
+<v Debra Howard>Just some thought around maybe revisiting
+that process as well and and what that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/508-0
+00:25:35.011 --> 00:25:35.611
+<v Pandya, Sandeep 14402>Mm-hmm.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/512-1
+00:25:37.172 --> 00:25:42.691
+<v Debra Howard>end to end looks like. So they're not,
+it isn't a direct 1 to one mapping.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/510-0
+00:25:41.531 --> 00:25:41.651
+<v Josh Sparkes>Yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/519-0
+00:25:42.131 --> 00:25:45.785
+<v Pandya, Sandeep 14402>Exactly, that's.
+That's what I was thinking because it had</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/513-0
+00:25:44.891 --> 00:25:45.171
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/519-1
+00:25:45.785 --> 00:25:49.871
+<v Pandya, Sandeep 14402>to be. I mean, it's not,
+it should not be one to one if it is one</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/519-2
+00:25:49.871 --> 00:25:52.844
+<v Pandya, Sandeep 14402>to one,
+then you're just exaggerating your time</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/516-0
+00:25:51.691 --> 00:25:52.171
+<v Debra Howard>Yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/519-3
+00:25:52.844 --> 00:25:57.611
+<v Pandya, Sandeep 14402>and all I could really get you and I
+think what I wanted to clarify is that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/518-0
+00:25:57.331 --> 00:25:57.451
+<v Debra Howard>But.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/523-0
+00:25:58.171 --> 00:26:01.683
+<v Pandya, Sandeep 14402>To do this while we're doing the user
+stories, the answer is no.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/523-1
+00:26:01.683 --> 00:26:05.356
+<v Pandya, Sandeep 14402>So then it make it gives us some time to
+think about. First of all,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/523-2
+00:26:05.356 --> 00:26:09.786
+<v Pandya, Sandeep 14402>review our SL as and this is my message
+to all the SMEs over here that review our</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/523-3
+00:26:09.786 --> 00:26:12.811
+<v Pandya, Sandeep 14402>current SL as at the back of the service
+catalogue and.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/529-0
+00:26:13.051 --> 00:26:17.070
+<v Pandya, Sandeep 14402>Be ready to kind of, you know, like see,
+because a big element of of of the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/529-1
+00:26:17.070 --> 00:26:20.084
+<v Pandya, Sandeep 14402>changes. ServiceNow,
+how is ServiceNow going to increase</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/525-0
+00:26:17.691 --> 00:26:17.811
+<v Collins, Gillian 14363>Good.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/529-2
+00:26:20.084 --> 00:26:24.472
+<v Pandya, Sandeep 14402>decrease that specific MPL task or or or
+that's task right? So we don't know that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/529-3
+00:26:24.472 --> 00:26:28.174
+<v Pandya, Sandeep 14402>So do we need to alter our you know Slas
+or not. I mean it's an open,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/529-4
+00:26:28.174 --> 00:26:29.971
+<v Pandya, Sandeep 14402>it's going to be an open position.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/536-0
+00:26:28.811 --> 00:26:32.295
+<v Mark Sedge>So and Sandeep,
+I would counsel that that's something you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/528-0
+00:26:29.771 --> 00:26:29.931
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/536-1
+00:26:32.295 --> 00:26:36.860
+<v Mark Sedge>will do after you've gone live enough
+after you've been operational with a,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/536-2
+00:26:36.860 --> 00:26:40.944
+<v Mark Sedge>you know, a good few weeks,
+you know 8 to 12 weeks worth of data to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/536-3
+00:26:40.944 --> 00:26:45.029
+<v Mark Sedge>be able to actively use your real time
+data to be able to evaluate.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/536-4
+00:26:45.029 --> 00:26:47.491
+<v Mark Sedge>So what does that actually mean and what?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/533-0
+00:26:45.171 --> 00:26:45.211
+<v Josh Sparkes>I.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/534-0
+00:26:46.251 --> 00:26:46.371
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/540-0
+00:26:47.571 --> 00:26:48.011
+<v Mark Sedge>What is it?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/543-0
+00:26:48.251 --> 00:26:51.874
+<v Mark Sedge>Because because you also want to leverage
+against importance to the business,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/543-1
+00:26:51.874 --> 00:26:55.683
+<v Mark Sedge>you don't measure the hell out of things
+that actually don't make material impact</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/543-2
+00:26:55.683 --> 00:26:59.305
+<v Mark Sedge>to the end to end journey of that product
+stack or that that item that you're</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/543-3
+00:26:59.305 --> 00:27:01.349
+<v Mark Sedge>pushing through your service.
+So there's a,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/543-4
+00:27:01.349 --> 00:27:04.739
+<v Mark Sedge>there's a little bit of a balance and I
+think this will be a really good</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/543-5
+00:27:04.739 --> 00:27:07.851
+<v Mark Sedge>opportunity once you're running,
+once you've got some source data.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/550-0
+00:27:08.051 --> 00:27:11.494
+<v Mark Sedge>To do a focused exercise of saying what
+do we, what's material,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/542-0
+00:27:08.811 --> 00:27:08.931
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/550-1
+00:27:11.494 --> 00:27:14.882
+<v Mark Sedge>what do we need to measure,
+what's important to our customers?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/550-2
+00:27:14.882 --> 00:27:19.185
+<v Mark Sedge>And then the converse of that is what do
+we need to measure for the performance</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/550-3
+00:27:19.185 --> 00:27:23.219
+<v Mark Sedge>and management of our teams and the
+combination of those two enable you to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/547-0
+00:27:23.171 --> 00:27:23.291
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/550-4
+00:27:23.219 --> 00:27:26.553
+<v Mark Sedge>then move, you know,
+sort of define that and then say to your</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/550-5
+00:27:26.553 --> 00:27:27.091
+<v Mark Sedge>customers.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/556-0
+00:27:27.771 --> 00:27:32.255
+<v Mark Sedge>This is how we're measuring output your
+our service for you to enable them to be</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/556-1
+00:27:32.255 --> 00:27:36.129
+<v Mark Sedge>able to take some comfort because
+remember there's a there's a direct</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/556-2
+00:27:36.129 --> 00:27:40.170
+<v Mark Sedge>correlation between usually process
+performance and reports the customer</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/556-3
+00:27:40.170 --> 00:27:43.601
+<v Mark Sedge>needs. If someone's working really well,
+the customer is not,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/556-4
+00:27:43.601 --> 00:27:47.531
+<v Mark Sedge>doesn't even need a report.
+It's not it not important if it's if it's.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/554-0
+00:27:44.371 --> 00:27:44.491
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/561-0
+00:27:47.651 --> 00:27:51.539
+<v Mark Sedge>Causing them impacting their business,
+then they're going to want to report.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/561-1
+00:27:51.539 --> 00:27:55.629
+<v Mark Sedge>Then they're going to want some, you know,
+some sort of service level objective,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/561-2
+00:27:55.629 --> 00:27:58.052
+<v Mark Sedge>etcetera.
+So I would use the period of time and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/561-3
+00:27:58.052 --> 00:28:02.041
+<v Mark Sedge>make it a focus period of time where
+you're collecting the data you're looking</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/561-4
+00:28:02.041 --> 00:28:04.565
+<v Mark Sedge>at it.
+Everyone's updating the records correctly.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/561-5
+00:28:04.565 --> 00:28:07.291
+<v Mark Sedge>Everyone's going through that,
+you know that hygiene.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/564-0
+00:28:07.451 --> 00:28:11.670
+<v Mark Sedge>Of task management and then you can
+really start to tell what you need to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/564-1
+00:28:11.670 --> 00:28:15.091
+<v Mark Sedge>measure and where you alley those
+hoefully that made sense.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/562-0
+00:28:13.171 --> 00:28:13.291
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/569-0
+00:28:15.451 --> 00:28:18.748
+<v Debra Howard>And also you've got activities that are
+got the high volume.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/569-1
+00:28:18.748 --> 00:28:23.018
+<v Debra Howard>So you know if it was just one offs you
+could say your SLA you know it takes X</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/569-2
+00:28:23.018 --> 00:28:27.288
+<v Debra Howard>amounts but actually with the volumes
+that you're doing that SLA won't have to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/569-3
+00:28:27.288 --> 00:28:31.558
+<v Debra Howard>be extended because you're getting so
+many you can't the customer can't expect</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/569-4
+00:28:31.558 --> 00:28:33.611
+<v Debra Howard>it to be turned around if it was just.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/573-0
+00:28:33.891 --> 00:28:37.298
+<v Debra Howard>One you know,
+so you have to also look realistically</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/573-1
+00:28:37.298 --> 00:28:42.183
+<v Debra Howard>the the volumes to make it you know,
+so that you're you're always operating</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/573-2
+00:28:42.183 --> 00:28:47.067
+<v Debra Howard>within that based on that activity you
+know end of month you know as well E</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/573-3
+00:28:47.067 --> 00:28:48.931
+<v Debra Howard>billing I think they had the.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/578-0
+00:28:50.011 --> 00:28:52.846
+<v Debra Howard>The you know very sort of 7000 invoices a
+month.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/578-1
+00:28:52.846 --> 00:28:57.301
+<v Debra Howard>So you know the SLA on that might be
+slightly more because they have to turn</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/578-2
+00:28:57.301 --> 00:29:00.657
+<v Debra Howard>around so many,
+but that's something else as probably not</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/578-3
+00:29:00.657 --> 00:29:05.343
+<v Debra Howard>said something to address that we can do
+realistic ones once you've got all that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/578-4
+00:29:05.343 --> 00:29:06.211
+<v Debra Howard>data coming in.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/577-0
+00:29:05.371 --> 00:29:06.891
+<v Mark Sedge>Yeah, yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/588-0
+00:29:08.211 --> 00:29:08.771
+<v Mark Sedge>Play song.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/590-0
+00:29:08.811 --> 00:29:12.375
+<v Mark Sedge>The aim, the aim there.
+So just divide just very quickly to add</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/580-0
+00:29:09.971 --> 00:29:10.091
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/590-1
+00:29:12.375 --> 00:29:16.886
+<v Mark Sedge>to that the aim there would be you'd be
+saying 90 something percent are going to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/590-2
+00:29:16.886 --> 00:29:20.895
+<v Mark Sedge>be completed within this period.
+The rest we'd hope to complete in this</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/582-0
+00:29:18.651 --> 00:29:18.771
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/584-0
+00:29:20.811 --> 00:29:21.971
+<v Josh Sparkes>Play song.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/590-3
+00:29:20.895 --> 00:29:24.181
+<v Mark Sedge>period. Now again,
+it doesn't help if you're the customers</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/590-4
+00:29:24.181 --> 00:29:28.691
+<v Mark Sedge>one that happens to be in the 2% that
+didn't make it. But as long as you've got.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/586-0
+00:29:24.891 --> 00:29:25.011
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/587-0
+00:29:24.971 --> 00:29:25.451
+<v Debra Howard>Yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/595-0
+00:29:28.811 --> 00:29:33.156
+<v Mark Sedge>One thing that gives them the steer they
+say, won't won't just fall off the Cliff.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/595-1
+00:29:33.156 --> 00:29:37.187
+<v Mark Sedge>You will continue to push for it and
+that's why why we do the baselining and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/595-2
+00:29:37.187 --> 00:29:41.113
+<v Mark Sedge>that's why you'd go through that
+structured approach because otherwise you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/595-3
+00:29:41.113 --> 00:29:43.678
+<v Mark Sedge>can't.
+You'll you'll either over commit and then</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/595-4
+00:29:43.678 --> 00:29:47.133
+<v Mark Sedge>consistently fail or you will under
+commit consistently be green.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/595-5
+00:29:47.133 --> 00:29:48.651
+<v Mark Sedge>But the customers love a bad.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/596-0
+00:29:48.931 --> 00:29:51.891
+<v Mark Sedge>Experience and that's the balance, OK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/602-0
+00:29:51.611 --> 00:29:54.475
+<v Pandya, Sandeep 14402>You know,
+I mean we we we do have those manually</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/602-1
+00:29:54.475 --> 00:29:57.747
+<v Pandya, Sandeep 14402>like you know,
+you took an example of eviling and we we</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/602-2
+00:29:57.747 --> 00:30:02.481
+<v Pandya, Sandeep 14402>have exactly a slab of what percentages
+around what days and ageing we should be</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/598-0
+00:29:58.131 --> 00:29:58.171
+<v Debra Howard>Oh.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/602-3
+00:30:02.481 --> 00:30:05.286
+<v Pandya, Sandeep 14402>having.
+So I mean that's an easy example for us</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/600-0
+00:30:04.731 --> 00:30:04.971
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/602-4
+00:30:05.286 --> 00:30:06.571
+<v Pandya, Sandeep 14402>to put in perspective.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/604-0
+00:30:11.971 --> 00:30:12.091
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/606-0
+00:30:18.131 --> 00:30:18.251
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/608-0
+00:30:18.291 --> 00:30:21.546
+<v Pandya, Sandeep 14402>The number of requests compared to the
+complexity.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/608-1
+00:30:21.546 --> 00:30:23.971
+<v Pandya, Sandeep 14402>Do we have any Slas over there or not?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/612-0
+00:30:27.091 --> 00:30:32.176
+<v Debra Howard>There's Slas on the documentation.
+I think that's probably to Tim's point</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/612-1
+00:30:32.176 --> 00:30:35.611
+<v Debra Howard>that he pulled out that we've we've seen
+to date.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/617-0
+00:30:35.251 --> 00:30:37.939
+<v Pandya, Sandeep 14402>Yeah, I mean it's it's, it's just a,
+it's it's,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/617-1
+00:30:37.939 --> 00:30:42.531
+<v Pandya, Sandeep 14402>I don't know if you're speaking or I mean
+you're mute though it's it's more about</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/613-0
+00:30:41.291 --> 00:30:41.411
+<v Josh Sparkes>Yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/617-2
+00:30:42.531 --> 00:30:45.163
+<v Pandya, Sandeep 14402>that.
+That's one of the most complex things to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/617-3
+00:30:45.163 --> 00:30:49.755
+<v Pandya, Sandeep 14402>kind of like you know, SS and SLA in, in,
+in my opinion because others are pretty</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/623-0
+00:30:48.171 --> 00:30:52.513
+<v Taylor,Geraldine  14688>Because other than black and white, yes.
+Sorry. I was on mute.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/617-4
+00:30:49.755 --> 00:30:50.931
+<v Pandya, Sandeep 14402>much black and white.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/623-1
+00:30:52.513 --> 00:30:57.888
+<v Taylor,Geraldine  14688>They are talking away. Apology and yeah.
+So, yeah. And Deborah, you're right.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/623-2
+00:30:57.888 --> 00:31:02.505
+<v Taylor,Geraldine  14688>We do have SL as in place.
+The majority of them are four hours and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/620-0
+00:31:02.291 --> 00:31:02.411
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/623-3
+00:31:02.505 --> 00:31:07.605
+<v Taylor,Geraldine  14688>that's fine for your basic ones.
+But and there is other ones where the SL</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/621-0
+00:31:03.811 --> 00:31:04.051
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/623-4
+00:31:07.605 --> 00:31:07.811
+<v Taylor,Geraldine  14688>as.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/628-0
+00:31:07.931 --> 00:31:12.319
+<v Taylor,Geraldine  14688>Do need to be more so we've for example,
+a panel agreement.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/628-1
+00:31:12.319 --> 00:31:17.292
+<v Taylor,Geraldine  14688>It's not gonna take 4 hours.
+It's you know that that's gonna take a</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/628-2
+00:31:17.292 --> 00:31:23.288
+<v Taylor,Geraldine  14688>lot longer and and you know potentially
+the queries are a bit difficult cause the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/628-3
+00:31:23.288 --> 00:31:24.531
+<v Taylor,Geraldine  14688>queries can take.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/638-0
+00:31:25.331 --> 00:31:29.697
+<v Taylor,Geraldine  14688>Can take, you know, up to four hours,
+but some of them also take a couple of</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/638-1
+00:31:29.697 --> 00:31:32.135
+<v Taylor,Geraldine  14688>days,
+so maybe that's something we need to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/630-0
+00:31:30.891 --> 00:31:31.091
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/638-2
+00:31:32.135 --> 00:31:35.764
+<v Taylor,Geraldine  14688>consider as well. Sandy,
+depending on maybe we need to consider</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/632-0
+00:31:32.611 --> 00:31:32.891
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/638-3
+00:31:35.764 --> 00:31:38.939
+<v Taylor,Geraldine  14688>how what type of query it is.
+We've got queries lifted,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/634-0
+00:31:37.571 --> 00:31:39.571
+<v Pandya, Sandeep 14402>Yeah, yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/638-4
+00:31:38.939 --> 00:31:43.588
+<v Taylor,Geraldine  14688>but some of them definitely take longer
+than four hours and can take several days</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/638-5
+00:31:43.588 --> 00:31:44.211
+<v Taylor,Geraldine  14688>to resolve.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/636-0
+00:31:44.011 --> 00:31:44.211
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/639-0
+00:31:44.771 --> 00:31:46.211
+<v Taylor,Geraldine  14688>Depending on the complexity.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/637-0
+00:31:45.051 --> 00:31:45.211
+<v Debra Howard>No.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/641-0
+00:31:48.131 --> 00:31:49.251
+<v Taylor,Geraldine  14688>Does that answer your question?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/643-0
+00:31:50.211 --> 00:31:53.837
+<v Pandya, Sandeep 14402>Yeah. Yeah.
+So I mean answers the question that it's</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/644-0
+00:31:50.571 --> 00:31:54.944
+<v Taylor,Geraldine  14688>Yeah, yeah.
+So we answer the question that on, yeah,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/643-1
+00:31:53.837 --> 00:31:54.931
+<v Pandya, Sandeep 14402>than others, so.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/644-1
+00:31:54.944 --> 00:31:55.851
+<v Taylor,Geraldine  14688>sure, yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/649-0
+00:31:57.971 --> 00:32:02.811
+<v Pandya, Sandeep 14402>OK. And can I,
+sorry something has and raised.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/650-0
+00:31:58.491 --> 00:32:03.211
+<v Taylor,Geraldine  14688>OK. And can I,
+sorry something else and raised.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/646-0
+00:32:00.891 --> 00:32:01.011
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/654-0
+00:32:04.851 --> 00:32:08.531
+<v Josh Sparkes>There's a there's quite a big echo
+Sandeep on your end, yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/655-0
+00:32:05.211 --> 00:32:08.691
+<v Taylor,Geraldine  14688>There's a there's quite a big echo.
+There's some feedback, yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/653-0
+00:32:06.691 --> 00:32:07.811
+<v Collins, Gillian 14363>Get some feedback.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/656-0
+00:32:11.211 --> 00:32:12.251
+<v Josh Sparkes>Maybe somebody got there.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/658-0
+00:32:11.611 --> 00:32:12.451
+<v Taylor,Geraldine  14688>Somebody's got.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/659-0
+00:32:11.851 --> 00:32:13.891
+<v Collins, Gillian 14363>Geraldine, could you go on mute, please?
+Thank you.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/660-0
+00:32:13.971 --> 00:32:14.211
+<v Josh Sparkes>Hmm.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/662-0
+00:32:17.771 --> 00:32:18.091
+<v Pandya, Sandeep 14402>Good luck.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/663-0
+00:32:19.691 --> 00:32:20.571
+<v Josh Sparkes>Try again Sandeep.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/665-0
+00:32:21.971 --> 00:32:25.631
+<v Pandya, Sandeep 14402>I said somebody has a hand raised,
+so I don't know if they have a question.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/666-0
+00:32:25.091 --> 00:32:27.251
+<v Josh Sparkes>Oh yeah. Mark, please.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/665-1
+00:32:25.631 --> 00:32:26.931
+<v Pandya, Sandeep 14402>I'm just going on the next.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/668-0
+00:32:25.971 --> 00:32:29.931
+<v Mark Sedge>I was just going to say Mark's got his
+hand up, so go on, Josh. Go on.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/674-0
+00:32:28.811 --> 00:32:32.445
+<v Tinsley, Mark>Yeah. Hey, guys. Yeah.
+It's just one quick question.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/669-0
+00:32:32.091 --> 00:32:32.211
+<v Pandya, Sandeep 14402>None.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/674-1
+00:32:32.445 --> 00:32:36.352
+<v Tinsley, Mark>It's not spinance SLA specific,
+but just SLA in general.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/674-2
+00:32:36.352 --> 00:32:40.808
+<v Tinsley, Mark>Since you've got the design principles up
+where there is an SLA,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/674-3
+00:32:40.808 --> 00:32:46.498
+<v Tinsley, Mark>have you decided yet on what the strategy
+is for communicating that SLA to the end</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/674-4
+00:32:46.498 --> 00:32:48.211
+<v Tinsley, Mark>user through like a note?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/675-0
+00:32:48.251 --> 00:32:52.531
+<v Tinsley, Mark>Location template or is that going to be
+hidden on phase one?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/679-0
+00:32:56.891 --> 00:33:00.807
+<v Josh Sparkes>I think not, mark, not that I've heard of.
+We got a specific strategy for displaying</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/679-1
+00:33:00.807 --> 00:33:03.571
+<v Josh Sparkes>that to the user,
+yet unless you've heard of the wise mark?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/682-0
+00:33:07.091 --> 00:33:07.851
+<v Tinsley, Mark>That's the other mark.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/681-0
+00:33:07.971 --> 00:33:08.651
+<v Josh Sparkes>Said yeah, yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/688-0
+00:33:11.211 --> 00:33:15.634
+<v Mark Sedge>So I think there's where there's two,
+two things that we identified that the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/684-0
+00:33:15.171 --> 00:33:15.291
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/688-1
+00:33:15.634 --> 00:33:19.541
+<v Mark Sedge>organisation doesn't have,
+like a broader service strategy of which</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/688-2
+00:33:19.541 --> 00:33:24.078
+<v Mark Sedge>would include communication of service
+expectations, service levels, etcetera.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/688-3
+00:33:24.078 --> 00:33:28.099
+<v Mark Sedge>So you would have that in the broader
+piece. Now we haven't got that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/688-4
+00:33:28.099 --> 00:33:28.731
+<v Mark Sedge>So what we.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/696-0
+00:33:29.051 --> 00:33:32.836
+<v Mark Sedge>Yeah. And again,
+this comes back to perhaps whether it's</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/696-1
+00:33:32.836 --> 00:33:38.081
+<v Mark Sedge>organisational change or you know comms
+directive or whatever the key point is</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/696-2
+00:33:38.081 --> 00:33:41.599
+<v Mark Sedge>that you would be signposting to say one
+we want to,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/692-0
+00:33:40.171 --> 00:33:40.291
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/693-0
+00:33:41.171 --> 00:33:41.411
+<v Pandya, Sandeep 14402>Hmm.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/696-3
+00:33:41.599 --> 00:33:46.114
+<v Mark Sedge>we want to sort of get to position
+through the through the you know</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/696-4
+00:33:46.114 --> 00:33:48.371
+<v Mark Sedge>implementation of a of a stronger.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/700-0
+00:33:48.451 --> 00:33:50.984
+<v Mark Sedge>A tool set which will enable us to better
+measure.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/700-1
+00:33:50.984 --> 00:33:54.659
+<v Mark Sedge>So the first message you give is we're
+going to better measure ourselves,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/700-2
+00:33:54.659 --> 00:33:58.631
+<v Mark Sedge>so we have a better understanding and
+then you'll have a duration time of after</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/700-3
+00:33:58.631 --> 00:34:01.909
+<v Mark Sedge>X amount of period we will come and we
+will come and talk to you.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/700-4
+00:34:01.909 --> 00:34:05.633
+<v Mark Sedge>This is you know to the business.
+So the leaderships will then go and have</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/700-5
+00:34:05.633 --> 00:34:07.371
+<v Mark Sedge>some of those conversations to say.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/705-0
+00:34:07.851 --> 00:34:10.471
+<v Mark Sedge>What's material?
+Based upon what we've learnt,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/705-1
+00:34:10.471 --> 00:34:13.870
+<v Mark Sedge>this is what we've seen in terms of our
+typical performance,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/705-2
+00:34:13.870 --> 00:34:18.217
+<v Mark Sedge>because you'd be transparent because
+ultimately sort of part through the same</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/705-3
+00:34:18.217 --> 00:34:21.282
+<v Mark Sedge>organisation,
+you would share your baselining pictures</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/705-4
+00:34:21.282 --> 00:34:24.570
+<v Mark Sedge>and landscape and then you'd have the
+conversation to say,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/705-5
+00:34:24.570 --> 00:34:27.691
+<v Mark Sedge>does any of what we've been achieving
+today materially.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/711-0
+00:34:27.771 --> 00:34:32.191
+<v Mark Sedge>Impact your business and what would you
+want us to be playing back to you to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/707-0
+00:34:32.171 --> 00:34:32.291
+<v Josh Sparkes>Yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/711-1
+00:34:32.191 --> 00:34:36.669
+<v Mark Sedge>reassure you if you are doing you know if
+your performance and if what you're</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/711-2
+00:34:36.669 --> 00:34:39.252
+<v Mark Sedge>driving for.
+And I've done these many times,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/711-3
+00:34:39.252 --> 00:34:43.500
+<v Mark Sedge>if you can demonstrate that actually
+there's no material impact borrowing</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/711-4
+00:34:43.500 --> 00:34:44.131
+<v Mark Sedge>exceptions.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/710-0
+00:34:43.771 --> 00:34:43.891
+<v Josh Sparkes>Yes.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/716-0
+00:34:44.531 --> 00:34:47.602
+<v Mark Sedge>You wouldn't even follow through with the
+service level.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/716-1
+00:34:47.602 --> 00:34:52.021
+<v Mark Sedge>What you would do is you'd just show your
+indicative scorecard against your Olas.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/716-2
+00:34:52.021 --> 00:34:56.223
+<v Mark Sedge>If you were asked. So if a business had,
+say, a challenge, and you went back,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/716-3
+00:34:56.223 --> 00:34:59.133
+<v Mark Sedge>you just used your material Ola structure,
+say, look,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/716-4
+00:34:59.133 --> 00:35:03.497
+<v Mark Sedge>this is typically where we are and we are
+holding within range and therefore you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/716-5
+00:35:03.497 --> 00:35:04.251
+<v Mark Sedge>wouldn't need.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/721-0
+00:35:04.291 --> 00:35:09.308
+<v Mark Sedge>Need to have any formal service level.
+The ones that are really material to the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/721-1
+00:35:09.308 --> 00:35:13.322
+<v Mark Sedge>business are the ones where you drive a
+service level and what.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/721-2
+00:35:13.322 --> 00:35:17.837
+<v Mark Sedge>You might also look at to say well
+actually and this is on the IT side,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/721-3
+00:35:17.837 --> 00:35:21.787
+<v Mark Sedge>I did a session on Xlas which are
+experience based agreements.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/721-4
+00:35:21.787 --> 00:35:23.731
+<v Mark Sedge>So it's less about the numbers.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/729-0
+00:35:24.051 --> 00:35:26.955
+<v Mark Sedge>98% were done. Invoices processing,
+whatever.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/729-1
+00:35:26.955 --> 00:35:31.816
+<v Mark Sedge>What you might actually do is you might
+just put an experience based one and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/723-0
+00:35:31.171 --> 00:35:31.291
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/729-2
+00:35:31.816 --> 00:35:35.793
+<v Mark Sedge>drive your performance at just purely on
+Net Promoter or CSAP.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/725-0
+00:35:33.251 --> 00:35:33.371
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/729-3
+00:35:35.793 --> 00:35:40.276
+<v Mark Sedge>And if if you you know on your CSAP one
+if you get if no one responds,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/729-4
+00:35:40.276 --> 00:35:42.611
+<v Mark Sedge>responds to that satisfaction survey.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/728-0
+00:35:42.051 --> 00:35:42.331
+<v Pandya, Sandeep 14402>Thank you.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/734-0
+00:35:43.011 --> 00:35:46.965
+<v Mark Sedge>Then they are satisfied against those
+that come back and say it was either</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/734-1
+00:35:46.965 --> 00:35:50.128
+<v Mark Sedge>outstanding or it was poor,
+and that gives you the balance.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/734-2
+00:35:50.128 --> 00:35:53.924
+<v Mark Sedge>So these are the things that you would
+need to explore once you've been</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/734-3
+00:35:53.924 --> 00:35:57.403
+<v Mark Sedge>operating once you actually have the data
+because to Jills point,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/734-4
+00:35:57.403 --> 00:36:01.726
+<v Mark Sedge>if you haven't been able to measure those
+ones that have been articulated in your</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/734-5
+00:36:01.726 --> 00:36:02.411
+<v Mark Sedge>catalogue to.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/739-0
+00:36:02.491 --> 00:36:07.208
+<v Mark Sedge>Date you're almost starting from the yeah,
+the blank canvas that then says.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/739-1
+00:36:07.208 --> 00:36:11.490
+<v Mark Sedge>Here's what we need to do.
+So I think Mark to to answer the question</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/739-2
+00:36:11.490 --> 00:36:16.393
+<v Mark Sedge>is one we possibly might need to think
+about that service strategy in terms of</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/737-0
+00:36:12.611 --> 00:36:12.731
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/739-3
+00:36:16.393 --> 00:36:19.371
+<v Mark Sedge>what it what it is that you know you know
+gets.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/746-0
+00:36:19.651 --> 00:36:22.994
+<v Mark Sedge>Gets or communicated or gets positioned
+to the business.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/746-1
+00:36:22.994 --> 00:36:27.568
+<v Mark Sedge>I think to the construct of that then
+says when we've got some solid data and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/741-0
+00:36:23.571 --> 00:36:23.691
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/746-2
+00:36:27.568 --> 00:36:31.263
+<v Mark Sedge>we know really solid measurable data,
+this is what we perform.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/746-3
+00:36:31.263 --> 00:36:35.778
+<v Mark Sedge>Let's go and have some dialogue with the
+customers and see what are the real</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/746-4
+00:36:35.778 --> 00:36:39.531
+<v Mark Sedge>impacts on them and then use their
+feedback back to then drive.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/745-0
+00:36:38.731 --> 00:36:38.851
+<v Julian Payneeandee>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/750-0
+00:36:39.611 --> 00:36:44.414
+<v Mark Sedge>Those agreements and that would be a
+typical approach that you would take,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/750-1
+00:36:44.414 --> 00:36:49.409
+<v Mark Sedge>especially if you're sort of focused on
+being customer centric and supporting</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/750-2
+00:36:49.409 --> 00:36:54.211
+<v Mark Sedge>ultimately the business drivers that
+bring you money. That's the ultimate.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/752-0
+00:36:55.251 --> 00:36:58.611
+<v Tinsley, Mark>Yeah, that makes that makes sense to me.
+Jill. Jill, you want to come in?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/759-0
+00:36:59.251 --> 00:37:04.082
+<v Collins, Gillian 14363>I was just gonna say just to add that I
+think we just need to agree what the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/759-1
+00:37:04.082 --> 00:37:09.163
+<v Collins, Gillian 14363>approach is gonna be an enterprise level
+cause what I wouldn't want to happen is</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/754-0
+00:37:07.211 --> 00:37:07.331
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/759-2
+00:37:09.163 --> 00:37:14.118
+<v Collins, Gillian 14363>that IT are perhaps publishing Slas and
+ask aren't because we're not currently</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/756-0
+00:37:10.771 --> 00:37:11.011
+<v Tinsley, Mark>Hmm.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/759-3
+00:37:14.118 --> 00:37:17.255
+<v Collins, Gillian 14363>measuring.
+So it's just important that I think we</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/759-4
+00:37:17.255 --> 00:37:19.011
+<v Collins, Gillian 14363>align that I think probably.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/767-0
+00:37:19.091 --> 00:37:22.349
+<v Collins, Gillian 14363>From my perspective,
+what I'm hearing just through these</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/767-1
+00:37:22.349 --> 00:37:27.037
+<v Collins, Gillian 14363>conversations is I want to be clear on as
+the work that we need to do just now on</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/763-0
+00:37:26.571 --> 00:37:29.211
+<v Pandya, Sandeep 14402>Yeah, yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/767-2
+00:37:27.037 --> 00:37:30.066
+<v Collins, Gillian 14363>Slas or Olas.
+So I'd like to take some guidance from</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/767-3
+00:37:30.066 --> 00:37:34.868
+<v Collins, Gillian 14363>TQI, my team around what that looks like.
+Is there actions that we need to be doing</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/767-4
+00:37:34.868 --> 00:37:38.011
+<v Collins, Gillian 14363>so that by day one,
+we could have some stuff in there.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/766-0
+00:37:38.611 --> 00:37:38.851
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/774-0
+00:37:38.611 --> 00:37:41.431
+<v Collins, Gillian 14363>Or are we taking it Mark? To your point,
+sage,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/774-1
+00:37:41.431 --> 00:37:45.871
+<v Collins, Gillian 14363>sorry that we are waiting till we get in
+and test and measuring from that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/774-2
+00:37:45.871 --> 00:37:50.371
+<v Collins, Gillian 14363>perspective it might be actually the
+right thing to do as a hybrid of that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/774-3
+00:37:50.371 --> 00:37:54.751
+<v Collins, Gillian 14363>because to sandeep's point we do have
+some Slas that are agreed with the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/774-4
+00:37:54.751 --> 00:37:58.171
+<v Collins, Gillian 14363>business because they're perhaps
+regulatory for example.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/777-0
+00:37:58.331 --> 00:38:03.014
+<v Collins, Gillian 14363>That's what drives that.
+So I think we just need some direction on</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/772-0
+00:37:59.411 --> 00:37:59.691
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/773-0
+00:37:59.451 --> 00:38:00.051
+<v Debra Howard>Mm-hmm.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/777-1
+00:38:03.014 --> 00:38:08.885
+<v Collins, Gillian 14363>what that looks like from now until we go
+live and what kind of pre work we need to</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/777-2
+00:38:08.885 --> 00:38:11.051
+<v Collins, Gillian 14363>do really to help achieve that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/784-0
+00:38:10.211 --> 00:38:12.993
+<v Julian Payneeandee>Yeah, that makes sense.
+I was going to say I was going to,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/778-0
+00:38:11.731 --> 00:38:12.571
+<v Pandya, Sandeep 14402>This up to mark.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/784-1
+00:38:12.993 --> 00:38:16.057
+<v Julian Payneeandee>so I was going to check.
+I didn't realise that you also had some</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/784-2
+00:38:16.057 --> 00:38:18.696
+<v Julian Payneeandee>SLA's in place,
+so it does mean that we do need to take</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/780-0
+00:38:18.171 --> 00:38:18.291
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/784-3
+00:38:18.696 --> 00:38:22.279
+<v Julian Payneeandee>the hybrid approach to and I do think we
+need to kind of have a base set of</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/784-4
+00:38:22.279 --> 00:38:24.777
+<v Julian Payneeandee>overlays that we we would try to use
+across finance,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/784-5
+00:38:24.777 --> 00:38:28.171
+<v Julian Payneeandee>but where you do have those agreements,
+there's SLA's already in place.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/791-0
+00:38:28.891 --> 00:38:30.984
+<v Julian Payneeandee>How do we define them?
+How do we capture them?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/791-1
+00:38:30.984 --> 00:38:34.279
+<v Julian Payneeandee>How do we build them in service now?
+How do we then have the ease to then</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/785-0
+00:38:31.251 --> 00:38:31.371
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/791-2
+00:38:34.279 --> 00:38:37.574
+<v Julian Payneeandee>create the reports off the back of it
+that you can then start to show the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/791-3
+00:38:37.574 --> 00:38:39.712
+<v Julian Payneeandee>business?
+So there's a couple of things that we</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/791-4
+00:38:39.712 --> 00:38:43.274
+<v Julian Payneeandee>probably do need to have a little bit
+more detailed session on the SLA that you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/791-5
+00:38:43.274 --> 00:38:46.658
+<v Julian Payneeandee>do have plus defining a base set of
+overlays that we want to have for phase</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/791-6
+00:38:46.658 --> 00:38:47.771
+<v Julian Payneeandee>one. I would say that we.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/795-0
+00:38:48.371 --> 00:38:51.835
+<v Julian Payneeandee>Typically you don't want to kind of share
+that much information right now as well.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/795-1
+00:38:51.835 --> 00:38:53.796
+<v Julian Payneeandee>How do we provide the service to the
+business?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/795-2
+00:38:53.796 --> 00:38:56.800
+<v Julian Payneeandee>But if you do have certain stakeholders
+where they are expected to see,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/795-3
+00:38:56.800 --> 00:38:58.720
+<v Julian Payneeandee>what's the performance look like,
+what is it,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/795-4
+00:38:58.720 --> 00:39:01.683
+<v Julian Payneeandee>what's the availability look like based
+on the SLA that we had agreed,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/795-5
+00:39:01.683 --> 00:39:04.896
+<v Julian Payneeandee>we do need to kind of create some of
+those reports and dashboards for almost</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/795-6
+00:39:04.896 --> 00:39:07.691
+<v Julian Payneeandee>like you have really basic ones,
+but just enough to kind of share.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/797-0
+00:39:08.371 --> 00:39:10.091
+<v Julian Payneeandee>We're responding to your slaves in place
+as well.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/799-0
+00:39:11.571 --> 00:39:12.611
+<v Collins, Gillian 14363>Yeah, definitely.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/798-0
+00:39:11.731 --> 00:39:11.971
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/805-0
+00:39:11.931 --> 00:39:16.271
+<v Pandya, Sandeep 14402>Yeah, I see it in the three steps, right,
+first step is right. Now it's just said,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/805-1
+00:39:16.271 --> 00:39:20.192
+<v Pandya, Sandeep 14402>what do we want to do right now until you
+know, we are testing going live.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/805-2
+00:39:20.192 --> 00:39:24.270
+<v Pandya, Sandeep 14402>So I understand that our we ourselves
+need to just kind of like you know fine</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/805-3
+00:39:24.270 --> 00:39:28.453
+<v Pandya, Sandeep 14402>tune the SL as whatever individuals have
+we make sure that it's put through and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/803-0
+00:39:26.651 --> 00:39:26.771
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/805-4
+00:39:28.453 --> 00:39:31.851
+<v Pandya, Sandeep 14402>you know we we manage and monitor ours.
+The Step 2 will be that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/810-0
+00:39:31.931 --> 00:39:35.905
+<v Pandya, Sandeep 14402>Those SL as are like what Mark was saying.
+I mean we need to have a have a</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/810-1
+00:39:35.905 --> 00:39:39.295
+<v Pandya, Sandeep 14402>discussion with the wider business areas
+and say you know this,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/810-2
+00:39:39.295 --> 00:39:43.534
+<v Pandya, Sandeep 14402>these are the SL as what we have agreed
+with yourself and you know what some of</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/810-3
+00:39:43.534 --> 00:39:47.666
+<v Pandya, Sandeep 14402>these might be ages you know so don't
+know if that discussion needs to happen</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/810-4
+00:39:47.666 --> 00:39:51.851
+<v Pandya, Sandeep 14402>with them and you know rediscuss the SL
+as etcetera. But yeah you know having.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/814-0
+00:39:51.931 --> 00:39:55.466
+<v Pandya, Sandeep 14402>That communication done with the Slas
+with, with the wider stakeholders,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/814-1
+00:39:55.466 --> 00:39:59.194
+<v Pandya, Sandeep 14402>that's Step 2 and then the last step is
+that to have that performance review</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/814-2
+00:39:59.194 --> 00:40:02.776
+<v Pandya, Sandeep 14402>meetings or you know whatever we want to
+call the NPS ESAP scoring river.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/814-3
+00:40:02.776 --> 00:40:06.553
+<v Pandya, Sandeep 14402>So form from that kind of a meeting like
+on a quarterly or on a semi annually</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/814-4
+00:40:06.553 --> 00:40:08.731
+<v Pandya, Sandeep 14402>basis you know with with those
+stakeholders.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/817-0
+00:40:09.171 --> 00:40:12.421
+<v Pandya, Sandeep 14402>I think the question for me is now,
+apart from the user stories,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/817-1
+00:40:12.421 --> 00:40:15.971
+<v Pandya, Sandeep 14402>is there anything you know we have to
+factor so the guys are prepared.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/821-0
+00:40:18.091 --> 00:40:20.494
+<v Julian Payneeandee>Yeah.
+So they just so I can just so I can</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/821-1
+00:40:20.494 --> 00:40:25.128
+<v Julian Payneeandee>understand as well in terms of the Slas
+that you do have in place at the moment,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/821-2
+00:40:25.128 --> 00:40:29.819
+<v Julian Payneeandee>do you have things like making the stuff
+a service review with finance operations</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/821-3
+00:40:29.819 --> 00:40:33.251
+<v Julian Payneeandee>or with AP community that says look,
+we set these Slas out?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/824-0
+00:40:33.811 --> 00:40:38.326
+<v Julian Payneeandee>How we're doing on a monthly basis is is
+ask finance performing as we agreed and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/824-1
+00:40:38.326 --> 00:40:42.171
+<v Julian Payneeandee>we set out you know at the very beginning
+when we set up these Slas.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/832-0
+00:40:41.531 --> 00:40:47.155
+<v Pandya, Sandeep 14402>We don't know. We don't have that.
+So what will have what we have right now</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/825-0
+00:40:43.771 --> 00:40:43.891
+<v Julian Payneeandee>OK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/832-1
+00:40:47.155 --> 00:40:52.852
+<v Pandya, Sandeep 14402>is certain regulatory SL as and and and
+reporting so not on the basis right.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/827-0
+00:40:51.571 --> 00:40:51.771
+<v Julian Payneeandee>OK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/832-2
+00:40:52.852 --> 00:40:58.254
+<v Pandya, Sandeep 14402>So say for example capturing we are
+responsible to sign up on the breach</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/832-3
+00:40:58.254 --> 00:41:00.251
+<v Pandya, Sandeep 14402>report across the form not.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/830-0
+00:40:59.611 --> 00:41:01.011
+<v Julian Payneeandee>OK. Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/838-0
+00:41:00.851 --> 00:41:05.416
+<v Pandya, Sandeep 14402>And OK, so we prove we have those Slas,
+we have those reporting standards.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/838-1
+00:41:05.416 --> 00:41:10.223
+<v Pandya, Sandeep 14402>But when we're talking about individuals
+and the teams know they we don't have</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/838-2
+00:41:10.223 --> 00:41:13.875
+<v Pandya, Sandeep 14402>that kind of a forum right now.
+Let's move with some tasks.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/835-0
+00:41:12.131 --> 00:41:12.251
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/838-3
+00:41:13.875 --> 00:41:17.161
+<v Pandya, Sandeep 14402>We think of payments,
+we've got banking cut off time.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/838-4
+00:41:17.161 --> 00:41:17.891
+<v Pandya, Sandeep 14402>So SL as of.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/842-0
+00:41:18.411 --> 00:41:18.531
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/844-0
+00:41:18.851 --> 00:41:21.748
+<v Pandya, Sandeep 14402>If someone gives us a payment request
+before a certain thing,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/844-1
+00:41:21.748 --> 00:41:24.691
+<v Pandya, Sandeep 14402>we will do it same day,
+but if it's after a certain thing with</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/844-2
+00:41:24.691 --> 00:41:27.167
+<v Pandya, Sandeep 14402>the next day,
+we have to keep those in place because</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/844-3
+00:41:27.167 --> 00:41:30.530
+<v Pandya, Sandeep 14402>we're managing the expectations of when
+people need to get stuff to us.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/844-4
+00:41:30.530 --> 00:41:33.847
+<v Pandya, Sandeep 14402>Julian's point is that after a month,
+two months, do you review? Yeah,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/844-5
+00:41:33.847 --> 00:41:37.771
+<v Pandya, Sandeep 14402>the work with them as well that you were
+late on 10 occasions or you know you were.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/851-0
+00:41:38.651 --> 00:41:41.343
+<v Pandya, Sandeep 14402>We were later on. Yeah.
+He was able to review that,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/851-1
+00:41:41.343 --> 00:41:44.086
+<v Pandya, Sandeep 14402>I guess book book driven by outside
+sources as well.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/846-0
+00:41:43.891 --> 00:41:44.011
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/851-2
+00:41:44.086 --> 00:41:47.501
+<v Pandya, Sandeep 14402>So to answer your questions again,
+maybe at a very minimal level,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/847-0
+00:41:45.771 --> 00:41:45.891
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/851-3
+00:41:47.501 --> 00:41:51.331
+<v Pandya, Sandeep 14402>you know we might be discussing this with
+the stakeholders we don't have.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/858-0
+00:41:52.251 --> 00:41:55.679
+<v Debra Howard>Yeah. And at the best,
+we do have your Slas. You know,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/850-0
+00:41:52.291 --> 00:41:52.571
+<v Julian Payneeandee>OK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/852-0
+00:41:53.051 --> 00:41:53.571
+<v Collins, Gillian 14363>I think it.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/858-1
+00:41:55.679 --> 00:42:00.478
+<v Debra Howard>as I go through each of the user stories
+and the process and consolidate it,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/853-0
+00:41:56.451 --> 00:41:56.571
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/854-0
+00:41:56.811 --> 00:41:56.931
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/858-2
+00:42:00.478 --> 00:42:05.339
+<v Debra Howard>you have multiple Slas already in place
+and you can say well actually is that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/858-3
+00:42:05.339 --> 00:42:10.263
+<v Debra Howard>regulatory do we, is that set in stone.
+So there are ones that we can pull out</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/858-4
+00:42:10.263 --> 00:42:11.571
+<v Debra Howard>that are you have to.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/865-0
+00:42:12.611 --> 00:42:16.960
+<v Debra Howard>Comply to and there are others that might
+have just been set. As you said,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/865-1
+00:42:16.960 --> 00:42:20.149
+<v Debra Howard>Geraldine in Varma,
+lots of them are 4 hours as a as a</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/865-2
+00:42:20.149 --> 00:42:23.048
+<v Debra Howard>blanket.
+We can certainly you know that that that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/865-3
+00:42:23.048 --> 00:42:27.223
+<v Debra Howard>is at least a starting point that we have
+today. And you can say, well,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/865-4
+00:42:27.223 --> 00:42:31.571
+<v Debra Howard>at best we're going to, you know,
+the SLA is going to be better than that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/870-0
+00:42:31.691 --> 00:42:35.159
+<v Debra Howard>Because they're probably generous because
+they're never breached,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/870-1
+00:42:35.159 --> 00:42:39.100
+<v Debra Howard>so that's at least that discussion that
+you can tie into the user stories.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/866-0
+00:42:36.171 --> 00:42:36.291
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/870-2
+00:42:39.100 --> 00:42:43.460
+<v Debra Howard>But to your point is probably, you know,
+how many is there a report today that you</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/870-3
+00:42:43.460 --> 00:42:46.928
+<v Debra Howard>can say, well, actually,
+this is what we're performing at because</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/870-4
+00:42:46.928 --> 00:42:51.131
+<v Debra Howard>I think there was some discussions on
+also performance reviews and utilisation.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/875-0
+00:42:51.331 --> 00:42:54.527
+<v Debra Howard>So having that information might be
+useful,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/875-1
+00:42:54.527 --> 00:43:00.482
+<v Debra Howard>but at the moment we certainly have all
+the Slas after the work that Tim has done</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/875-2
+00:43:00.482 --> 00:43:05.928
+<v Debra Howard>previously in place and that's it
+probably a good starting point of saying</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/874-0
+00:43:05.091 --> 00:43:05.211
+<v Julian Payneeandee>OK.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/875-3
+00:43:05.928 --> 00:43:06.291
+<v Debra Howard>well.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/880-0
+00:43:06.771 --> 00:43:10.152
+<v Debra Howard>That's what we are least starting the
+conversation on,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/880-1
+00:43:10.152 --> 00:43:14.701
+<v Debra Howard>and we can story point some of the
+journeys as well against those to say,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/880-2
+00:43:14.701 --> 00:43:17.652
+<v Debra Howard>well actually we and we can do that as a
+group,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/880-3
+00:43:17.652 --> 00:43:22.632
+<v Debra Howard>but could say well actually we believe
+that you could do that in three hours for</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/880-4
+00:43:22.632 --> 00:43:24.291
+<v Debra Howard>example on a four hour SLA.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/882-0
+00:43:24.771 --> 00:43:28.775
+<v Debra Howard>But as we stand today,
+we do have most of the Slas captured for</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/882-1
+00:43:28.775 --> 00:43:33.091
+<v Debra Howard>each of our user stories or each of the
+processes that you provided.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/889-0
+00:43:34.251 --> 00:43:34.291
+<v Collins, Gillian 14363>I.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/890-0
+00:43:34.411 --> 00:43:38.482
+<v Collins, Gillian 14363>I think it's maybe an exercise that needs
+to be carried out at some point, right?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/884-0
+00:43:37.771 --> 00:43:37.891
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/890-1
+00:43:38.482 --> 00:43:42.355
+<v Collins, Gillian 14363>I don't know that it's right now that it
+needs to be done because I think the</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/885-0
+00:43:40.211 --> 00:43:40.251
+<v Debra Howard>I.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/890-2
+00:43:42.355 --> 00:43:46.228
+<v Collins, Gillian 14363>focus should be on the user stories and
+what we need to be focused on in that</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/886-0
+00:43:44.611 --> 00:43:44.891
+<v Julian Payneeandee>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/887-0
+00:43:45.331 --> 00:43:45.491
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/890-3
+00:43:46.228 --> 00:43:49.207
+<v Collins, Gillian 14363>perspective. Tim,
+I'm going to throw your hat and hopefully</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/890-4
+00:43:49.207 --> 00:43:53.327
+<v Collins, Gillian 14363>you would be able to help us support and
+doing that kind of exercise with the guys</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/890-5
+00:43:53.327 --> 00:43:54.171
+<v Collins, Gillian 14363>working with TKI.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/892-0
+00:43:54.411 --> 00:43:56.911
+<v Collins, Gillian 14363>If you just let us know when the time's
+right,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/892-1
+00:43:56.911 --> 00:44:01.165
+<v Collins, Gillian 14363>what kind of information it is that you
+need us to clarify on the current SL ES</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/892-2
+00:44:01.165 --> 00:44:04.568
+<v Collins, Gillian 14363>that we have, etcetera,
+I think that's probably a good starting</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/892-3
+00:44:04.568 --> 00:44:07.971
+<v Collins, Gillian 14363>point and then we can work from there and
+see what it tells us.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/894-0
+00:44:08.891 --> 00:44:10.171
+<v Elsworth, Tim 14011>More than happy to help Jill.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/897-0
+00:44:08.891 --> 00:44:12.231
+<v Debra Howard>And as you said, it's yeah.
+And as we said, it's a,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/893-0
+00:44:09.131 --> 00:44:09.491
+<v Julian Payneeandee>We'll.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/897-1
+00:44:12.231 --> 00:44:17.047
+<v Debra Howard>we are also looking at it not mutually
+exclusive exclusively for each one.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/897-2
+00:44:17.047 --> 00:44:21.350
+<v Debra Howard>It's an end to end process.
+So we're acutely aware that these four</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/895-0
+00:44:17.651 --> 00:44:18.051
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/897-3
+00:44:21.350 --> 00:44:25.588
+<v Debra Howard>hours can easily build up,
+but the actual handoffs you know there</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/896-0
+00:44:24.131 --> 00:44:24.411
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/897-4
+00:44:25.588 --> 00:44:27.771
+<v Debra Howard>has to be a different SLA on that.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/899-0
+00:44:25.611 --> 00:44:30.220
+<v Julian Payneeandee>I think I think from our side,
+we'll provide a template which you can</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/899-1
+00:44:30.220 --> 00:44:35.685
+<v Julian Payneeandee>then start to use as a methods to capture
+what we call kind of SLA definitions and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/898-0
+00:44:30.891 --> 00:44:31.131
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/899-2
+00:44:35.685 --> 00:44:39.241
+<v Julian Payneeandee>SLA definitions,
+covers SLA overlays and underpinning</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/899-3
+00:44:39.241 --> 00:44:41.611
+<v Julian Payneeandee>contracts. Within that it will have.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/903-0
+00:44:41.931 --> 00:44:43.968
+<v Julian Payneeandee>What's the name of your SLA?
+What does it cover?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/900-0
+00:44:42.691 --> 00:44:42.971
+<v Collins, Gillian 14363>Play movie.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/903-1
+00:44:43.968 --> 00:44:45.881
+<v Julian Payneeandee>What's the start condition?
+What's it almost?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/903-2
+00:44:45.881 --> 00:44:48.666
+<v Julian Payneeandee>What's how do you trigger that SLA?
+How do you pause it? You know,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/903-3
+00:44:48.666 --> 00:44:52.241
+<v Julian Payneeandee>kind of pause conditions, stop conditions,
+etcetera. So if we're going to build that,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/903-4
+00:44:52.241 --> 00:44:55.027
+<v Julian Payneeandee>we need to make sure that we've gathered
+that information as well.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/903-5
+00:44:55.027 --> 00:44:56.731
+<v Julian Payneeandee>So we can then capture the right stories.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/902-0
+00:44:57.091 --> 00:44:57.251
+<v Debra Howard>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/901-0
+00:44:57.171 --> 00:44:57.371
+<v Collins, Gillian 14363>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/905-0
+00:44:57.331 --> 00:45:02.074
+<v Julian Payneeandee>The other thing I was going to say is
+George C point as well, the Ola piece,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/905-1
+00:45:02.074 --> 00:45:06.693
+<v Julian Payneeandee>we did cover AI would call it an
+enterprise decision to agree the approach</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/904-0
+00:45:03.971 --> 00:45:04.091
+<v Josh Sparkes>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/905-2
+00:45:06.693 --> 00:45:09.526
+<v Julian Payneeandee>for that.
+So let's take that one offline as a</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/905-3
+00:45:09.526 --> 00:45:12.051
+<v Julian Payneeandee>separate session that we do need to have.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/906-0
+00:45:12.531 --> 00:45:13.451
+<v Julian Payneeandee>We used to agree.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/907-0
+00:45:15.011 --> 00:45:18.539
+<v Julian Payneeandee>Let's have you know,
+do we start with a kind of base set line,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/907-1
+00:45:18.539 --> 00:45:21.171
+<v Julian Payneeandee>you know,
+baseline of overlays to help us just</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/907-2
+00:45:21.171 --> 00:45:24.251
+<v Julian Payneeandee>measure to start with, yeah,
+slightly easy to achieve,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/907-3
+00:45:24.251 --> 00:45:28.955
+<v Julian Payneeandee>but allows us to measure actually how how
+well do we do how how effective are we in</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/907-4
+00:45:28.955 --> 00:45:30.411
+<v Julian Payneeandee>pushing certain things or?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/908-0
+00:45:30.931 --> 00:45:33.537
+<v Julian Payneeandee>Actually,
+if I have a a end to end service not only</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/908-1
+00:45:33.537 --> 00:45:36.693
+<v Julian Payneeandee>just within finance,
+but let's say an onboarding journey where</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/908-2
+00:45:36.693 --> 00:45:40.151
+<v Julian Payneeandee>there's multiple functions that are
+engaged, how do we measure that?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/908-3
+00:45:40.151 --> 00:45:42.806
+<v Julian Payneeandee>How do we look at those end to end
+services as well?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/908-4
+00:45:42.806 --> 00:45:46.915
+<v Julian Payneeandee>So let's say that offline as a separate
+session that we just need to kind of have</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/908-5
+00:45:46.915 --> 00:45:50.171
+<v Julian Payneeandee>a think through and see what is the the
+best approach right now.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/909-0
+00:45:50.251 --> 00:45:52.372
+<v Julian Payneeandee>'Cause I'm.
+I'm conscious about getting the stories</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/909-1
+00:45:52.372 --> 00:45:54.411
+<v Julian Payneeandee>and and getting the functionality in
+rather than.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/910-0
+00:45:56.131 --> 00:45:59.565
+<v Julian Payneeandee>Adding to the workload and trying to get
+the measurements when we want to try and</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/910-1
+00:45:59.565 --> 00:46:01.951
+<v Julian Payneeandee>get the services right simplified in
+ServiceNow as well,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/910-2
+00:46:01.951 --> 00:46:03.291
+<v Julian Payneeandee>but let's pick that offline now.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/913-0
+00:46:02.411 --> 00:46:05.092
+<v Collins, Gillian 14363>And I I agree.
+I think that's the priority. But yeah,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/913-1
+00:46:05.092 --> 00:46:07.575
+<v Collins, Gillian 14363>that's definitely an enterprise approach,
+Julian.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/913-2
+00:46:07.575 --> 00:46:10.653
+<v Collins, Gillian 14363>I think around that oily piece and what
+it means for day one,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/913-3
+00:46:10.653 --> 00:46:13.135
+<v Collins, Gillian 14363>we know what we want to achieve long term,
+right?</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/911-0
+00:46:11.651 --> 00:46:11.851
+<v Julian Payneeandee>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/913-4
+00:46:13.135 --> 00:46:17.157
+<v Collins, Gillian 14363>But what's it actually like for day one
+and then that will give us some guidance</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/913-5
+00:46:17.157 --> 00:46:20.731
+<v Collins, Gillian 14363>around how that's going to be in the
+system and what it will feel like.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/914-0
+00:46:20.971 --> 00:46:21.571
+<v Collins, Gillian 14363>We're working through it.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/912-0
+00:46:22.331 --> 00:46:22.491
+<v Julian Payneeandee>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/916-0
+00:46:24.771 --> 00:46:29.368
+<v Josh Sparkes>All right. Thanks, everyone.
+I think we're all clear and aligned. We,</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/916-1
+00:46:29.368 --> 00:46:34.095
+<v Josh Sparkes>we we all got to the same outcome there.
+So thanks all for your inputs.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/915-0
+00:46:32.731 --> 00:46:32.851
+<v Pandya, Sandeep 14402>Yeah.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/916-2
+00:46:34.095 --> 00:46:35.211
+<v Josh Sparkes>We appreciate it.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/933-0
+00:46:37.331 --> 00:46:40.331
+<v Mark Sedge>Thanks, Josh. So cheers, bye.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/934-0
+00:46:37.931 --> 00:46:40.651
+<v Elsworth, Tim 14011>Cheers all. Bye. Bye. Thanks everyone.
+Bye bye bye.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/936-0
+00:46:38.051 --> 00:46:41.091
+<v Collins, Gillian 14363>Excellent. Thanks everyone. Bye.
+Thank you.</v>
+
+7644cf32-e614-422b-8eea-7b4d0a622e31/938-0
+00:46:38.371 --> 00:46:39.291
+<v Josh Sparkes>Have a good day of thank you.</v>

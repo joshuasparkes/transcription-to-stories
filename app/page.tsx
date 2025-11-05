@@ -43,6 +43,7 @@ const PRELOADED_FILES = [
   'clean_AP_2.vtt',
   'CC & WIP 1.vtt',
   'CC & WIP 2.vtt',
+  'Finance SLAs.vtt',
 ];
 
 export default function Home() {
