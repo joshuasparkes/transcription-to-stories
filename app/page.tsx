@@ -753,7 +753,18 @@ export default function Home() {
                 <div className="mt-8 space-y-4">
                   {/* Main Answer */}
                   <div className="p-6 bg-gray-900 rounded-lg border border-gray-700">
-                    <h3 className="text-xl font-semibold text-white mb-4">Response</h3>
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="text-xl font-semibold text-white">Response</h3>
+                      <button
+                        onClick={() => {
+                          navigator.clipboard.writeText(mainAnswer);
+                        }}
+                        className="px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-200 cursor-pointer flex items-center gap-2"
+                      >
+                        <FontAwesomeIcon icon={faCopy} />
+                        Copy Response
+                      </button>
+                    </div>
                     <div className="bg-white p-4 rounded-lg text-black whitespace-pre-wrap">
                       {mainAnswer}
                     </div>
