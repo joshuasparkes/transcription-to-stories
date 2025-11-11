@@ -44,7 +44,8 @@ const PRELOADED_FILES = [
   'CC & WIP 1.vtt',
   'CC & WIP 2.vtt',
   'Finance SLAs.vtt',
-  'Facilities.vtt'
+  'Facilities.vtt',
+  'Client.vtt'
 ];
 
 export default function Home() {
