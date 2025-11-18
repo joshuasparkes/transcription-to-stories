@@ -47,6 +47,8 @@ const PRELOADED_FILES = [
   'Facilities.vtt',
   'Client.vtt',
   'Reporting.vtt',
+  'Connect transcript 1.vtt',
+  'Connect transcript 2.vtt'
 ];
 
 export default function Home() {
