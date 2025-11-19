@@ -8,8 +8,8 @@ const openai = new OpenAI({
 
 // Pricing per 1M tokens for different models
 const MODEL_PRICING = {
-  'gpt-5': {
-    input: 2.50,
+  'gpt-5.1': {
+    input: 1.50,
     output: 10.00,
   },
   'gpt-5-mini': {

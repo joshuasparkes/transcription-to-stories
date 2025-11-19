@@ -16,7 +16,7 @@ interface UsageInfo {
   totalCost: number;
 }
 
-type GptModel = 'gpt-5' | 'gpt-5-mini' | 'gpt-5-nano';
+type GptModel = 'gpt-5.1' | 'gpt-5-mini' | 'gpt-5-nano';
 type Mode = 'query' | 'user-stories' | 'cleanup' | 'file-viewer';
 
 // Pre-loaded VTT files available in the public folder
@@ -503,7 +503,7 @@ export default function Home() {
               onChange={(e) => setSelectedModel(e.target.value as GptModel)}
               className="w-full p-3 bg-gray-900 text-white rounded-xl border-2 border-gray-700 focus:border-blue-500 focus:outline-none transition-all duration-200"
             >
-              <option value="gpt-5">GPT-5 (Highest quality, $2.50/$10.00 per 1M tokens)</option>
+              <option value="gpt-5.1">GPT-5.1 (Highest quality, $2.50/$10.00 per 1M tokens)</option>
               <option value="gpt-5-mini">GPT-5 Mini (Balanced, $0.10/$0.40 per 1M tokens)</option>
               <option value="gpt-5-nano">GPT-5 Nano (Fastest, $0.05/$0.20 per 1M tokens)</option>
             </select>
