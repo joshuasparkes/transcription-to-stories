@@ -203,8 +203,11 @@ export default function Home() {
         throw new Error(`Failed to fetch ${filename}`);
       }
       const text = await response.text();
-      setViewedFileContent(text);
-      console.log('✅ [Frontend] Loaded file for viewing:', filename);
+
+      // Parse VTT to remove timestamps and metadata for cleaner viewing
+      const cleanedText = parseVTT(text);
+      setViewedFileContent(cleanedText);
+      console.log('✅ [Frontend] Loaded and cleaned file for viewing:', filename);
     } catch (err) {
       console.error('❌ [Frontend] Failed to load file for viewing:', err);
       setError(`Failed to load ${filename}`);
