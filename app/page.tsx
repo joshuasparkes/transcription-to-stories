@@ -47,6 +47,7 @@ const PRELOADED_FILES = [
   'Facilities.vtt',
   'Facilities Workshop.vtt',
   'Client.vtt',
+  'Client 1.vtt',
   'Reporting.vtt',
   'Connect transcript 1.vtt',
   'Connect transcript 2.vtt'
